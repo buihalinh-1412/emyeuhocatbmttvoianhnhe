@@ -6,18 +6,14 @@
   <meta name="artifact-type" content="tool">
   <meta name="design-style" content="sticker">
   <title>Em yêu, học ATBMTT cùng anh nào~~ | Ôn Thi ATBMTT</title>
-  <!-- Favicon SVG Thỏ Bông Bảo Mật hiển thị trên tab trình duyệt -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6 L88 22 V50 C88 74 71 90 50 96 C29 90 12 74 12 50 V22 Z' fill='%23ffe8f4' stroke='%23c2207f' stroke-width='6'/%3E%3Cellipse cx='38' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Cellipse cx='62' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='50' cy='56' r='22' fill='%23fff5fa' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='42' cy='53' r='3' fill='%232e1a28'/%3E%3Ccircle cx='58' cy='53' r='3' fill='%232e1a28'/%3E%3Cpath d='M46 60 Q50 65 54 60' fill='none' stroke='%23c2207f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Sử dụng Be Vietnam Pro, Lexend và JetBrains Mono hỗ trợ 100% dấu tiếng Việt sắc nét -->
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&family=Lexend:wght@600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
   <style>
     :root {
       color-scheme: light;
-
-      /* Sticker style core tokens */
       --background: #fef7ff;
       --surface-container-low: #ffffff;
       --surface-container: #f8eef8;
@@ -26,16 +22,10 @@
       --surface-mint: #e8fbf3;
       --surface-amber: #fff5e4;
       --surface-sky: #e8f7ff;
-
-      /* Ink */
       --on-surface: #2e1a28;
       --on-surface-variant: #5e4666;
-
-      /* Rules */
       --outline: #907898;
       --outline-variant: #dcc8e0;
-
-      /* Accents */
       --primary: #c2207f;
       --on-primary: #ffffff;
       --primary-container: #f598ce;
@@ -49,56 +39,38 @@
       --positive: #0d7a54;
       --on-positive: #ffffff;
       --warning: #b85800;
-
-      /* Data series */
       --data-1: #c2207f;
       --data-2: #7c52aa;
       --data-3: #0088ba;
       --data-4: #d96a00;
-
-      /* Fonts chuẩn tiếng Việt */
       --font-headline: 'Lexend', 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
       --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-
-      /* Shape */
       --rounded: 1rem;
       --rounded-lg: 1.75rem;
       --rounded-full: 9999px;
-
-      /* Effects */
       --shadow-pink: 0 4px 16px rgb(224 64 160 / 0.16);
       --shadow-pink-deep: 0 10px 28px rgb(224 64 160 / 0.28);
       --shadow-grape: 0 4px 16px rgb(124 82 170 / 0.16);
       --shadow-sky: 0 4px 16px rgb(0 150 204 / 0.16);
       --pop-scale: scale(1.02);
       --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-      /* Bunny mascot palette */
       --bunny-fur: #fff5fa;
       --bunny-ear: #ffd6eb;
       --bunny-ear-inner: #ff9ed2;
       --focus-ring-soft: 0 0 0 3px rgb(194 32 127 / 0.16);
       --keycap-shadow: 0 2px 0 var(--outline-variant);
-
-      /* Focus */
       --focus: #c2207f;
-
-      /* Type scale */
       --display-size: clamp(1.65rem, 1.35rem + 1.1vw, 2.2rem);
       --headline-size: clamp(1.2rem, 1.05rem + 0.45vw, 1.45rem);
       --subhead-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.15rem);
       --body-size: clamp(0.94rem, 0.91rem + 0.12vw, 1rem);
       --label-size: 0.74rem;
-
-      /* Spacing */
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
       --space-md: 1rem;
       --space-lg: 1.5rem;
       --space-xl: 2.25rem;
-
-      /* Motion */
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
       --dur-micro: 120ms;
       --dur-short: 220ms;
@@ -135,7 +107,6 @@
       outline-offset: 2px;
     }
 
-    /* Layout shell */
     .app-shell {
       max-width: 1180px;
       margin: 0 auto;
@@ -145,7 +116,6 @@
     }
     .app-shell * { min-width: 0; }
 
-    /* Hero banner */
     .hero-panel {
       background: var(--surface-container-low);
       border-radius: var(--rounded-lg);
@@ -224,7 +194,6 @@
     }
     .share-pill:hover { transform: var(--pop-scale); }
 
-    /* Stats strip inside hero */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -258,7 +227,6 @@
       color: var(--on-surface-variant);
     }
 
-    /* Mode segmented control */
     .mode-bar {
       display: flex;
       flex-wrap: wrap;
@@ -298,7 +266,6 @@
       box-shadow: var(--shadow-pink);
     }
 
-    /* Buttons */
     .btn {
       min-height: 44px;
       border: none;
@@ -324,13 +291,17 @@
       box-shadow: var(--shadow-pink);
     }
     .btn-primary:hover:not(:disabled) { box-shadow: var(--shadow-pink-deep); }
+    .btn-grape {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      box-shadow: var(--shadow-grape);
+    }
     .btn-soft {
       background: var(--surface-container);
       color: var(--primary);
     }
     .btn-soft:hover:not(:disabled) { background: var(--surface-rose); }
 
-    /* Cards */
     .card {
       background: var(--surface-container-low);
       border-radius: var(--rounded);
@@ -353,7 +324,6 @@
       color: var(--on-surface-variant);
     }
 
-    /* Chapter filter pills */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -390,7 +360,6 @@
       box-shadow: var(--shadow-pink);
     }
 
-    /* Theory layout */
     .theory-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
@@ -442,9 +411,7 @@
       font-size: 0.9rem;
       color: var(--on-surface);
     }
-    .tldr-box strong {
-      color: var(--warning);
-    }
+    .tldr-box strong { color: var(--warning); }
     .formula-box {
       background: var(--surface-container);
       border-radius: var(--rounded);
@@ -482,7 +449,6 @@
       background: var(--surface-container);
     }
 
-    /* Casio Lab Interactive Widgets */
     .casio-workbench {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
@@ -560,7 +526,6 @@
     .keycap.shift { background: var(--surface-amber); color: var(--warning); }
     .keycap.alpha { background: var(--surface-rose); color: var(--primary); }
 
-    /* Quiz / Practice View */
     .quiz-topbar {
       display: flex;
       flex-wrap: wrap;
@@ -611,6 +576,10 @@
       font-weight: 700;
       padding: 4px 12px;
       border-radius: var(--rounded-full);
+    }
+    .q-tag.gen-tag {
+      background: var(--surface-sky);
+      color: var(--tertiary);
     }
     .q-text {
       font-family: var(--font-headline);
@@ -694,7 +663,6 @@
     .explain-box.is-correct { background: var(--surface-mint); }
     .explain-box.is-wrong { background: var(--error-bg); }
 
-    /* Question map sidebar */
     .q-nav-panel {
       background: var(--surface-container-low);
       border-radius: var(--rounded);
@@ -726,7 +694,6 @@
     .q-dot.ok { background: var(--positive); color: var(--on-positive); }
     .q-dot.bad { background: var(--error); color: var(--on-error); }
 
-    /* Mock exam timer & result */
     .timer-badge {
       display: inline-flex;
       align-items: center;
@@ -774,7 +741,6 @@
       gap: var(--space-xs);
     }
 
-    /* Mascot Floating Celebration Toast */
     .mascot-toast {
       position: fixed;
       right: var(--space-lg);
@@ -818,7 +784,6 @@
       color: var(--on-surface-variant);
     }
 
-    /* Confetti / Hearts particle layer */
     .fx-layer {
       position: fixed;
       inset: 0;
@@ -867,7 +832,6 @@
     <header class="hero-panel">
       <div>
         <div class="brand-row">
-          <!-- Logo Thỏ Bông & Khiên ATBMTT -->
           <svg class="brand-logo" viewBox="0 0 100 100" aria-label="Logo Thỏ Bông ATBMTT">
             <defs>
               <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
@@ -888,13 +852,12 @@
             <ellipse cx="35" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
             <ellipse cx="65" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
             <path d="M45 59 Q50 64 55 59" fill="none" stroke="#c2207f" stroke-width="2.8" stroke-linecap="round"/>
-            <!-- Ổ khóa mini ở đáy khiên -->
             <rect x="42" y="74" width="16" height="12" rx="3" fill="#c2207f"/>
             <path d="M46 74 V70 A4 4 0 0 1 54 70 V74" fill="none" stroke="#c2207f" stroke-width="2.5"/>
           </svg>
           <span class="kicker" style="margin-bottom:0;">
             <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
-            Học phần An toàn &amp; Bảo mật Thông tin
+            ATBMTT · Engine Sinh Đề Tự Động Vô Hạn
           </span>
           <button type="button" class="share-pill" id="btn-copy-link" onclick="copyWebLink(this)">
             <i data-lucide="link" style="width:13px;height:13px;"></i>
@@ -903,7 +866,7 @@
         </div>
         <h1 class="display">Em yêu, học <em>ATBMTT</em> cùng anh nào~~</h1>
         <p class="hero-desc">
-          Lý thuyết 4 chương được dịch sang ngôn ngữ đời thường cực dễ nhớ (kèm từ khóa chuẩn đi thi), mẹo bấm Casio 570/580/880, 100 câu trắc nghiệm và đề thi thử 40 câu.
+          Lý thuyết 4 chương dịch sang ngôn ngữ đời thường cực dễ nhớ, mẹo bấm Casio 570/580/880, 100 câu chuẩn kèm <strong>Engine tự sinh vô hạn câu hỏi Lý thuyết &amp; Tính toán mới</strong>.
         </p>
       </div>
       <div class="stats-grid">
@@ -944,7 +907,7 @@
       </button>
       <button type="button" class="mode-btn" id="tab-practice" onclick="switchMode('practice')">
         <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
-        Luyện tập theo chương
+        Luyện tập &amp; Sinh đề mới
       </button>
       <button type="button" class="mode-btn" id="tab-mock" onclick="switchMode('mock')">
         <i data-lucide="timer" style="width:18px;height:18px;"></i>
@@ -969,7 +932,6 @@
       <p class="section-sub">Đi thi không cần nhẩm tay toát mồ hôi! Thuộc 3 tổ hợp phím này là cân trọn bài tập tính toán Chương 2, 3, 4.</p>
 
       <div class="casio-workbench">
-        <!-- Tool 1: Modulo & Power Mod -->
         <article class="card">
           <span class="theory-badge">Mẹo 1 · Chia lấy dư &amp; Lũy thừa lớn</span>
           <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--primary);">Tính a mod n &amp; a<sup>k</sup> mod n</h3>
@@ -987,7 +949,7 @@
             <span class="keycap">=</span>
           </div>
           <p style="font-size:0.88rem;color:var(--on-surface-variant);">
-            <strong>Mẹo mũ to (VD: 5<sup>117</sup> mod 19):</strong> Đừng bấm thẳng <code>5^117</code> vì máy sẽ báo lỗi <em>Math ERROR</em> (tràn bộ nhớ). Hãy rút gọn mũ bằng định lý Fermat (<code>5<sup>18</sup> ≡ 1 mod 19</code> nên <code>117 = 18×6 + 9</code>, chỉ còn tính <code>5<sup>9</sup> mod 19</code>), sau đó bình phương từng bước và bấm <code>÷R 19</code> liên tục!
+            <strong>Mẹo mũ to (VD: 5<sup>117</sup> mod 19):</strong> Đừng bấm thẳng <code>5^117</code> vì máy sẽ báo lỗi <em>Math ERROR</em>. Hãy rút gọn mũ bằng định lý Fermat (<code>5<sup>18</sup> ≡ 1 mod 19</code> nên <code>117 = 18×6 + 9</code>, chỉ còn tính <code>5<sup>9</sup> mod 19</code>), sau đó bình phương từng bước và bấm <code>÷R 19</code> liên tục!
           </p>
           <div class="input-row" style="margin-top:var(--space-md);">
             <div class="input-group">
@@ -1006,12 +968,11 @@
           <div class="casio-output" id="casio-mod-out"></div>
         </article>
 
-        <!-- Tool 2: Modular Inverse -->
         <article class="card card-grape">
           <span class="theory-badge">Mẹo 2 · Tìm khóa giải mã RSA bằng TABLE</span>
           <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--secondary);">Tìm nghịch đảo a<sup>-1</sup> mod n</h3>
           <div class="tldr-box">
-            <strong>Hiểu nôm na:</strong> Trong chia dư không có phép chia thông thường, nên tìm <code>a<sup>-1</sup> mod n</code> nghĩa là tìm số <code>d</code> sao cho <code>(a × d) chia n dư 1</code>.
+            <strong>Hiểu nôm na:</strong> Tìm <code>a<sup>-1</sup> mod n</code> nghĩa là tìm số <code>d</code> sao cho <code>(a × d) chia n dư 1</code>.
           </div>
           <p style="font-size:0.9rem;color:var(--on-surface-variant);">
             Thay vì kẻ bảng Euclid mở rộng dễ nhầm dấu, hãy dùng chế độ lập bảng <strong>TABLE</strong> trên Casio để dò nghiệm:
@@ -1037,12 +998,11 @@
           <div class="casio-output" id="casio-inv-out"></div>
         </article>
 
-        <!-- Tool 3: BASE-N XOR / BIN / HEX -->
         <article class="card card-sky">
           <span class="theory-badge">Mẹo 3 · Bấm bit Nhị phân &amp; Hex</span>
           <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--tertiary);">Chế độ BASE-N (TinyDES, MD5 thu nhỏ)</h3>
           <div class="tldr-box">
-            <strong>Nhớ nhanh phép XOR (⊕):</strong> Hai bit <strong>giống nhau</strong> ra <code>0</code> (0⊕0=0, 1⊕1=0); hai bit <strong>khác nhau</strong> ra <code>1</code> (0⊕1=1, 1⊕0=1).
+            <strong>Nhớ nhanh phép XOR (⊕):</strong> Hai bit <strong>giống nhau</strong> ra <code>0</code>; hai bit <strong>khác nhau</strong> ra <code>1</code>.
           </div>
           <p style="font-size:0.9rem;color:var(--on-surface-variant);">
             Chuyển máy tính sang chế độ hệ cơ số để đổi nhanh giữa <strong>HEX (hệ 16)</strong> và <strong>BIN (nhị phân)</strong>, kèm phép <code>xor, and, or</code>:
@@ -1084,7 +1044,13 @@
           <h2 class="section-title" id="practice-title" style="margin-bottom:2px;">Luyện tập Chương 1</h2>
           <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="practice-sub">Chọn đáp án để xem giải thích dễ hiểu ngay lập tức!</span>
         </div>
-        <button type="button" class="btn btn-soft" onclick="resetCurrentChapter(this)">Làm lại chương này</button>
+        <div style="display:flex;gap:var(--space-sm);flex-wrap:wrap;">
+          <button type="button" class="btn btn-grape" onclick="generateNewBatchForChapter()">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            Sinh 25 câu mới (LT + Tính toán)
+          </button>
+          <button type="button" class="btn btn-soft" onclick="resetCurrentChapter(this)">Làm lại chương này</button>
+        </div>
       </div>
 
       <div class="progress-track">
@@ -1106,20 +1072,19 @@
     <!-- VIEW 4: MOCK EXAM -->
     <section id="view-mock" class="hidden">
       <div id="mock-lobby" class="card" style="text-align:left;">
-        <span class="theory-badge">Phòng thi thử tổng hợp · Tự động lưu tiến độ</span>
+        <span class="theory-badge">Phòng thi thử tổng hợp · Hybrid Đề Chuẩn + Tự Sinh Động</span>
         <h2 class="section-title" style="margin-top:var(--space-sm);">Đề thi thử 40 câu — 60 phút</h2>
         <p class="section-sub">
-          Hệ thống ghi nhớ toàn bộ các câu bạn đã làm qua từng lần thi để <strong>ưu tiên bốc câu mới chưa gặp</strong> (10 câu mỗi chương). Nếu lỡ tải lại trang giữa chừng, bài thi đang làm dở cũng được tự động khôi phục!
+          Mỗi đề thi gồm 40 câu (10 câu/chương): kết hợp <strong>50% câu kho chuẩn</strong> (ưu tiên câu chưa gặp) và <strong>50% câu tự sinh động hoàn toàn mới</strong> (đầy đủ cả Lý thuyết tổ hợp lẫn Bài tập tính toán với số liệu mới).
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);align-items:center;">
           <button type="button" class="btn btn-primary" onclick="startMockExam()">
             <i data-lucide="play" style="width:18px;height:18px;"></i>
             Bắt đầu đề mới (60:00)
           </button>
-          <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="mock-pool-status">Đã chinh phục: 0 / 100 câu trong kho đề</span>
+          <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="mock-pool-status">Đã chinh phục: 0 / 100 câu trong kho chuẩn</span>
         </div>
         <div id="mock-history-box" style="margin-top:var(--space-lg);"></div>
-      </div>
       </div>
 
       <div id="mock-active" class="hidden">
@@ -1456,1120 +1421,4 @@ Khóa bí mật chung: KAB = yB^xA mod q = yA^xB mod q</div>
       4: `
         <div class="theory-grid">
           <article class="theory-card">
-            <span class="theory-badge">4.1 Hàm băm (Hash Function)</span>
-            <h3>"Máy xay sinh tố" dữ liệu &amp; 3 Tính chất vàng</h3>
-            <div class="tldr-box">
-              <strong>Tưởng tượng dễ hiểu:</strong> Hàm băm giống như chiếc máy xay sinh tố 1 chiều: bạn bỏ một hạt táo hay cả xe tải táo (<em>đầu vào dài tùy ý</em>) vào xay thì đều thu được đúng <strong>1 cốc nước ép 250ml</strong> (<em>đầu ra cố định</em>, gọi là <strong>cốt bức điện</strong>). Sửa chỉ 1 dấu phẩy trong văn bản là cốc nước ép đổi màu hoàn toàn!
-            </div>
-            <ul>
-              <li><strong>1. Tính một chiều (Preimage resistance):</strong> Nhìn cốc nước ép (cốt <code>z</code>), không thể ép ngược lại thành quả táo ban đầu (bức điện <code>x</code>).</li>
-              <li><strong>2. Tính không đụng độ cao (Second-preimage):</strong> Đã có hợp đồng thật <code>x</code>, hacker không thể sửa đổi thành hợp đồng giả <code>x' ≠ x</code> mà cho ra cùng mã băm với <code>x</code>.</li>
-              <li><strong>3. Tính đụng độ cao (Collision resistance):</strong> Hacker không thể tự chế ra <em>bất kỳ 2 văn bản nào</em> khác nhau mà lại trùng mã băm <code>h(x) = h(x')</code>.</li>
-            </ul>
-          </article>
-
-          <article class="theory-card">
-            <span class="theory-badge">4.2 Nghịch lý ngày sinh (Birthday Attack)</span>
-            <h3>Tại sao cốt 128 bit của MD5 không còn an toàn?</h3>
-            <div class="tldr-box">
-              <strong>Sự thật thú vị:</strong> Một năm có 365 ngày, nhưng chỉ cần nhốt ngẫu nhiên <strong>23 người</strong> vào một phòng là xác suất có 2 người trùng ngày sinh đã lên tới <strong>50% (1/2)</strong>!
-            </div>
-            <ul>
-              <li><strong>Công thức đi thi:</strong> Nếu hàm băm tạo ra cốt dài <code>m</code> bit (tức là có <code>n = 2^m</code> kết quả khác nhau), kẻ tấn công không cần thử hết <code>2^m</code> lần mà chỉ cần thử khoảng <strong><code>√n = 2^(m/2)</code></strong> văn bản ngẫu nhiên là đã có 50% cơ hội tìm ra 2 văn bản trùng mã băm!</li>
-              <li><strong>Ví dụ thực tế:</strong>
-                <br>• Cốt 24 bit → chỉ cần <code>2^12 = 4.096</code> lần thử là đụng độ.
-                <br>• Cốt 128 bit (MD5) → cần <code>2^64</code> lần thử (máy tính ngày nay chạy được nên MD5 đã bị khai tử trong bảo mật cao).
-                <br>• Cốt 160 bit (SHA-1) → cần <code>2^80</code> lần thử.
-              </li>
-            </ul>
-          </article>
-
-          <article class="theory-card">
-            <span class="theory-badge">4.3 So sánh MD5 và SHA (Theo slide bài giảng)</span>
-            <h3>Quy tắc đệm bit &amp; Bảng so sánh thuộc lòng</h3>
-            <div class="tldr-box">
-              <strong>Bẫy đệm bit cực hay ra thi:</strong> Theo quy ước trên slide, ta luôn thêm <strong>1 bit "1"</strong> vào đuôi tin nhắn, sau đó nhét thêm toàn bit <strong>"0"</strong> cho đến khi tổng độ dài chia hết cho <strong>512</strong>. Nếu tin nhắn dài sẵn <code>1.024 bit</code> (chia hết 512 rồi) thì vẫn <strong>bắt buộc thêm bit "1"</strong> thành 1.025 bit, nên phải đệm lên <code>1.536 bit</code> (3 khối)!
-            </div>
-            <div class="table-wrap">
-              <table class="cute-table">
-                <thead><tr><th>Đặc điểm</th><th>MD5</th><th>SHA (SHA-1)</th></tr></thead>
-                <tbody>
-                  <tr><td>Độ dài mã băm (cốt)</td><td><strong>128 bit</strong></td><td><strong>160 bit</strong></td></tr>
-                  <tr><td>Số thanh ghi 32 bit</td><td><strong>4 thanh ghi</strong></td><td><strong>5 thanh ghi</strong></td></tr>
-                  <tr><td>Số vòng lặp</td><td>4 vòng</td><td>4 vòng</td></tr>
-                  <tr><td>Số bước mỗi vòng</td><td>16 bước</td><td>20 bước</td></tr>
-                  <tr><td>Tổng phép biến đổi / khối 512b</td><td><strong>64 lần</strong></td><td><strong>80 lần</strong></td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <article class="theory-card">
-            <span class="theory-badge">4.4 Bài tập MD5 &amp; SHA thu nhỏ (8 bit)</span>
-            <h3>Công thức bước biến đổi &amp; Mẹo quay bit</h3>
-            <div class="formula-box">MD5 thu nhỏ: a_mới = b ⊞ ((a ⊞ f(b,c,d) ⊞ M_j ⊞ t_i) &lt;&lt;&lt; s)
-  • Hàm f(b,c,d) = (b AND c) OR ((NOT b) AND d)
-  • Phép ⊞ là cộng thông thường rồi lấy mod 256 (vì 1 byte = 2⁸ = 256)
-SHA thu nhỏ: c_mới = b &lt;&lt;&lt; 6 (quay trái 6 bit trên 8 bit)</div>
-            <p><strong>Mẹo quay trái <code>&lt;&lt;&lt; s</code> không bao giờ nhầm:</strong> Viết đủ <strong>8 chữ số nhị phân</strong> ra giấy, gạch chân <code>s</code> bit đầu tiên bên trái rồi bê nguyên cụm đó dán ra sau đuôi!</p>
-          </article>
-
-          <article class="theory-card">
-            <span class="theory-badge">4.5 Chữ ký điện tử &amp; Chữ ký RSA</span>
-            <h3>Ký trước hay Mã trước? &amp; Chữ ký RSA</h3>
-            <ul>
-              <li><strong>Thứ tự chuẩn khi vừa muốn bí mật vừa muốn ký tên:</strong>
-                <br>1. A dùng <strong>Khóa bí mật của A</strong> ký lên thư trước: <code>y = sig_A(x)</code>.
-                <br>2. A dùng <strong>Khóa công khai của B</strong> bọc kín cả thư lẫn chữ ký rồi mới gửi đi: <code>z = e_B(x, y)</code>.
-              </li>
-              <li><strong>Tại sao khi dùng hàm băm, A chỉ cần gửi <code>(x, y)</code> mà không cần gửi kèm mã băm <code>z = h(x)</code>?</strong> Vì hàm băm là công khai, B nhận được thư <code>x</code> là tự bấm máy tính ra <code>h(x)</code> để đối chiếu với chữ ký <code>y</code> được ngay!</li>
-              <li><strong>Chữ ký RSA (ngược chiều với mã hóa RSA):</strong>
-                <br>• Ký bằng <strong>khóa bí mật <code>a</code></strong>: <code>y = x^a mod n</code>.
-                <br>• Mọi người xác minh bằng <strong>khóa công khai <code>b</code></strong>: kiểm tra xem <code>y^b mod n</code> có bằng đúng nội dung thư <code>x</code> hay không.
-              </li>
-            </ul>
-          </article>
-
-          <article class="theory-card">
-            <span class="theory-badge">4.6 Chuẩn chữ ký điện tử DSS</span>
-            <h3>Công thức DSS &amp; Thảm họa dùng lại số k</h3>
-            <div class="formula-box">Tham số: q nguyên tố, p nguyên tố sao cho q chia hết (p − 1)
-α = g^((p−1)/q) mod p (α ≠ 1)  |  Khóa công khai β = α^a mod p
-Ký (chọn số ngẫu nhiên k mới mỗi lần, 1 ≤ k ≤ q−1):
-  γ = (α^k mod p) mod q
-  δ = (x + a·γ)·k⁻¹ mod q
-Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
-  Hợp lệ ⟺ (α^e1 · β^e2 mod p) mod q = γ</div>
-            <div class="tldr-box">
-              <strong>Lỗi chí tử hay hỏi thi:</strong> Mỗi lần ký bắt buộc phải gieo một số ngẫu nhiên <code>k</code> hoàn toàn mới! Nếu lười dùng lại cùng một số <code>k</code> cho 2 văn bản khác nhau, chúng sẽ có cùng giá trị <code>γ</code>, giúp hacker lập hệ phương trình tìm ra ngay <code>k</code> và <strong>lộ sạch khóa bí mật <code>a</code></strong>!
-            </div>
-          </article>
-        </div>
-      `
-    };
-
-    /* ============================================================
-       2. QUESTION BANK: 25 QUESTIONS / CHAPTER = 100 QUESTIONS
-       ============================================================ */
-    const QUESTIONS = [
-      // === CHƯƠNG 1 (1..25) ===
-      { ch: 1, q: `Nhân viên vệ sinh vô ý rút nhầm phích cắm tủ máy chủ làm dịch vụ ngừng 2 giờ. Tình huống này thuộc mối đe dọa và loại hiểm họa nào?`, opts: [`Phá hoại — vô tình — chủ động`, `Sửa đổi — vô tình — thụ động`, `Can thiệp — cố ý — chủ động`, `Phá hoại — cố ý — thụ động`], ans: 0, exp: `Làm sập/gián đoạn dịch vụ là Phá hoại; rút nhầm dây là vô tình; đã tác động trực tiếp làm ngừng hệ thống nên là chủ động.` },
-      { ch: 1, q: `Kẻ tấn công đặt thiết bị bắt gói tin trên đường truyền để đọc thư nội bộ nhưng không sửa gì. Đây là hiểm họa nào?`, opts: [`Sửa đổi — cố ý — chủ động`, `Can thiệp — cố ý — thụ động`, `Phá hoại — vô tình — thụ động`, `Can thiệp — vô tình — chủ động`], ans: 1, exp: `Đọc trộm thông tin là Can thiệp; hành vi có chủ đích là cố ý; chỉ nghe lén mà không sửa đổi dữ liệu hay làm sập hệ thống nên là thụ động.` },
-      { ch: 1, q: `Quản trị viên khởi động máy chủ ở chế độ đặc quyền rồi quên chuyển về chế độ thông thường. Tình huống này được xếp loại thế nào?`, opts: [`Mối đe dọa phá hoại chủ động`, `Mối đe dọa can thiệp cố ý`, `Chưa thuộc mối đe dọa nào; là điểm yếu do sơ suất (vô tình, thụ động)`, `Mối đe dọa sửa đổi vô tình`], ans: 2, exp: `Sơ suất này chưa có ai khai thác nên chưa thành mối đe dọa thực tế, chỉ là điểm yếu vô tình, thụ động.` },
-      { ch: 1, q: `Kẻ tấn công sửa số tiền từ 1 triệu thành 10 triệu trên lệnh chuyển khoản đang truyền đi. Thuộc tính nào bị vi phạm và công cụ bảo vệ tương ứng là gì?`, opts: [`Bí mật — công cụ bảo vệ là Mã hóa`, `Sẵn sàng — công cụ bảo vệ là Dự phòng, sao lưu`, `Xác thực — công cụ bảo vệ là Chữ ký số`, `Toàn vẹn — công cụ bảo vệ là Hàm băm, mã xác thực MAC`], ans: 3, exp: `Sửa đổi dữ liệu đang truyền làm mất tính Toàn vẹn (Integrity); công cụ phát hiện sửa đổi là hàm băm và mã xác thực MAC.` },
-      { ch: 1, q: `Một sự cố có thể vi phạm đồng thời nhiều mục tiêu ATBMTT không? Ví dụ nào minh họa đúng nhất?`, opts: [`Không, mỗi sự cố chỉ vi phạm đúng một thuộc tính`, `Có, ví dụ mã độc tống tiền vừa mã hóa khóa dữ liệu (mất Sẵn sàng) vừa đánh cắp dữ liệu dọa tung lên mạng (mất Bí mật)`, `Có, nhưng chỉ xảy ra với tấn công DDoS`, `Không, vì 4 thuộc tính hoàn toàn độc lập nhau`], ans: 1, exp: `Mã độc tống tiền hiện đại thường tống tiền kép: khóa file làm mất tính Sẵn sàng và chép dữ liệu ra ngoài làm mất tính Bí mật.` },
-      { ch: 1, q: `Ba thành phần chính của An toàn và Bảo mật Thông tin theo bài giảng gồm những mức nào?`, opts: [`Mức phần cứng, mức phần mềm, mức mạng`, `Mức vật lý, mức tác nghiệp, mức quản lý và chính sách`, `Mức người dùng, mức quản trị, mức lãnh đạo`, `Mức mã hóa, mức xác thực, mức tường lửa`], ans: 1, exp: `Ba thành phần chính gồm: an toàn mức vật lý, an toàn mức tác nghiệp, và an toàn mức quản lý và chính sách.` },
-      { ch: 1, q: `Một rủi ro R3 có xác suất xảy ra trong năm là 0,10 và tổn thất mỗi lần 3.000 triệu đồng. Giải pháp G1 giá 80 triệu/năm giúp giảm 80% tổn thất kỳ vọng của R3. Lợi ích ròng của G1 (chỉ xét R3) là bao nhiêu?`, opts: [`240 triệu đồng`, `160 triệu đồng`, `300 triệu đồng`, `220 triệu đồng`], ans: 1, exp: `Tổn thất kỳ vọng = 0,10 × 3.000 = 300 triệu/năm. Giải pháp cứu được 80% × 300 = 240 triệu. Trừ đi giá mua 80 triệu còn Lợi ích ròng = 160 triệu đồng.` },
-      { ch: 1, q: `Khi lựa chọn tổ hợp giải pháp bảo vệ trong giới hạn ngân sách, vì sao có giải pháp KHÔNG nên mua dù ngân sách vẫn còn dư?`, opts: [`Vì giải pháp đó có lợi ích ròng âm (chi phí lớn hơn tổn thất giảm được)`, `Vì chỉ được phép mua tối đa 2 giải pháp`, `Vì phải giữ ngân sách dự phòng 50%`, `Vì tổn thất kỳ vọng bắt buộc phải giảm về 0`], ans: 0, exp: `Nguyên tắc kinh tế: không bỏ tiền mua giải pháp có chi phí đắt hơn cả số tiền thiệt hại mà nó cứu được (lợi ích ròng âm).` },
-      { ch: 1, q: `Nhân viên kế toán tự ý mở xem hồ sơ lương của giám đốc dù công việc không yêu cầu. Người này thuộc loại kẻ xâm nhập nào?`, opts: [`Kẻ giả danh (Masquerader)`, `Kẻ lạm quyền (Misfeasor)`, `Người dùng giấu mặt (Clandestine)`, `Chưa xếp được vào kẻ xâm nhập`], ans: 1, exp: `Người nội bộ có tài khoản hợp pháp nhưng truy cập vượt quá phạm vi công việc được giao là Kẻ lạm quyền.` },
-      { ch: 1, q: `Một người ngoài Internet quét cổng máy chủ công ty nhưng chưa đăng nhập được vào hệ thống. Người này thuộc loại kẻ xâm nhập nào?`, opts: [`Kẻ giả danh`, `Kẻ lạm quyền`, `Người dùng giấu mặt`, `Chưa xếp được vì chưa truy cập vào hệ thống`], ans: 3, exp: `Mới chỉ đứng ngoài dò cổng, chưa đột nhập được vào bên trong hệ thống thì chưa xếp vào 3 nhóm kẻ xâm nhập.` },
-      { ch: 1, q: `Khi kẻ xâm nhập chiếm quyền quản trị và lập tức tắt tính năng ghi nhật ký (log), cách tiếp cận phát hiện xâm nhập nào trở nên gần như vô hiệu?`, opts: [`Phát hiện thống kê bất thường`, `Phát hiện dựa trên quy tắc`, `Kiểm tra các bản ghi và phân tích kiểm tra bản ghi`, `Giám sát băng thông mạng`], ans: 2, exp: `Nhật ký bị tắt đồng nghĩa không còn dữ liệu log để kiểm tra và phân tích.` },
-      { ch: 1, q: `Trình tự đúng 4 bước của chu trình xâm nhập điển hình là gì?`, opts: [`Truy cập ban đầu → Dò tìm mục tiêu → Xóa dấu vết → Leo thang quyền`, `Tìm mục tiêu & thu thập thông tin → Truy cập ban đầu → Leo thang quyền → Xóa dấu vết`, `Leo thang quyền → Tìm mục tiêu → Truy cập ban đầu → Xóa dấu vết`, `Tìm mục tiêu → Xóa dấu vết → Truy cập ban đầu → Leo thang quyền`], ans: 1, exp: `Hacker luôn đi theo trình tự: (1) Trinh sát tìm thông tin → (2) Đột nhập ban đầu → (3) Leo thang lên quyền cao nhất → (4) Xóa dấu vết.` },
-      { ch: 1, q: `Trong cấu trúc của Virus, "bộ tải" (payload) đảm nhiệm chức năng gì?`, opts: [`Chỉ dùng để nén tệp thực thi cho nhẹ`, `Tạo các bản sao của virus và thực hiện nhiệm vụ ngầm`, `Ngăn chặn phần mềm diệt virus cập nhật`, `Tự động vá lỗ hổng hệ điều hành`], ans: 1, exp: `Bộ tải là phần mã lệnh bên trong virus chịu trách nhiệm nhân bản virus và thực thi hành vi phá hoại/đánh cắp ngầm.` },
-      { ch: 1, q: `Trong 6 loại mã độc (virus, sâu, cửa sau, bom logic, ngựa thành Tơ-roa, zombie), cặp nào vừa KHÔNG tự sinh lặp vừa thường do người phát triển cài sẵn?`, opts: [`Virus và Sâu`, `Ngựa thành Tơ-roa và Zombie`, `Cửa sau (Trapdoor) và Bom logic`, `Sâu và Bom logic`], ans: 2, exp: `Cửa sau (cổng hậu bí mật) và Bom logic (hẹn giờ/điều kiện nổ) không tự nhân bản và thường do chính người viết code gài vào.` },
-      { ch: 1, q: `Máy chủ chịu tối đa 25.000 yêu cầu/giây; người dùng thật gửi 8.000 yêu cầu/giây. Nếu mạng 100.000 máy zombie mỗi máy gửi 1 yêu cầu/giây, quản trị viên đặt giới hạn 2 yêu cầu/giây/địa chỉ IP thì có chặn được không?`, opts: [`Chặn được hoàn toàn`, `Không chặn được vì mỗi zombie chỉ gửi 1 yêu cầu/giây, thấp hơn ngưỡng 2`, `Chặn được 50% lưu lượng zombie`, `Chỉ chặn được người dùng thật`], ans: 1, exp: `Tổng cộng có tới 108.000 yêu cầu/giây làm sập web, nhưng từng máy zombie chỉ gửi 1 req/s < ngưỡng 2 req/s nên lọt qua bộ lọc dễ dàng.` },
-      { ch: 1, q: `Khung ngăn xếp (chiều địa chỉ tăng dần) gồm: Bộ đệm 64 byte, Biến cục bộ khác 8 byte, Con trỏ khung đã lưu 4 byte, Địa chỉ trả về 4 byte. Cần nhập tối thiểu bao nhiêu byte để ghi đè trọn vẹn địa chỉ trả về?`, opts: [`72 byte`, `76 byte`, `80 byte`, `84 byte`], ans: 2, exp: `Cộng dồn từ đầu bộ đệm đến hết địa chỉ trả về: 64 + 8 + 4 + 4 = 80 byte.` },
-      { ch: 1, q: `Nếu bật Stack Canary (giá trị ngẫu nhiên 4 byte đặt ngay trước con trỏ khung đã lưu) cho cấu trúc ngăn xếp ở câu trên, số byte để ghi đè trọn vẹn địa chỉ trả về thành bao nhiêu và kết quả ra sao?`, opts: [`84 byte; kẻ tấn công vẫn thực thi thành công`, `84 byte; kẻ tấn công không đạt mục đích vì chương trình phát hiện canary bị thay đổi và dừng lại`, `76 byte; địa chỉ trả về không đổi`, `88 byte; canary tự động sửa lại địa chỉ`], ans: 1, exp: `Chèn thêm 4 byte canary nâng tổng lên 84 byte; nhưng khi ghi đè qua canary thì chương trình phát hiện bị thay đổi và tự ngắt ngay.` },
-      { ch: 1, q: `Trong ba cơ chế bảo vệ bộ nhớ Stack Canary, DEP/NX bit và ASLR, cơ chế nào bắt buộc phải biên dịch lại mã nguồn mới áp dụng được?`, opts: [`ASLR`, `DEP / NX bit`, `Stack Canary`, `Cả ba đều phải biên dịch lại`], ans: 2, exp: `DEP và ASLR do hệ điều hành hỗ trợ sẵn cho file chạy; riêng Stack Canary do trình biên dịch chèn thêm mã kiểm tra vào hàm nên phải biên dịch lại.` },
-      { ch: 1, q: `Hai máy chủ trong cùng trung tâm dữ liệu cần xác thực nguồn gốc và toàn vẹn gói IP, nhưng PHẢI để rõ nội dung tải trọng để hệ thống phát hiện xâm nhập (IDS) ở giữa đọc được. Giải pháp IPSec nào phù hợp nhất?`, opts: [`ESP ở chế độ ống (Tunnel)`, `ESP ở chế độ vận chuyển (Transport)`, `AH ở chế độ vận chuyển (Transport)`, `Tường lửa bộ lọc gói`], ans: 2, exp: `AH chỉ ký xác thực và bảo vệ toàn vẹn mà không mã hóa nội dung, giúp IDS đứng giữa đọc kiểm tra gói tin bình thường.` },
-      { ch: 1, q: `Để nối hai văn phòng qua Internet thành mạng riêng ảo (VPN) và giấu luôn địa chỉ IP nội bộ, ta dùng giải pháp IPSec nào?`, opts: [`AH ở chế độ vận chuyển`, `ESP ở chế độ ống (Tunnel)`, `Bộ lọc gói IP`, `Cổng mức mạch`], ans: 1, exp: `ESP chế độ ống (Tunnel) mã hóa toàn bộ gói IP gốc (kể cả IP nội bộ) rồi bọc thêm vỏ IP mới để đi qua Internet.` },
-      { ch: 1, q: `Loại tường lửa nào kiểm tra được nội dung và cú pháp của từng dịch vụ tầng ứng dụng như HTTP, FTP, SMTP nhưng đòi hỏi một proxy riêng cho mỗi dịch vụ?`, opts: [`Bộ lọc gói (Packet Filter)`, `Cổng mức mạch (Circuit-level Gateway)`, `Cổng mức ứng dụng (Application-level Gateway)`, `NAT Router`], ans: 2, exp: `Cổng mức ứng dụng soi sâu tận tầng ứng dụng nên an toàn nhất, nhưng phải cài proxy riêng cho từng dịch vụ.` },
-      { ch: 1, q: `Lệnh "ls -l" trong Linux hiển thị quyền rwx gắn theo từng tệp tin. Đây là cách cắt ma trận kiểm soát truy cập theo chiều nào và tên là gì?`, opts: [`Theo hàng — Capability list`, `Theo cột — Danh sách kiểm soát truy cập (ACL)`, `Theo đường chéo — Ma trận khóa`, `Theo tầng — RBAC`], ans: 1, exp: `Mỗi tệp tin là một cột trong ma trận phân quyền; gắn quyền trực tiếp lên tệp gọi là Danh sách kiểm soát truy cập (ACL).` },
-      { ch: 1, q: `Hạn chế nào sau đây là nhược điểm cố hữu của tường lửa?`, opts: [`Không lọc được địa chỉ IP`, `Không chống được mối đe dọa nội bộ, không chặn được đường truyền đi vòng qua nó và không diệt được virus trong tệp tin mã hóa đi qua cổng hợp lệ`, `Không hoạt động được trên giao thức TCP`, `Làm mất tính toàn vẹn của gói tin`], ans: 1, exp: `Tường lửa chỉ gác cổng ra vào mạng; nếu nhân viên cắm USB độc hại bên trong hoặc dùng 4G đi vòng thì tường lửa chịu thua.` },
-      { ch: 1, q: `Thủ tục bắt tay SSL (SSL Handshake Protocol) KHÔNG thực hiện công việc nào sau đây?`, opts: [`Xác thực máy chủ và máy trạm`, `Thỏa thuận thuật toán mã hóa và MAC`, `Thỏa thuận khóa mã phiên sẽ dùng`, `Nén toàn bộ cơ sở dữ liệu máy chủ trước khi lưu ổ cứng`], ans: 3, exp: `SSL Handshake chỉ lo chuyện xác thực hai bên, chọn thuật toán mã hóa và thống nhất khóa phiên cho đường truyền.` },
-      { ch: 1, q: `Trong mô hình "Phong bì số" (Digital Envelope), dữ liệu lớn và khóa phiên lần lượt được mã hóa bằng gì?`, opts: [`Cả hai đều mã bằng RSA`, `Dữ liệu mã bằng khóa phiên đối xứng (AES); khóa phiên mã bằng mã bất đối xứng (RSA) với khóa công khai người nhận`, `Dữ liệu mã bằng hàm băm MD5; khóa phiên mã bằng AES`, `Dữ liệu mã bằng khóa riêng người gửi; khóa phiên không cần mã hóa`], ans: 1, exp: `Dùng AES (nhanh) để mã hóa file nặng, rồi dùng RSA (tiện gửi khóa) để mã hóa cái chìa khóa AES đó.` },
-
-      // === CHƯƠNG 2 (26..50) ===
-      { ch: 2, q: `Trong mô hình mã hóa đối xứng, mối quan hệ giữa khóa mã hóa KE và khóa giải mã KD là gì?`, opts: [`KE và KD hoàn toàn độc lập`, `KE = KD (hoặc có thể suy ra trực tiếp lẫn nhau)`, `KE là khóa công khai, KD là khóa riêng`, `KE luôn dài gấp đôi KD`], ans: 1, exp: `Mã hóa đối xứng dùng chung một khóa bí mật cho cả hai đầu gửi và nhận (KE = KD).` },
-      { ch: 2, q: `Sắp xếp 4 kiểu tấn công thám mã theo thứ tự kẻ tấn công từ YẾU đến MẠNH:`, opts: [`Chọn bản rõ → Biết bản rõ → Chỉ dùng bản mã → Chọn bản tin`, `Chỉ dùng bản mã → Biết bản rõ → Chọn bản rõ → Chọn bản tin`, `Biết bản rõ → Chỉ dùng bản mã → Chọn bản tin → Chọn bản rõ`, `Chỉ dùng bản mã → Chọn bản rõ → Biết bản rõ → Chọn bản tin`], ans: 1, exp: `Hacker càng có nhiều quyền tương tác với hệ thống mã hóa/giải mã thì càng mạnh: Chỉ dùng bản mã → Biết bản rõ → Chọn bản rõ → Chọn bản tin.` },
-      { ch: 2, q: `Một máy tính thử được 10⁶ khóa/giây. Nếu độ dài khóa tăng thêm 1 bit (ví dụ từ 55 bit lên 56 bit), thời gian duyệt toàn bộ khóa thay đổi thế nào?`, opts: [`Tăng thêm 1 giây`, `Tăng gấp đôi`, `Tăng thêm 10%`, `Không đổi`], ans: 1, exp: `Mỗi bit thêm vào nhân đôi số trường hợp (2^(n+1) = 2 × 2^n), nên thời gian dò cũng tăng gấp đôi.` },
-      { ch: 2, q: `Một bản tin chỉ có giá trị trong 1 giờ. Máy tính thử được 10⁶ khóa/giây. Xét thời gian dò trung bình (thử 50% không gian khóa), khóa 32 bit có đủ bảo vệ bản tin này không?`, opts: [`Đủ, vì mất hơn 2 năm`, `Không đủ, vì thời gian dò trung bình khoảng 35,79 phút (< 1 giờ)`, `Đủ, vì mất khoảng 71,58 phút trung bình`, `Không đủ, vì mất 1 giây`], ans: 1, exp: `Số khóa trung bình cần thử = 2³² / 2 = 2³¹ ≈ 2,147 tỷ khóa. Chia cho 10⁶ khóa/giây = 2.147 giây ≈ 35,79 phút < 1 giờ nên bị phá kịp!` },
-      { ch: 2, q: `Hệ mã nào đạt được mức "an toàn không điều kiện" (unconditional security)?`, opts: [`DES`, `AES-256`, `One-Time Pad (OTP)`, `RSA-2048`], ans: 2, exp: `Chỉ One-Time Pad (khóa ngẫu nhiên hoàn toàn, dài bằng bản rõ, dùng duy nhất 1 lần) đạt an toàn tuyệt đối về mặt toán học.` },
-      { ch: 2, q: `Mã hóa bản rõ "NETWORK" bằng mã Caesar với khóa k = 11 (A=0, B=1, ..., Z=25). Bản mã thu được là gì?`, opts: [`YPEHZCV`, `YPFHZCV`, `ZPEHZCW`, `XODGYBU`], ans: 0, exp: `N(13)+11=24(Y), E(4)+11=15(P), T(19)+11=30≡4(E), W(22)+11=33≡7(H), O(14)+11=25(Z), R(17)+11=28≡2(C), K(10)+11=21(V) → YPEHZCV.` },
-      { ch: 2, q: `Biết bản rõ "SECRET" được mã hóa Caesar thành "BNLANC". Giá trị khóa k bằng bao nhiêu?`, opts: [`k = 7`, `k = 9`, `k = 11`, `k = 17`], ans: 1, exp: `Chữ S(18) biến thành B(1): lấy (1 − 18) mod 26 = −17 mod 26 = 9. Thử tiếp E(4)+9 = 13(N), chuẩn k = 9.` },
-      { ch: 2, q: `Mã bảng chữ đơn có tới 26! ≈ 4 × 10²⁶ khóa, lớn hơn rất nhiều so với 25 khóa của Caesar, nhưng vì sao vẫn dễ bị phá bằng giấy bút?`, opts: [`Vì khóa ngắn hơn 8 bit`, `Vì quy luật ánh xạ 1-1 giữ nguyên tần suất xuất hiện đặc trưng của các chữ cái trong ngôn ngữ`, `Vì chỉ mã hóa được số`, `Vì không có phép giải mã`], ans: 1, exp: `Một chữ rõ luôn đổi thành đúng 1 chữ mã cố định nên chỉ cần đếm tần suất xuất hiện (E, T, A, O…) là đoán ngược ra bảng chữ.` },
-      { ch: 2, q: `Trong mã Playfair với từ khóa "KEYWORD" (gộp I/J, chèn X), khi mã hóa bản rõ "SUCCESS", ta tách thành các cặp nào?`, opts: [`SU CC ES SX`, `SU CX CE SX SX`, `SU CX CE SS X`, `SU CC EX SS`], ans: 1, exp: `Không được để 2 chữ giống nhau đứng chung 1 cặp: CC tách thành CX; CE giữ nguyên; SS tách thành SX và còn dư S cuối đệm X thành SX → SU CX CE SX SX.` },
-      { ch: 2, q: `Khi mã hóa "MESSAGE" bằng Playfair (chèn X) thành "NKQZPCND", nếu giải mã lại thu được "MESXSAGE". Vì sao không giống hệt bản rõ ban đầu?`, opts: [`Do thuật toán Playfair bị mất dữ liệu`, `Do chữ X được chèn thêm để tách cặp SS vẫn tồn tại sau khi giải mã`, `Do nhầm khóa`, `Do chữ M và E nằm cùng hàng`], ans: 1, exp: `Chữ X chèn vào lúc tách cặp SS vẫn là một ký tự hợp lệ nên giải mã xong nó vẫn nằm nguyên ở đó.` },
-      { ch: 2, q: `Mã hóa bản rõ "INFORMATION" bằng mã Vigenère với từ khóa "KEY" (lặp KEYKEYKEYKE). Kết quả là gì?`, opts: [`SRDYVKKXGYR`, `SRDZVKKXGYR`, `SQDYVKKXGYR`, `SRDYVKLXGYR`], ans: 0, exp: `Cộng từng cặp chữ (I+K=S, N+E=R, F+Y=D, O+K=Y…) theo mod 26 thu được SRDYVKKXGYR.` },
-      { ch: 2, q: `Giải mã bản mã "CGRORYYTAHPP" biết được mã hóa bằng Rail Fence 4 dòng. Bản rõ là từ nào?`, opts: [`CRYPTOGRAPHY`, `CYBERSECURITY`, `STEGANOGRAPHY`, `AUTHENTICATE`], ans: 0, exp: `Xếp 12 chữ cái lên 4 dòng hàng rào zic-zac rồi đọc theo đường zic-zac được từ CRYPTOGRAPHY.` },
-      { ch: 2, q: `Mã hóa "SECURITYFIRST" bằng mã dịch chuyển dòng với 4 cột, dãy khóa 2 4 1 3 (đệm X cho đủ lưới 4×4). Kết quả là gì?`, opts: [`CTRXSRFTUYSXEIIX`, `SRFTCTRXEIIXUYSX`, `UYSXCTRXSRFTEIIX`, `CTRXUYSXEIIXSRFT`], ans: 0, exp: `Viết 4 hàng: SECU / RITY / FIRS / TXXX. Đọc cột số 1 (cột 3: CTRX), cột số 2 (cột 1: SRFT), cột số 3 (cột 4: UYSX), cột số 4 (cột 2: EIIX) → CTRXSRFTUYSXEIIX.` },
-      { ch: 2, q: `Đặc điểm nào giúp nhận diện nhanh một bản mã được tạo ra bởi mã hoán vị thay vì mã thay thế?`, opts: [`Bản mã toàn chữ số`, `Bảng tần suất chữ cái của bản mã giống hệt bản rõ (ngôn ngữ gốc)`, `Bản mã luôn dài gấp đôi bản rõ`, `Không có chữ cái nguyên âm`], ans: 1, exp: `Mã hoán vị chỉ tráo chỗ đứng của các chữ cái chứ không đổi mặt chữ nên tần suất các chữ giữ nguyên y hệt.` },
-      { ch: 2, q: `Trong hệ mã TinyA5/1, mỗi bước sinh số có thể có bao nhiêu thanh ghi cùng quay?`, opts: [`1, 2 hoặc 3 thanh ghi`, `Chỉ có 2 hoặc 3 thanh ghi (không bao giờ chỉ 1)`, `Luôn cả 3 thanh ghi`, `0 hoặc 1 thanh ghi`], ans: 1, exp: `Bầu cử đa số giữa 3 bit (x1, y3, z3) thì phe thắng luôn có ít nhất 2 phiếu (2-1 hoặc 3-0), nên luôn có 2 hoặc 3 thanh ghi quay.` },
-      { ch: 2, q: `Với TinyA5/1, nếu tại một bước có (x1, y3, z3) = (1, 0, 1), giá trị đa số m bằng bao nhiêu và thanh ghi nào được quay?`, opts: [`m = 0; quay Y`, `m = 1; quay X và Z`, `m = 1; quay X, Y, Z`, `m = 0; quay X và Z`], ans: 1, exp: `Có hai bit 1 và một bit 0 nên phe số 1 thắng (m = 1). Thanh ghi X (x1=1) và Z (z3=1) trùng phe thắng nên được quay.` },
-      { ch: 2, q: `Trong TinyRC4 (mảng S gồm 8 phần tử từ 0 đến 7), nhiệm vụ chính của giai đoạn khởi tạo (KSA) là gì?`, opts: [`Mã hóa trực tiếp bản rõ`, `Xáo trộn hoán vị dãy S từ (0,1,…,7) dựa theo khóa K`, `Tính hàm băm của khóa`, `Tìm số nguyên tố lớn`], ans: 1, exp: `KSA dùng khóa K để xáo trộn lộn xộn mảng S ban đầu (0..7) trước khi bắt đầu sinh dòng khóa.` },
-      { ch: 2, q: `TinyRC4 với khóa K = (5, 2, 7) sinh ra chuỗi S_key = 000 100 110. Nếu bản rõ P = 011 100 010 ("DEC"), bản mã C = P ⊕ S_key là từ nào (A=000 … H=111)?`, opts: [`DAE`, `DAF`, `GBC`, `CAE`], ans: 0, exp: `011⊕000 = 011 (D); 100⊕100 = 000 (A); 010⊕110 = 100 (E) → DAE.` },
-      { ch: 2, q: `Trong TinyDES, hàm Expand nhận 4 bit b0b1b2b3 và mở rộng thành 6 bit nào?`, opts: [`b0b1b2b3b0b1`, `b2b3b1b2b1b0`, `b3b2b1b0b3b2`, `b1b2b3b0b1b2`], ans: 1, exp: `Theo quy ước bài giảng ATBMTT, hàm Expand mở rộng b0b1b2b3 thành 6 bit b2b3b1b2b1b0.` },
-      { ch: 2, q: `Trong TinyDES, khi đưa 6 bit b0b1b2b3b4b5 vào S-box, cách chọn hàng và cột là gì?`, opts: [`b0b1 chọn hàng, b2b3b4b5 chọn cột`, `b0b5 chọn hàng, b1b2b3b4 chọn cột`, `b4b5 chọn hàng, b0b1b2b3 chọn cột`, `b2b3 chọn hàng, b0b1b4b5 chọn cột`], ans: 1, exp: `2 bit đầu-đuôi (b0b5) ghép lại chọn hàng, 4 bit kẹp ở giữa (b1b2b3b4) chọn cột.` },
-      { ch: 2, q: `Nếu giải mã TinyDES (3 vòng Feistel) bằng cách chạy lại y hệt sơ đồ mã hóa với thứ tự khóa K3, K2, K1 (không đảo nửa), kết quả có ra lại bản rõ không?`, opts: [`Có, luôn ra đúng bản rõ`, `Không, vì sơ đồ mã hóa vòng cuối không tự đảo lại hai nửa L và R như công thức giải mã Feistel`, `Có nếu khóa toàn bit 1`, `Chỉ sai 1 bit cuối`], ans: 1, exp: `Giải mã Feistel phải dùng công thức ngược R_(i-1) = L_i và L_(i-1) = R_i ⊕ F(R_(i-1), K_i); chạy xuôi sẽ bị ngược mất hai nửa L và R.` },
-      { ch: 2, q: `Bốn thông số chuẩn xác của hệ mã DES cổ điển là gì?`, opts: [`12 vòng, khối 128 bit, khóa 128 bit, khóa con 64 bit`, `Feistel 16 vòng, khối 64 bit, khóa 56 bit, khóa con 48 bit/vòng`, `10 vòng, khối 64 bit, khóa 64 bit, khóa con 56 bit`, `Feistel 8 vòng, khối 32 bit, khóa 56 bit, khóa con 32 bit`], ans: 1, exp: `Bộ 4 số chuẩn của DES: 16 vòng Feistel, khối 64 bit, khóa chính hiệu dụng 56 bit, khóa con mỗi vòng 48 bit.` },
-      { ch: 2, q: `A gửi một bản mã cho B. Kẻ thứ ba C chặn bản mã đó rồi gửi lại cho B khiến B nhận cùng một bản rõ hai lần. Đây là tấn công gì?`, opts: [`Tấn công từ chối dịch vụ`, `Tấn công phát lại thông điệp (Replay attack)`, `Tấn công tràn bộ đệm`, `Tấn công vét cạn khóa`], ans: 1, exp: `Bắt trộm gói tin hợp lệ rồi phát lại nguyên xi để đánh lừa hệ thống thực hiện lặp lại hành động gọi là Replay attack.` },
-      { ch: 2, q: `Vì sao mã hóa đối xứng KHÔNG thể thực hiện được tính không từ chối (Non-repudiation)?`, opts: [`Vì tốc độ mã hóa quá chậm`, `Vì khóa K do cả hai người cùng giữ nên không có cơ sở quy trách nhiệm khi lộ khóa hoặc tranh chấp`, `Vì chỉ dùng được cho văn bản ngắn`, `Vì thuật toán DES chỉ có 56 bit`], ans: 1, exp: `Do cả A và B đều có quyền tạo ra bản mã bằng khóa K chung nên khi tranh cãi không chứng minh được ai là người gửi.` },
-      { ch: 2, q: `Nếu hệ thống có N = 10 người dùng giao tiếp mã đối xứng từng cặp mà không có KDC, cần bao nhiêu khóa bí mật? Nếu dùng KDC, mỗi người cần giữ bao nhiêu khóa chính với KDC?`, opts: [`45 khóa và 1 khóa`, `90 khóa và 10 khóa`, `10 khóa và 45 khóa`, `55 khóa và 2 khóa`], ans: 0, exp: `Không KDC: 10×9/2 = 45 khóa. Có KDC: mỗi người chỉ giữ đúng 1 khóa riêng với trung tâm KDC.` },
-
-      // === CHƯƠNG 3 (51..75) ===
-      { ch: 3, q: `Trong hệ mã hóa khóa công khai (không sử dụng cho chữ ký số), hai loại khóa được dùng như thế nào?`, opts: [`Khóa công khai để giải mã, khóa riêng để mã hóa`, `Khóa công khai của người nhận để mã hóa; khóa riêng của người nhận để giải mã`, `Cả hai bên dùng chung khóa công khai`, `Người gửi dùng khóa riêng của người nhận để mã hóa`], ans: 1, exp: `Ai muốn gửi thư cho B thì bỏ vào hòm thư công khai của B (mã bằng khóa công khai của B); chỉ B cầm chìa khóa riêng của B mới mở được.` },
-      { ch: 3, q: `Dùng thuật toán Euclid tìm GCD(2415, 945). Kết quả bằng bao nhiêu?`, opts: [`35`, `105`, `15`, `210`], ans: 1, exp: `2415 = 2×945 + 525; 945 = 1×525 + 420; 525 = 1×420 + 105; 420 = 4×105 + 0 → Ước chung lớn nhất = 105.` },
-      { ch: 3, q: `Dùng thuật toán Euclid tìm GCD(1769, 551). Kết quả là số nào?`, opts: [`1`, `19`, `29`, `58`], ans: 2, exp: `1769 = 3×551 + 116; 551 = 4×116 + 87; 116 = 1×87 + 29; 87 = 3×29 + 0 → GCD = 29.` },
-      { ch: 3, q: `Tính phần tử nghịch đảo 37⁻¹ mod 120 bằng thuật toán Euclid mở rộng.`, opts: [`13`, `23`, `43`, `73`], ans: 0, exp: `Thử nhanh: 37 × 13 = 481 = 4×120 + 1 (chia 120 dư 1) → 37⁻¹ mod 120 = 13.` },
-      { ch: 3, q: `Khi tính 26⁻¹ mod 91 bằng bảng Euclid mở rộng, vì sao kết quả không tồn tại?`, opts: [`Vì 91 là số lẻ`, `Vì GCD(26, 91) = 13 ≠ 1`, `Vì 26 nhỏ hơn 91`, `Vì 26 là số chẵn`], ans: 1, exp: `26 và 91 cùng chia hết cho 13 (GCD = 13 ≠ 1) nên không tồn tại nghịch đảo.` },
-      { ch: 3, q: `Dựa trên kết quả 37⁻¹ ≡ 13 (mod 120), nghiệm x ∈ Z₁₂₀ của phương trình đồng dư 37x ≡ 11 (mod 120) là bao nhiêu?`, opts: [`13`, `23`, `33`, `113`], ans: 1, exp: `Nhân hai vế với 37⁻¹ = 13: x ≡ 11 × 13 = 143 ≡ 23 (mod 120).` },
-      { ch: 3, q: `Tính nhanh 5¹¹⁷ mod 19 bằng định lý Fermat nhỏ hoặc bình phương và nhân.`, opts: [`1`, `5`, `7`, `11`], ans: 0, exp: `Theo Fermat, 5¹⁸ ≡ 1 (mod 19). Chia 117 cho 18 được 6 dư 9 nên chỉ còn tính 5⁹ mod 19 = 1.` },
-      { ch: 3, q: `Tính giá trị 3²⁰⁰ mod 23.`, opts: [`1`, `3`, `9`, `16`], ans: 2, exp: `Theo Fermat, 3²² ≡ 1 (mod 23). Ta có 200 = 22×9 + 2 nên 3²⁰⁰ ≡ 3² = 9 (mod 23).` },
-      { ch: 3, q: `Tính hàm Euler Φ(n) lần lượt cho n = 61 và n = 85.`, opts: [`60 và 64`, `61 và 84`, `60 và 68`, `59 và 64`], ans: 0, exp: `61 nguyên tố → Φ(61) = 60. 85 = 5 × 17 → Φ(85) = 4 × 16 = 64.` },
-      { ch: 3, q: `Tính Φ(125) và Φ(144).`, opts: [`100 và 48`, `124 và 48`, `100 và 72`, `25 và 48`], ans: 0, exp: `125 = 5³ → Φ(125) = 125 − 25 = 100. 144 = 2⁴ × 3² → Φ(144) = (16−8)(9−3) = 48.` },
-      { ch: 3, q: `Đâu là ví dụ áp dụng SAI định lý Fermat nhỏ do vi phạm điều kiện GCD(a, p) = 1?`, opts: [`2⁶ ≡ 1 (mod 7)`, `3⁶ ≡ 1 (mod 7)`, `14⁶ ≡ 1 (mod 7)`, `5⁶ ≡ 1 (mod 7)`], ans: 2, exp: `14 chia hết cho 7 nên 14⁶ mod 7 phải bằng 0 chứ không phải 1!` },
-      { ch: 3, q: `Tìm số nguyên dương x nhỏ nhất thỏa mãn đồng thời: x ≡ 1 (mod 5), x ≡ 4 (mod 7), x ≡ 6 (mod 11).`, opts: [`81`, `116`, `151`, `231`], ans: 1, exp: `Thử trực tiếp đáp án: 116 chia 5 dư 1, chia 7 dư 4, chia 11 dư 6 → chuẩn 116.` },
-      { ch: 3, q: `Dùng Định lý Phần dư Trung Hoa tính 7¹²⁹ mod 55 (tách theo 5 và 11). Kết quả là bao nhiêu?`, opts: [`7`, `27`, `52`, `49`], ans: 2, exp: `7¹²⁹ mod 5 = 2; 7¹²⁹ mod 11 = 8. Số nhỏ hơn 55 chia 5 dư 2 và chia 11 dư 8 chính là 52.` },
-      { ch: 3, q: `Vì sao Định lý Phần dư Trung Hoa (CRT) giúp tăng tốc phép giải mã RSA?`, opts: [`Vì bỏ qua bước tính lũy thừa`, `Vì tính lũy thừa theo hai modulo nhỏ p và q rồi ghép lại nhanh hơn nhiều so với tính trực tiếp theo N = p·q`, `Vì giảm độ dài khóa công khai e`, `Vì không cần giữ bí mật d`], ans: 1, exp: `Tính toán trên hai số p, q nhỏ bằng một nửa số bit của N giúp máy tính chạy nhanh hơn gấp ~4 lần.` },
-      { ch: 3, q: `Hệ mã ba lô MHK có A' = (3, 5, 11, 21, 44), M = 97, u = 34. Véc tơ khóa công khai S có giá trị đầu và cuối là bao nhiêu?`, opts: [`(5, ..., 41)`, `(3, ..., 44)`, `(34, ..., 97)`, `(10, ..., 82)`], ans: 0, exp: `S₁ = (3×34) mod 97 = 5; S₅ = (44×34) mod 97 = 41. Bộ S đầy đủ là (5, 73, 83, 35, 41).` },
-      { ch: 3, q: `Kiểm tra điều kiện của hệ mã MHK với A' = (3, 5, 11, 21, 44), M = 97, u = 34. Vì sao bộ tham số này hợp lệ?`, opts: [`Vì A' siêu tăng, M = 97 > 2×44 = 88, u < M và GCD(34, 97) = 1`, `Vì M là số chẵn và u là số nguyên tố`, `Vì tổng A' bằng 97`, `Vì các phần tử A' đều là số lẻ`], ans: 0, exp: `Dãy A' có số sau lớn hơn tổng các số trước (siêu tăng), M > 2×44, và GCD(34, 97) = 1.` },
-      { ch: 3, q: `Trong hệ mã ba lô MHK với S = (5, 73, 83, 35, 41) và M = 97, mã hóa bản rõ P = 10110 cho bản mã C = (∑ x_i·S_i) mod M bằng bao nhiêu?`, opts: [`26`, `41`, `57`, `73`], ans: 0, exp: `Các bit bằng 1 nằm ở vị trí 1, 3, 4 nên cộng S₁ + S₃ + S₄ = (5 + 83 + 35) mod 97 = 123 mod 97 = 26.` },
-      { ch: 3, q: `Với hệ MHK ở trên (A' = (3, 5, 11, 21, 44), M = 97, u = 34, u⁻¹ = 20), giải mã bản mã C = 57 cho ra bản rõ P là gì?`, opts: [`10110`, `11011`, `01101`, `11100`], ans: 1, exp: `C' = (57 × 20) mod 97 = 73. Tách 73 theo dãy siêu tăng A' từ phải sang trái: 73 = 44 + 21 + 5 + 3 → bit 1 ở vị trí 5, 4, 2, 1 → 11011.` },
-      { ch: 3, q: `Trong hệ mã RSA với p = 13, q = 23, e = 17, giá trị N, Φ(N) và khóa giải mã d lần lượt là gì?`, opts: [`N = 299, Φ(N) = 264, d = 233`, `N = 299, Φ(N) = 298, d = 17`, `N = 264, Φ(N) = 299, d = 233`, `N = 299, Φ(N) = 264, d = 155`], ans: 0, exp: `N = 13×23 = 299; Φ(N) = 12×22 = 264; bấm d = 17⁻¹ mod 264 = 233.` },
-      { ch: 3, q: `Với bộ khóa RSA KU = {17, 299}, mã hóa bản rõ M = 100 cho bản mã C bằng bao nhiêu?`, opts: [`100`, `189`, `289`, `42`], ans: 2, exp: `C = 100¹⁷ mod 299 = 289.` },
-      { ch: 3, q: `Trong hệ RSA, vì sao phải giữ bí mật p và q chứ không chỉ giữ bí mật mỗi khóa riêng d?`, opts: [`Vì p, q dùng để mã hóa`, `Vì nếu lộ p, q, kẻ tấn công tính được ngay Φ(N) = (p-1)(q-1) rồi suy ra d từ e công khai`, `Vì p, q là khóa phiên`, `Vì p, q dùng để xác minh chữ ký`], ans: 1, exp: `Biết p và q là tính ra ngay Φ(N), từ đó dùng khóa e công khai bấm máy 3 giây là ra khóa bí mật d.` },
-      { ch: 3, q: `Đâu KHÔNG phải là một trong bốn cách phân phối khóa công khai được nêu trong bài giảng?`, opts: [`Thông báo công khai`, `Thư mục truy cập công cộng`, `Chủ quyền khóa công khai và Chứng nhận khóa công khai`, `Gửi khóa công khai qua mã hóa Caesar`], ans: 3, exp: `4 cách chuẩn gồm: Thông báo công khai, Thư mục truy cập công cộng, Chủ quyền khóa công khai, và Chứng nhận khóa công khai.` },
-      { ch: 3, q: `Phát biểu: "Có thể dùng thuật toán Diffie-Hellman để trực tiếp mã hóa và gửi mẩu tin". Nhận định này đúng hay sai?`, opts: [`Đúng, bằng cách lấy mẩu tin làm khóa công khai`, `Sai, Diffie-Hellman chỉ dùng để trao đổi và thiết lập khóa bí mật chung`, `Đúng với bản tin nhỏ hơn q`, `Đúng nếu α là số nguyên tố`], ans: 1, exp: `Diffie-Hellman chỉ tạo ra chìa khóa chung KAB cho hai người, không dùng để mã hóa trực tiếp nội dung tin nhắn.` },
-      { ch: 3, q: `Trao đổi khóa Diffie-Hellman với q = 467, α = 2. A chọn xA = 153, B chọn xB = 219. Giá trị yA, yB và khóa chung KAB là bao nhiêu?`, opts: [`yA = 224, yB = 455, KAB = 216`, `yA = 455, yB = 224, KAB = 216`, `yA = 224, yB = 455, KAB = 153`, `yA = 128, yB = 256, KAB = 467`], ans: 0, exp: `yA = 2¹⁵³ mod 467 = 224; yB = 2²¹⁹ mod 467 = 455; KAB = 455¹⁵³ mod 467 = 216.` },
-      { ch: 3, q: `Kẻ nghe trộm bắt được q, α, yA, yB trong trao đổi Diffie-Hellman. Hắn phải giải bài toán nào để tìm được khóa chung KAB?`, opts: [`Bài toán phân tích thừa số nguyên tố`, `Bài toán xếp ba lô`, `Bài toán logarit rời rạc`, `Bài toán tìm ước chung lớn nhất`], ans: 2, exp: `Tìm số mũ xA từ biểu thức yA = α^xA mod q chính là bài toán logarit rời rạc.` },
-
-      // === CHƯƠNG 4 (76..100) ===
-      { ch: 4, q: `Sự khác biệt cơ bản giữa đầu vào và đầu ra của một hàm băm mật mã là gì?`, opts: [`Đầu vào cố định, đầu ra biến thiên`, `Đầu vào có kích thước biến thiên bất kỳ; đầu ra là chuỗi có độ dài cố định (cốt bức điện)`, `Đầu vào và đầu ra luôn dài bằng nhau`, `Đầu ra luôn dài gấp đôi đầu vào`], ans: 1, exp: `Bỏ vào 1 chữ cái hay cả bộ phim (độ dài bất kỳ) thì hàm băm đều trả ra một mã băm có độ dài cố định.` },
-      { ch: 4, q: `Trong sơ đồ chữ ký có dùng hàm băm, vì sao bên ký phát cặp (x, y) mà không cần gửi kèm cốt bức điện z = h(x)?`, opts: [`Vì hàm h(x) là bí mật`, `Vì hàm băm h() công khai nên bên nhận tự tính lại được z = h(x) từ x để kiểm tra ver(z, y)`, `Vì z quá nặng`, `Vì z trùng với chữ ký y`], ans: 1, exp: `Thuật toán băm là công khai nên người nhận nhận được x là tự bấm ra h(x) được ngay, gửi kèm chỉ tốn băng thông.` },
-      { ch: 4, q: `Một hợp đồng đã công bố kèm cốt; kẻ gian soạn được hợp đồng khác có đúng cốt ấy. Tình huống này vi phạm tính chất nào của hàm băm?`, opts: [`Tính một chiều`, `Tính không đụng độ cao (Second-preimage resistance)`, `Tính đụng độ cao (Collision resistance)`, `Tính toàn vẹn phần cứng`], ans: 1, exp: `Đã có sẵn một văn bản x mà tìm được văn bản giả x' ≠ x có cùng mã băm là vi phạm tính Không đụng độ cao.` },
-      { ch: 4, q: `Kẻ gian tự soạn hai hợp đồng khác nhau hoàn toàn nhưng có cùng một cốt bức điện, rồi đưa một bản đi ký. Đây là vi phạm tính chất nào?`, opts: [`Tính một chiều`, `Tính không đụng độ cao`, `Tính đụng độ cao (Collision resistance)`, `Tính bí mật`], ans: 2, exp: `Tự chế ra bất kỳ 2 văn bản nào khác nhau mà trùng mã băm là vi phạm tính Đụng độ cao.` },
-      { ch: 4, q: `Kẻ tấn công lấy được tệp chỉ chứa các giá trị cốt (hash mật khẩu) và tìm ngược ra mật khẩu sinh ra một cốt trong đó. Tính chất nào bị vi phạm?`, opts: [`Tính một chiều (Preimage resistance)`, `Tính không đụng độ cao`, `Tính đụng độ cao`, `Tính sẵn sàng`], ans: 0, exp: `Từ mã băm z tìm ngược lại được mật khẩu gốc x là phá vỡ tính Một chiều.` },
-      { ch: 4, q: `Một hàm băm cho cốt dài 3 byte (24 bit). Số giá trị băm n khác nhau và số phép thử tối thiểu để tìm đụng độ với xác suất ~50% theo nghịch lý ngày sinh là bao nhiêu?`, opts: [`n = 2²⁴; khoảng 2¹² = 4.096 phép thử`, `n = 2²⁴; khoảng 2²³ phép thử`, `n = 2³; khoảng 2² phép thử`, `n = 2¹²; khoảng 2⁶ phép thử`], ans: 0, exp: `3 byte = 24 bit → n = 2²⁴. Theo nghịch lý ngày sinh, chỉ cần căn bậc hai số đó là 2¹² = 4.096 phép thử!` },
-      { ch: 4, q: `Một máy tính làm được 2³⁰ phép thử/giây. Với hàm băm cho cốt dài 96 bit, mất khoảng bao lâu để đạt xác suất đụng độ 50%?`, opts: [`Khoảng 2¹⁸ giây ≈ 3,03 ngày`, `Khoảng 2⁶⁶ giây`, `Khoảng 2⁴⁸ giây`, `Khoảng 1 giờ`], ans: 0, exp: `Cốt 96 bit cần 2⁴⁸ phép thử; chia cho tốc độ 2³⁰ phép thử/s còn 2¹⁸ = 262.144 giây ≈ 3,03 ngày.` },
-      { ch: 4, q: `Vì sao hàm băm có cốt 128 bit (như MD5) ngày nay không còn được khuyến nghị cho chữ ký số an toàn cao?`, opts: [`Vì chạy quá chậm`, `Vì theo nghịch lý ngày sinh chỉ cần khoảng 2⁶⁴ phép thử để tìm đụng độ, mức này đã nằm trong tầm tính toán hiện đại`, `Vì không chạy được trên máy 64 bit`, `Vì đầu ra không cố định`], ans: 1, exp: `Nhờ nghịch lý ngày sinh, độ khó giảm từ 2¹²⁸ xuống còn 2⁶⁴, siêu máy tính ngày nay có thể phá được.` },
-      { ch: 4, q: `Theo quy ước đệm trên slide bài giảng (thêm bit "1" rồi các bit "0" đến khi chia hết cho 512), bức điện dài 1.024 bit sau khi đệm sẽ có tổng độ dài và số khối 512 bit bằng bao nhiêu?`, opts: [`1.024 bit — 2 khối`, `1.536 bit — 3 khối`, `1.280 bit — 2,5 khối`, `2.048 bit — 4 khối`], ans: 1, exp: `Luôn phải thêm ít nhất 1 bit "1" nên 1.024 thành 1.025 bit, bắt buộc phải đệm thêm 511 số 0 lên 1.536 bit (3 khối).` },
-      { ch: 4, q: `Một bức điện dài 3.000 bit sau khi đệm lên 3.072 bit (6 khối 512 bit) thì có bao nhiêu lần biến đổi với hàm phi tuyến nếu dùng MD5 và nếu dùng SHA?`, opts: [`MD5: 384 lần; SHA: 480 lần`, `MD5: 480 lần; SHA: 384 lần`, `Cả hai đều 384 lần`, `MD5: 192 lần; SHA: 240 lần`], ans: 0, exp: `Mỗi khối 512 bit thì MD5 chạy 64 lần (6×64 = 384), còn SHA chạy 80 lần (6×80 = 480).` },
-      { ch: 4, q: `Vì sao số từ 32 bit của bức điện sau khi đệm (chia hết cho 512 bit) luôn chia hết cho 16?`, opts: [`Vì 512 / 32 = 16`, `Vì MD5 có 16 vòng`, `Vì mỗi byte có 16 bit`, `Vì có 16 thanh ghi`], ans: 0, exp: `Đơn giản vì một khối 512 bit chia nhỏ thành các từ 32 bit thì được đúng 512 / 32 = 16 từ.` },
-      { ch: 4, q: `MD5 thu nhỏ (thanh ghi 8 bit): Cho b = 0x6A (01101010), c = 0xC5 (11000101), d = 0x91 (10010001). Tính f(b,c,d) = (b ∧ c) ∨ (¬b ∧ d).`, opts: [`0xD1`, `0x40`, `0x91`, `0x83`], ans: 0, exp: `b ∧ c = 01000000; ¬b ∧ d = 10010001; ghép OR lại được 11010001 = 0xD1.` },
-      { ch: 4, q: `Tiếp tục bài MD5 thu nhỏ trên: a = 0x3D, f = 0xD1, Mj = 0x27, ti = 0x4E. Tổng S = (a + f + Mj + ti) mod 256 bằng bao nhiêu?`, opts: [`0x83`, `0x86`, `0xD1`, `0x1C`], ans: 0, exp: `61 + 209 + 39 + 78 = 387. Lấy 387 chia 256 dư 131 = 0x83.` },
-      { ch: 4, q: `Quay trái 3 bit giá trị 0x83 (10000011) rồi cộng b = 0x6A (mod 256) để thu được giá trị mới của thanh ghi a. Kết quả là gì?`, opts: [`0x1C`, `0x86`, `0xDA`, `0xEC`], ans: 1, exp: `10000011 đưa 3 bit đầu (100) ra đuôi thành 00011100 (28). Cộng b = 106 được 134 = 0x86.` },
-      { ch: 4, q: `So sánh cấu trúc MD5 và SHA (SHA-1) theo bài giảng:`, opts: [`MD5 cốt 160 bit, 5 thanh ghi; SHA cốt 128 bit, 4 thanh ghi`, `MD5 cốt 128 bit, 4 thanh ghi, 64 lần/khối; SHA cốt 160 bit, 5 thanh ghi, 80 lần/khối`, `Cả hai đều có 5 thanh ghi và 4 vòng`, `SHA có 5 vòng, mỗi vòng 16 lần`], ans: 1, exp: `MD5: 128 bit, 4 thanh ghi, 64 bước/khối. SHA: 160 bit, 5 thanh ghi, 80 bước/khối.` },
-      { ch: 4, q: `Trong SHA thu nhỏ (thanh ghi 8 bit), thanh ghi c nhận giá trị của b sau phép quay trái 6 bit. Nếu trước bước biến đổi b = 0xB3 (10110011), sau bước đó c bằng bao nhiêu?`, opts: [`0xEC`, `0xCE`, `0x96`, `0x3B`], ans: 0, exp: `10110011 cắt 6 bit đầu (101100) chuyển ra sau 11 → 11101100 = 0xEC.` },
-      { ch: 4, q: `Nếu bạn làm nhầm thành quay PHẢI 6 bit trên giá trị 8 bit 0xB3 (10110011) thay vì quay trái 6 bit, kết quả thu được là bao nhiêu?`, opts: [`0xEC`, `0xCE`, `0x96`, `0x6E`], ans: 1, exp: `Quay phải 6 bit trên 8 bit giống hệt quay trái 2 bit: 10110011 → 11001110 = 0xCE.` },
-      { ch: 4, q: `Một sơ đồ chữ ký điện tử được định nghĩa là bộ 5 tham số (P, A, K, S, V). Ký hiệu A đại diện cho thành phần nào?`, opts: [`Thuật toán giải mã`, `Tập hữu hạn các chữ ký`, `Không gian khóa`, `Thuật toán xác minh`], ans: 1, exp: `P là tập bức điện, A là tập chữ ký, K là không gian khóa, S là thuật toán ký, V là thuật toán xác minh.` },
-      { ch: 4, q: `A muốn gửi cho B một bức điện vừa được KÝ vừa được MÃ HÓA bảo mật. A phải thực hiện theo thứ tự nào?`, opts: [`Mã hóa bằng khóa công khai của A trước, rồi ký bằng khóa công khai của B`, `Ký trước y = sig_A(x) bằng khóa bí mật của A, rồi mã hóa cả (x, y) bằng khóa công khai của B`, `Mã hóa (x) bằng khóa công khai của B, rồi ký trực tiếp lên bản mã`, `Ký và mã hóa đều dùng khóa bí mật của B`], ans: 1, exp: `Giống viết thư tay: ký tên mình vào giấy trước, sau đó mới bỏ vào phong bì dán kín gửi cho người nhận.` },
-      { ch: 4, q: `Hệ chữ ký điện tử RSA (quy ước bài giảng) có p = 13, q = 19, khóa công khai b = 5. Giá trị n, φ(n) và khóa bí mật a là bao nhiêu?`, opts: [`n = 247, φ(n) = 216, a = 173`, `n = 247, φ(n) = 216, a = 43`, `n = 216, φ(n) = 247, a = 173`, `n = 247, φ(n) = 246, a = 197`], ans: 0, exp: `n = 13×19 = 247; φ(n) = 12×18 = 216; bấm a = 5⁻¹ mod 216 = 173.` },
-      { ch: 4, q: `Với hệ chữ ký RSA trên (n = 247, b = 5, a = 173), người gửi ký bức điện x = 40 thu được chữ ký y = 53. Một người khác gửi cặp (x = 55, y = 53) thì kết quả xác minh là gì?`, opts: [`Hợp lệ vì chữ ký 53 là đúng`, `Không hợp lệ vì 53⁵ mod 247 = 40 ≠ 55`, `Hợp lệ nếu đổi b = 7`, `Không thể xác minh`], ans: 1, exp: `Khi xác minh lấy 53⁵ mod 247 ra 40 chứ không khớp với nội dung giả 55, phát hiện ngay giả mạo.` },
-      { ch: 4, q: `Trong hệ chữ ký RSA, khóa nào dùng để ký và khóa nào dùng để xác minh? So với phép mã hóa RSA ở Chương 3 thì thế nào?`, opts: [`Ký bằng khóa công khai, xác minh bằng khóa riêng; cùng chiều với mã hóa RSA`, `Ký bằng khóa bí mật a, xác minh bằng khóa công khai b; ngược chiều với phép mã hóa RSA`, `Cả ký và xác minh đều dùng khóa công khai`, `Ký bằng p, xác minh bằng q`], ans: 1, exp: `Chỉ chủ nhân mới có khóa bí mật để ký, còn cả thế giới dùng khóa công khai để kiểm tra chữ ký đó (ngược chiều với mã hóa).` },
-      { ch: 4, q: `Chuẩn chữ ký điện tử DSS với q = 59, p = 1181 (p - 1 = 20×59), g = 2, a = 23. Biết α = 2²⁰ mod 1181 = 1029, β = 1029²³ mod 1181 = 1055. Ký x = 777 với k = 17 (k⁻¹ mod 59 = 7) được γ = 32. Tính δ = (x + a·γ)·k⁻¹ mod 59.`, opts: [`δ = 30`, `δ = 31`, `δ = 32`, `δ = 23`], ans: 0, exp: `(777 + 23×32) × 7 = 1513 × 7 = 10591. Lấy 10591 mod 59 = 30.` },
-      { ch: 4, q: `Nếu trên đường truyền, thành phần δ = 30 của chữ ký DSS trên bị kẻ gian sửa thành δ = 31, khi bên nhận xác minh (α^e1 · β^e2 mod p) mod q sẽ nhận được kết quả ra sao?`, opts: [`Vẫn bằng 32 = γ (chấp nhận)`, `Ra 33 ≠ γ = 32 → chữ ký không hợp lệ`, `Ra 0`, `Không tính được δ⁻¹`], ans: 1, exp: `Chỉ cần sai lệch 1 đơn vị ở chữ ký là phép tính xác minh ra số khác γ (33 ≠ 32), chữ ký bị hủy bỏ.` },
-      { ch: 4, q: `Trong chuẩn chữ ký DSS, vì sao mỗi lần ký bắt buộc phải chọn một số ngẫu nhiên k mới? Điều gì xảy ra nếu dùng lại cùng một k cho hai bức điện khác nhau?`, opts: [`Làm chữ ký dài gấp đôi`, `Hai chữ ký sẽ có cùng γ; kẻ tấn công dùng δ₁ − δ₂ ≡ (x₁ − x₂)k⁻¹ (mod q) tìm được k rồi suy ngược ra khóa bí mật a`, `Làm bên nhận không tính được e1`, `Làm α bằng 1`], ans: 1, exp: `Dùng lại k làm 2 chữ ký có chung γ, giúp hacker trừ hai phương trình để tìm ra k và tính ngược ra khóa bí mật a.` }
-    ];
-
-    /* ============================================================
-       3. APP STATE & PERSISTENCE
-       ============================================================ */
-    const BUNNY_EXPRESSIONS = {
-      sparkle: `
-        <path d="M38 49 L40 54 L45 56 L40 58 L38 63 L36 58 L31 56 L36 54 Z" fill="var(--primary)"/>
-        <path d="M62 49 L64 54 L69 56 L64 58 L62 63 L60 58 L55 56 L60 54 Z" fill="var(--primary)"/>
-        <ellipse cx="29" cy="64" rx="6" ry="3.5" fill="var(--primary-container)" opacity="0.75"/>
-        <ellipse cx="71" cy="64" rx="6" ry="3.5" fill="var(--primary-container)" opacity="0.75"/>
-        <path d="M44 64 Q47 68 50 64 Q53 68 56 64" fill="none" stroke="var(--primary)" stroke-width="2.8" stroke-linecap="round"/>
-      `,
-      heart: `
-        <path d="M38 61 C38 61 31 56 31 52 C31 49.5 33 48 35.2 48 C36.7 48 37.6 49 38 49.8 C38.4 49 39.3 48 40.8 48 C43 48 45 49.5 45 52 C45 56 38 61 38 61 Z" fill="var(--primary)"/>
-        <path d="M62 61 C62 61 55 56 55 52 C55 49.5 57 48 59.2 48 C60.7 48 61.6 49 62 49.8 C62.4 49 63.3 48 64.8 48 C67 48 69 49.5 69 52 C69 56 62 61 62 61 Z" fill="var(--primary)"/>
-        <ellipse cx="29" cy="64" rx="6.5" ry="3.6" fill="var(--primary-container)" opacity="0.8"/>
-        <ellipse cx="71" cy="64" rx="6.5" ry="3.6" fill="var(--primary-container)" opacity="0.8"/>
-        <path d="M44 64 Q50 73 56 64 Z" fill="var(--primary)"/>
-      `,
-      wink: `
-        <circle cx="38" cy="56" r="4.3" fill="var(--on-surface)"/>
-        <circle cx="39.5" cy="54.2" r="1.6" fill="var(--on-primary)"/>
-        <path d="M56 54 L65 56.5 L56 59" fill="none" stroke="var(--on-surface)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <ellipse cx="29" cy="64" rx="5.5" ry="3.2" fill="var(--primary-container)" opacity="0.7"/>
-        <ellipse cx="71" cy="64" rx="5.5" ry="3.2" fill="var(--primary-container)" opacity="0.7"/>
-        <path d="M44 64 Q47 68 50 64 Q53 68 56 64" fill="none" stroke="var(--primary)" stroke-width="2.8" stroke-linecap="round"/>
-      `,
-      blush: `
-        <path d="M33 56 Q38 51 43 56" fill="none" stroke="var(--on-surface)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M57 56 Q62 51 67 56" fill="none" stroke="var(--on-surface)" stroke-width="3" stroke-linecap="round"/>
-        <ellipse cx="29" cy="63" rx="7" ry="4" fill="var(--primary-container)" opacity="0.88"/>
-        <ellipse cx="71" cy="63" rx="7" ry="4" fill="var(--primary-container)" opacity="0.88"/>
-        <line x1="26" y1="61" x2="24" y2="65" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="30" y1="61" x2="28" y2="65" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="70" y1="61" x2="68" y2="65" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round"/>
-        <line x1="74" y1="61" x2="72" y2="65" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round"/>
-        <path d="M46 65 Q50 69 54 65" fill="none" stroke="var(--primary)" stroke-width="2.8" stroke-linecap="round"/>
-      `,
-      smug: `
-        <path d="M33 55 Q38 58 43 55" fill="none" stroke="var(--on-surface)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M57 55 Q62 58 67 55" fill="none" stroke="var(--on-surface)" stroke-width="3" stroke-linecap="round"/>
-        <ellipse cx="29" cy="64" rx="5.5" ry="3.2" fill="var(--primary-container)" opacity="0.65"/>
-        <ellipse cx="71" cy="64" rx="5.5" ry="3.2" fill="var(--primary-container)" opacity="0.65"/>
-        <path d="M44 65 Q50 69 56 63" fill="none" stroke="var(--primary)" stroke-width="2.8" stroke-linecap="round"/>
-      `
-    };
-
-    const PRAISES = [
-      { t: `giỏi quá em yêu~~ 💕`, s: `Cứ đà này là nắm trọn điểm A rồi nha!`, expr: 'heart' },
-      { t: `cố lên em yêu sắp ra r ✨`, s: `Sắp về đích rồi, cố thêm chút nữa thôi!`, expr: 'blush' },
-      { t: `tối nay em muốn thưởng j nào ~~~ 🎀`, s: `Làm đúng liên tiếp thế này phải thưởng lớn rồi!`, expr: 'wink' },
-      { t: `onichan tuyệt quá đi!! 🌸`, s: `Ngưỡng mộ trình độ này quá trời luôn~`, expr: 'sparkle' },
-      { t: `hẹn em 8h tối nay ở phòng 612 😉`, s: `Nhớ ôn xong hết rồi đúng hẹn nha~`, expr: 'wink' },
-      { t: `Bé yêu muốn a thưởng j nào ~~ 💖`, s: `Ngoan ngoãn học giỏi thế này cưng hết nấc!`, expr: 'heart' },
-      { t: `Em giỏi quáaaa~ ❤️`, s: `Onii-chan tự hào về em lắm đấy~ ❤️`, expr: 'sparkle' },
-      { t: `Sugoiiii~ ✨`, s: `Không ngờ em lại tài năng đến mức này!`, expr: 'sparkle' },
-      { t: `Ohoho~ 👑`, s: `Đúng là một thiên tài nhỏ bé đáng yêu mà~`, expr: 'smug' },
-      { t: `Ưm... ngại quá đi~ 😳`, s: `Em làm anh phải đỏ mặt vì tự hào mất rồi đấy~`, expr: 'blush' }
-    ];
-
-    let appState = {
-      mode: 'theory',
-      theoryCh: 1,
-      practiceCh: 1,
-      practiceIdx: { 1: 0, 2: 0, 3: 0, 4: 0 },
-      practiceOrder: { 1: null, 2: null, 3: null, 4: null },
-      practiceAnswers: {},
-      mockSeenQuestions: [], // Lưu danh sách ID các câu đã từng gặp trong thi thử
-      mockHistory: [],       // Lưu lịch sử điểm các lần thi thử
-      activeMock: null,      // Lưu bài thi thử đang làm dở nếu tắt/reload trang
-      streak: 0,
-      bestMock: null
-    };
-
-    let mockSession = {
-      active: false,
-      questions: [],
-      answers: {},
-      currentIdx: 0,
-      secondsLeft: 3600,
-      timerId: null,
-      finished: false
-    };
-
-    let toastTimeout = null;
-    const LOCAL_STORAGE_KEY = 'atbmtt_bunny_study_v1';
-
-    async function saveState() {
-      try {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(appState));
-      } catch (e) { /* ignore storage quota */ }
-      try {
-        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === 'function') {
-          await window.notebookAppApi.setAppState(appState);
-        }
-      } catch (e) { /* safe fallback */ }
-    }
-
-    async function initApp() {
-      let saved = null;
-      try {
-        const rawLocal = localStorage.getItem(LOCAL_STORAGE_KEY);
-        if (rawLocal) saved = JSON.parse(rawLocal);
-      } catch (e) { /* ignore */ }
-
-      if (!saved) {
-        try {
-          if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
-            saved = await window.notebookAppApi.getAppState();
-          }
-        } catch (e) { /* ignore */ }
-      }
-
-      if (saved && typeof saved === 'object') {
-        appState = {
-          ...appState,
-          ...saved,
-          practiceIdx: { ...appState.practiceIdx, ...(saved.practiceIdx || {}) },
-          practiceOrder: { ...appState.practiceOrder, ...(saved.practiceOrder || {}) },
-          practiceAnswers: saved.practiceAnswers || {},
-          mockSeenQuestions: Array.isArray(saved.mockSeenQuestions) ? saved.mockSeenQuestions : [],
-          mockHistory: Array.isArray(saved.mockHistory) ? saved.mockHistory : [],
-          activeMock: saved.activeMock || null
-        };
-      }
-
-      // Mỗi lần mở lại trang: xáo trộn thứ tự các câu CHƯA làm (giữ nguyên trace các câu đã làm)
-      [1, 2, 3, 4].forEach(ch => {
-        reshuffleUnansweredInChapter(ch, true);
-      });
-      saveState();
-
-      calcCasioMod();
-      calcCasioInv();
-      calcCasioBase();
-      updateHeroStats();
-      renderMockLobbyInfo();
-      switchMode(appState.mode || 'theory', true);
-      selectTheoryChapter(appState.theoryCh || 1, true);
-      selectPracticeChapter(appState.practiceCh || 1, true);
-
-      // Nếu trước đó đang thi thử dở dang thì khôi phục lại đúng phiên thi đó
-      if (appState.activeMock && appState.activeMock.active && Array.isArray(appState.activeMock.questions) && appState.activeMock.questions.length === 40) {
-        resumeSavedMockExam();
-      }
-
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === 'function') {
-        window.notebookAppApi.notifyAppReady();
-      }
-    }
-
-    /* ============================================================
-       4. NAVIGATION & HERO STATS
-       ============================================================ */
-    function switchMode(mode, skipSave) {
-      appState.mode = mode;
-      ['theory', 'casio', 'practice', 'mock'].forEach(m => {
-        const view = document.getElementById('view-' + m);
-        const tab = document.getElementById('tab-' + m);
-        if (view) view.classList.toggle('hidden', m !== mode);
-        if (tab) tab.classList.toggle('active', m === mode);
-      });
-      if (mode === 'practice') renderPractice();
-      if (mode === 'mock' && !mockSession.active) renderMockLobbyInfo();
-      if (!skipSave) saveState();
-    }
-
-    function selectTheoryChapter(ch, skipSave) {
-      appState.theoryCh = ch;
-      [1, 2, 3, 4].forEach(i => {
-        const chip = document.getElementById('th-chip-' + i);
-        if (chip) chip.classList.toggle('active', i === ch);
-      });
-      const container = document.getElementById('theory-content');
-      if (container) container.innerHTML = THEORY_HTML[ch] || '';
-      if (!skipSave) saveState();
-    }
-
-    function copyWebLink(btn) {
-      const url = window.location.href;
-      const tempInput = document.createElement('input');
-      tempInput.value = url;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        btn.innerHTML = '<i data-lucide="check" style="width:13px;height:13px;"></i> Đã chép link!';
-      } catch (e) {
-        btn.textContent = 'Hãy lưu file & tải lên Netlify';
-      }
-      document.body.removeChild(tempInput);
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-      setTimeout(() => {
-        btn.innerHTML = '<i data-lucide="link" style="width:13px;height:13px;"></i> Sao chép link web';
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-      }, 2400);
-    }
-
-    function updateHeroStats() {
-      const keys = Object.keys(appState.practiceAnswers);
-      let correct = 0;
-      keys.forEach(k => {
-        const idx = Number(k);
-        if (QUESTIONS[idx] && appState.practiceAnswers[k] === QUESTIONS[idx].ans) correct++;
-      });
-      const totalAns = keys.length;
-      const pct = totalAns ? Math.round((correct / totalAns) * 100) : 0;
-
-      const elAns = document.getElementById('stat-answered');
-      const elAcc = document.getElementById('stat-accuracy');
-      const elStr = document.getElementById('stat-streak');
-      const elBest = document.getElementById('stat-best-mock');
-      const elMood = document.getElementById('stat-mood');
-
-      if (elAns) elAns.textContent = `${totalAns} / ${QUESTIONS.length}`;
-      if (elAcc) elAcc.textContent = `${pct}%`;
-      if (elStr) elStr.textContent = `Chuỗi đúng: ${appState.streak || 0}`;
-      if (elBest) elBest.textContent = appState.bestMock !== null ? `${appState.bestMock} / 40` : '--';
-      if (elMood) {
-        if (appState.streak >= 5) elMood.textContent = `Rực rỡ luôn!`;
-        else if (totalAns > 0) elMood.textContent = `Đang vào guồng!`;
-        else elMood.textContent = `Sẵn sàng học!`;
-      }
-    }
-
-    function handleResetProgress(btn) {
-      if (btn.dataset.armed !== 'true') {
-        btn.dataset.armed = 'true';
-        btn.textContent = 'Bấm lại để xác nhận';
-        setTimeout(() => {
-          if (btn.dataset.armed === 'true') {
-            btn.dataset.armed = 'false';
-            btn.textContent = 'Đặt lại tiến độ';
-          }
-        }, 3000);
-        return;
-      }
-      btn.dataset.armed = 'false';
-      btn.textContent = 'Đặt lại tiến độ';
-      clearInterval(mockSession.timerId);
-      mockSession.active = false;
-      appState.practiceAnswers = {};
-      appState.practiceIdx = { 1: 0, 2: 0, 3: 0, 4: 0 };
-      appState.mockSeenQuestions = [];
-      appState.mockHistory = [];
-      appState.activeMock = null;
-      appState.streak = 0;
-      appState.bestMock = null;
-      document.getElementById('mock-active')?.classList.add('hidden');
-      document.getElementById('mock-result')?.classList.add('hidden');
-      document.getElementById('mock-lobby')?.classList.remove('hidden');
-      updateHeroStats();
-      renderMockLobbyInfo();
-      renderPractice();
-      saveState();
-    }
-
-    /* ============================================================
-       5. MASCOT & PARTICLE CELEBRATIONS
-       ============================================================ */
-    function celebrate(customTitle, customSub) {
-      const toast = document.getElementById('mascot-toast');
-      const titleEl = document.getElementById('mascot-title');
-      const subEl = document.getElementById('mascot-sub');
-      const faceEl = document.getElementById('mascot-face');
-      const pick = PRAISES[Math.floor(Math.random() * PRAISES.length)];
-      if (faceEl) {
-        const exprKey = pick.expr || 'sparkle';
-        faceEl.innerHTML = BUNNY_EXPRESSIONS[exprKey] || BUNNY_EXPRESSIONS.sparkle;
-      }
-      if (titleEl) titleEl.textContent = customTitle || pick.t;
-      if (subEl) subEl.textContent = customSub || pick.s;
-      if (toast) {
-        toast.classList.add('show');
-        clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => toast.classList.remove('show'), 2600);
-      }
-
-      const layer = document.getElementById('fx-layer');
-      if (!layer) return;
-      const symbols = ['🎉', '🌸', '✨', '💕', '♥', '★'];
-      const colors = ['var(--primary)', 'var(--secondary)', 'var(--tertiary)', 'var(--data-4)'];
-      for (let i = 0; i < 14; i++) {
-        const span = document.createElement('span');
-        span.className = 'fx-particle';
-        span.textContent = symbols[i % symbols.length];
-        span.style.color = colors[i % colors.length];
-        span.style.left = `${15 + Math.random() * 75}vw`;
-        span.style.setProperty('--dx', `${(Math.random() - 0.5) * 160}px`);
-        span.style.setProperty('--dy', `${-160 - Math.random() * 240}px`);
-        span.style.setProperty('--rot', `${(Math.random() - 0.5) * 140}deg`);
-        layer.appendChild(span);
-        setTimeout(() => span.remove(), 1400);
-      }
-    }
-
-    /* ============================================================
-       6. CASIO 570/580/880 INTERACTIVE LAB
-       ============================================================ */
-    function modPow(base, exp, mod) {
-      if (mod <= 1) return 0;
-      let b = ((base % mod) + mod) % mod;
-      let res = 1;
-      let e = Math.max(0, Math.floor(exp));
-      while (e > 0) {
-        if (e % 2 === 1) res = (res * b) % mod;
-        b = (b * b) % mod;
-        e = Math.floor(e / 2);
-      }
-      return res;
-    }
-
-    function extGcd(a, b) {
-      let oldR = a, r = b, oldS = 1, s = 0, oldT = 0, t = 1;
-      while (r !== 0) {
-        const q = Math.floor(oldR / r);
-        [oldR, r] = [r, oldR - q * r];
-        [oldS, s] = [s, oldS - q * s];
-        [oldT, t] = [t, oldT - q * t];
-      }
-      return { gcd: oldR, x: oldS, y: oldT };
-    }
-
-    function calcCasioMod() {
-      const baseEl = document.getElementById('casio-base');
-      const expEl = document.getElementById('casio-exp');
-      const modEl = document.getElementById('casio-mod');
-      const outEl = document.getElementById('casio-mod-out');
-      if (!baseEl || !expEl || !modEl || !outEl) return;
-      const a = Number(baseEl.value);
-      const k = Number(expEl.value);
-      const n = Number(modEl.value);
-      if (!Number.isFinite(a) || !Number.isFinite(k) || !Number.isFinite(n) || n < 2 || k < 0) {
-        outEl.innerHTML = `<span>Nhập số nguyên hợp lệ với Modulo ≥ 2 và số mũ ≥ 0.</span>`;
-        return;
-      }
-      const res = modPow(a, k, n);
-      const bin = Math.floor(k).toString(2);
-      outEl.innerHTML = `
-        <span>Kết quả: <strong>${a}^${k} mod ${n} = ${res}</strong></span>
-        <span style="font-size:0.85rem;color:var(--on-surface-variant);">Gợi ý tách nhị phân số mũ ${k} = (${bin})₂ để bình phương và nhân nối tiếp bằng phím ÷R trên Casio.</span>
-      `;
-    }
-
-    function calcCasioInv() {
-      const aEl = document.getElementById('inv-a');
-      const nEl = document.getElementById('inv-n');
-      const outEl = document.getElementById('casio-inv-out');
-      if (!aEl || !nEl || !outEl) return;
-      const a = Math.trunc(Number(aEl.value));
-      const n = Math.trunc(Number(nEl.value));
-      if (!Number.isFinite(a) || !Number.isFinite(n) || n < 2) {
-        outEl.innerHTML = `<span>Vui lòng nhập a và modulo n ≥ 2.</span>`;
-        return;
-      }
-      const aPos = ((a % n) + n) % n;
-      const g = extGcd(aPos, n);
-      if (g.gcd !== 1) {
-        outEl.innerHTML = `<span><strong>Không tồn tại nghịch đảo</strong> vì GCD(${a}, ${n}) = ${g.gcd} ≠ 1.</span>`;
-        return;
-      }
-      const inv = ((g.x % n) + n) % n;
-      const kCheck = (aPos * inv - 1) / n;
-      outEl.innerHTML = `
-        <span>Kết quả: <strong>${a}⁻¹ mod ${n} = ${inv}</strong></span>
-        <span style="font-size:0.85rem;color:var(--on-surface-variant);">Bấm Casio TABLE với <code>f(X) = (${n}X + 1) ÷ ${aPos}</code>: tại dòng X = ${kCheck} cho ra số nguyên đẹp đầu tiên là ${inv}.</span>
-      `;
-    }
-
-    function parseBinOrHex(str) {
-      const s = (str || '').trim().toLowerCase();
-      if (s.startsWith('0b')) return parseInt(s.slice(2), 2);
-      if (s.startsWith('0x')) return parseInt(s.slice(2), 16);
-      if (/^[01]+$/.test(s) && s.length >= 4) return parseInt(s, 2);
-      return parseInt(s, 16);
-    }
-
-    function calcCasioBase() {
-      const xEl = document.getElementById('base-x');
-      const yEl = document.getElementById('base-y');
-      const outEl = document.getElementById('casio-base-out');
-      if (!xEl || !yEl || !outEl) return;
-      const x = parseBinOrHex(xEl.value);
-      const y = parseBinOrHex(yEl.value);
-      if (Number.isNaN(x) || Number.isNaN(y)) {
-        outEl.innerHTML = `<span>Nhập giá trị Hex (vd 0x6A) hoặc Nhị phân (vd 0b01101010).</span>`;
-        return;
-      }
-      const x8 = x & 0xff, y8 = y & 0xff;
-      const xorVal = (x8 ^ y8) & 0xff;
-      const andVal = (x8 & y8) & 0xff;
-      const orVal = (x8 | y8) & 0xff;
-      const sum8 = (x8 + y8) & 0xff;
-      const padBin = v => v.toString(2).padStart(8, '0');
-      const toHex = v => '0x' + v.toString(16).toUpperCase().padStart(2, '0');
-      outEl.innerHTML = `
-        <span>X ⊕ Y (XOR): <strong>${toHex(xorVal)}</strong> (${padBin(xorVal)})</span>
-        <span style="font-size:0.85rem;">AND: <code>${toHex(andVal)}</code> | OR: <code>${toHex(orVal)}</code> | Cộng mod 256 (⊞): <code>${toHex(sum8)}</code></span>
-      `;
-    }
-
-    /* ============================================================
-       7. CHAPTER PRACTICE (25 QUESTIONS PER CHAPTER)
-       ============================================================ */
-    function getRawChapterIndices(ch) {
-      const list = [];
-      QUESTIONS.forEach((item, idx) => {
-        if (item.ch === ch) list.push(idx);
-      });
-      return list;
-    }
-
-    // Lấy danh sách thứ tự câu hỏi của chương (tạo ngẫu nhiên nếu chưa có)
-    function getChapterIndices(ch) {
-      const raw = getRawChapterIndices(ch);
-      const savedOrder = appState.practiceOrder && appState.practiceOrder[ch];
-      if (Array.isArray(savedOrder) && savedOrder.length === raw.length && savedOrder.every(i => raw.includes(i))) {
-        return savedOrder;
-      }
-      const shuffled = shuffleArray(raw);
-      if (!appState.practiceOrder) appState.practiceOrder = {};
-      appState.practiceOrder[ch] = shuffled;
-      return shuffled;
-    }
-
-    // Nháo lại các câu chưa làm mỗi lần vào trang mà không làm mất trace câu đã làm
-    function reshuffleUnansweredInChapter(ch, jumpToFirstUnanswered) {
-      const currentOrder = getChapterIndices(ch);
-      const answered = currentOrder.filter(gi => appState.practiceAnswers[gi] !== undefined);
-      const unanswered = shuffleArray(currentOrder.filter(gi => appState.practiceAnswers[gi] === undefined));
-      const nextOrder = [...answered, ...unanswered];
-      appState.practiceOrder[ch] = nextOrder;
-      if (jumpToFirstUnanswered) {
-        appState.practiceIdx[ch] = answered.length < nextOrder.length ? answered.length : 0;
-      }
-    }
-
-    function selectPracticeChapter(ch, skipSave) {
-      appState.practiceCh = ch;
-      [1, 2, 3, 4].forEach(i => {
-        const chip = document.getElementById('pr-chip-' + i);
-        if (chip) chip.classList.toggle('active', i === ch);
-      });
-      renderPractice();
-      if (!skipSave) saveState();
-    }
-
-    function renderPractice() {
-      const ch = appState.practiceCh;
-      const indices = getChapterIndices(ch);
-      const localIdx = Math.min(appState.practiceIdx[ch] || 0, indices.length - 1);
-      appState.practiceIdx[ch] = localIdx;
-      const globalIdx = indices[localIdx];
-      const item = QUESTIONS[globalIdx];
-
-      const titleEl = document.getElementById('practice-title');
-      if (titleEl) titleEl.textContent = `Luyện tập Chương ${ch} — Câu ${localIdx + 1}/${indices.length}`;
-
-      let answeredCount = 0;
-      let correctCount = 0;
-      indices.forEach(gi => {
-        if (appState.practiceAnswers[gi] !== undefined) {
-          answeredCount++;
-          if (appState.practiceAnswers[gi] === QUESTIONS[gi].ans) correctCount++;
-        }
-      });
-      const progEl = document.getElementById('practice-progress');
-      if (progEl) progEl.style.width = `${Math.round((answeredCount / indices.length) * 100)}%`;
-      const badgeEl = document.getElementById('practice-score-badge');
-      if (badgeEl) badgeEl.textContent = `${correctCount} / ${indices.length} đúng`;
-
-      const cardEl = document.getElementById('practice-card');
-      const userAns = appState.practiceAnswers[globalIdx];
-      const hasAnswered = userAns !== undefined;
-      const letters = ['A', 'B', 'C', 'D'];
-
-      if (cardEl && item) {
-        const optsHtml = item.opts.map((opt, oi) => {
-          let cls = 'opt-btn';
-          if (hasAnswered) {
-            if (oi === item.ans) cls += ' correct';
-            else if (oi === userAns) cls += ' wrong';
-          }
-          return `
-            <button type="button" class="${cls}" ${hasAnswered ? 'disabled' : ''} onclick="answerPractice(${globalIdx}, ${oi})">
-              <span class="opt-letter">${letters[oi]}</span>
-              <span>${opt}</span>
-            </button>
-          `;
-        }).join('');
-
-        let expHtml = '';
-        if (hasAnswered) {
-          const isOk = userAns === item.ans;
-          expHtml = `
-            <div class="explain-box ${isOk ? 'is-correct' : 'is-wrong'}">
-              <strong>${isOk ? 'Chính xác rồi nè!' : 'Chưa đúng rồi — đáp án đúng là ' + letters[item.ans]}</strong>
-              <span>${item.exp}</span>
-            </div>
-          `;
-        }
-
-        cardEl.innerHTML = `
-          <div class="q-meta">
-            <span class="q-tag">Chương ${ch} · Câu ${localIdx + 1}</span>
-            <span style="font-size:0.85rem;color:var(--on-surface-variant);">Đã làm ${answeredCount}/${indices.length}</span>
-          </div>
-          <p class="q-text">${item.q}</p>
-          <div class="options-list">${optsHtml}</div>
-          ${expHtml}
-          <div style="display:flex;justify-content:space-between;gap:var(--space-sm);flex-wrap:wrap;margin-top:var(--space-xs);">
-            <button type="button" class="btn btn-soft" ${localIdx === 0 ? 'disabled' : ''} onclick="movePractice(-1)">Câu trước</button>
-            <button type="button" class="btn btn-primary" ${localIdx === indices.length - 1 ? 'disabled' : ''} onclick="movePractice(1)">Câu tiếp theo</button>
-          </div>
-        `;
-      }
-
-      const dotsEl = document.getElementById('practice-dots');
-      if (dotsEl) {
-        dotsEl.innerHTML = indices.map((gi, li) => {
-          let cls = 'q-dot';
-          if (li === localIdx) cls += ' current';
-          const ans = appState.practiceAnswers[gi];
-          if (ans !== undefined) cls += (ans === QUESTIONS[gi].ans ? ' ok' : ' bad');
-          return `<button type="button" class="${cls}" onclick="jumpPractice(${li})">${li + 1}</button>`;
-        }).join('');
-      }
-    }
-
-    function answerPractice(globalIdx, optIdx) {
-      if (appState.practiceAnswers[globalIdx] !== undefined) return;
-      appState.practiceAnswers[globalIdx] = optIdx;
-      const isCorrect = optIdx === QUESTIONS[globalIdx].ans;
-      if (isCorrect) {
-        appState.streak = (appState.streak || 0) + 1;
-        celebrate();
-      } else {
-        appState.streak = 0;
-      }
-      updateHeroStats();
-      renderPractice();
-      saveState();
-    }
-
-    function movePractice(delta) {
-      const ch = appState.practiceCh;
-      const max = getChapterIndices(ch).length - 1;
-      appState.practiceIdx[ch] = Math.max(0, Math.min(max, (appState.practiceIdx[ch] || 0) + delta));
-      renderPractice();
-      saveState();
-    }
-
-    function jumpPractice(localIdx) {
-      appState.practiceIdx[appState.practiceCh] = localIdx;
-      renderPractice();
-      saveState();
-    }
-
-    function resetCurrentChapter(btn) {
-      if (btn.dataset.armed !== 'true') {
-        btn.dataset.armed = 'true';
-        btn.textContent = 'Xác nhận làm lại?';
-        setTimeout(() => {
-          if (btn.dataset.armed === 'true') {
-            btn.dataset.armed = 'false';
-            btn.textContent = 'Làm lại chương này';
-          }
-        }, 3000);
-        return;
-      }
-      btn.dataset.armed = 'false';
-      btn.textContent = 'Làm lại chương này';
-      const ch = appState.practiceCh;
-      getRawChapterIndices(ch).forEach(gi => { delete appState.practiceAnswers[gi]; });
-      // Xáo trộn sang một thứ tự hoàn toàn mới cho lượt làm lại
-      appState.practiceOrder[ch] = shuffleArray(getRawChapterIndices(ch));
-      appState.practiceIdx[ch] = 0;
-      updateHeroStats();
-      renderPractice();
-      saveState();
-    }
-
-    /* ============================================================
-       8. MOCK EXAM (40 QUESTIONS / 60 MINUTES + FULL TRACE)
-       ============================================================ */
-    function shuffleArray(arr) {
-      const a = arr.slice();
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    function renderMockLobbyInfo() {
-      const seenSet = new Set(appState.mockSeenQuestions || []);
-      const statusEl = document.getElementById('mock-pool-status');
-      if (statusEl) {
-        const remain = QUESTIONS.length - seenSet.size;
-        statusEl.textContent = remain > 0
-          ? `Đã gặp trong thi thử: ${seenSet.size} / ${QUESTIONS.length} câu (còn ${remain} câu mới tinh)`
-          : `Đã cày hết 100 / 100 câu! Đề tiếp theo sẽ tự động trộn vòng mới`;
-      }
-      const histBox = document.getElementById('mock-history-box');
-      if (histBox) {
-        const hist = appState.mockHistory || [];
-        if (hist.length === 0) {
-          histBox.innerHTML = '';
-        } else {
-          const rows = hist.slice(-5).reverse().map((h, i) => `
-            <tr>
-              <td>Lần #${hist.length - i}</td>
-              <td><strong>${h.score} điểm</strong> (${h.correct}/40)</td>
-              <td>${h.date}</td>
-            </tr>
-          `).join('');
-          histBox.innerHTML = `
-            <div style="font-size:0.85rem;font-weight:700;color:var(--on-surface-variant);margin-bottom:6px;">Lịch sử thi thử gần đây (lưu trên trình duyệt):</div>
-            <div class="table-wrap">
-              <table class="cute-table">
-                <thead><tr><th>Lượt thi</th><th>Kết quả</th><th>Thời gian</th></tr></thead>
-                <tbody>${rows}</tbody>
-              </table>
-            </div>
-          `;
-        }
-      }
-    }
-
-    function persistActiveMock() {
-      if (mockSession.active) {
-        appState.activeMock = {
-          active: true,
-          questions: mockSession.questions,
-          answers: mockSession.answers,
-          currentIdx: mockSession.currentIdx,
-          secondsLeft: mockSession.secondsLeft
-        };
-      } else {
-        appState.activeMock = null;
-      }
-      saveState();
-    }
-
-    function startMockTimer() {
-      clearInterval(mockSession.timerId);
-      updateMockTimerDisplay();
-      mockSession.timerId = setInterval(() => {
-        mockSession.secondsLeft--;
-        updateMockTimerDisplay();
-        if (mockSession.secondsLeft % 5 === 0) persistActiveMock();
-        if (mockSession.secondsLeft <= 0) {
-          finishMockExam();
-        }
-      }, 1000);
-    }
-
-    function resumeSavedMockExam() {
-      const saved = appState.activeMock;
-      if (!saved) return;
-      mockSession = {
-        active: true,
-        questions: saved.questions,
-        answers: saved.answers || {},
-        currentIdx: saved.currentIdx || 0,
-        secondsLeft: Math.max(10, saved.secondsLeft || 3600),
-        timerId: null,
-        finished: false
-      };
-      document.getElementById('mock-lobby')?.classList.add('hidden');
-      document.getElementById('mock-result')?.classList.add('hidden');
-      document.getElementById('mock-active')?.classList.remove('hidden');
-      startMockTimer();
-      renderMockQuestion();
-    }
-
-    function startMockExam() {
-      const seenSet = new Set(appState.mockSeenQuestions || []);
-      const picked = [];
-
-      // Ưu tiên bốc 10 câu CHƯA TỪNG GẶP ở mỗi chương; nếu thiếu mới lấy bù từ câu đã gặp
-      [1, 2, 3, 4].forEach(ch => {
-        const allCh = getRawChapterIndices(ch);
-        const unseen = shuffleArray(allCh.filter(idx => !seenSet.has(idx)));
-        const seen = shuffleArray(allCh.filter(idx => seenSet.has(idx)));
-        const chosen = [...unseen, ...seen].slice(0, 10);
-        picked.push(...chosen);
-      });
-
-      mockSession = {
-        active: true,
-        questions: shuffleArray(picked),
-        answers: {},
-        currentIdx: 0,
-        secondsLeft: 3600,
-        timerId: null,
-        finished: false
-      };
-
-      document.getElementById('mock-lobby')?.classList.add('hidden');
-      document.getElementById('mock-result')?.classList.add('hidden');
-      document.getElementById('mock-active')?.classList.remove('hidden');
-
-      persistActiveMock();
-      startMockTimer();
-      renderMockQuestion();
-    }
-
-    function updateMockTimerDisplay() {
-      const el = document.getElementById('mock-timer');
-      if (!el) return;
-      const m = Math.floor(Math.max(0, mockSession.secondsLeft) / 60);
-      const s = Math.max(0, mockSession.secondsLeft) % 60;
-      el.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-      el.classList.toggle('urgent', mockSession.secondsLeft <= 300);
-    }
-
-    function renderMockQuestion() {
-      const idx = mockSession.currentIdx;
-      const gi = mockSession.questions[idx];
-      const item = QUESTIONS[gi];
-      const chosen = mockSession.answers[idx];
-      const letters = ['A', 'B', 'C', 'D'];
-
-      const countEl = document.getElementById('mock-answered-count');
-      if (countEl) countEl.textContent = `Đã chọn: ${Object.keys(mockSession.answers).length} / 40`;
-
-      const cardEl = document.getElementById('mock-card');
-      if (cardEl && item) {
-        const optsHtml = item.opts.map((opt, oi) => `
-          <button type="button" class="opt-btn ${chosen === oi ? 'selected' : ''}" onclick="selectMockOpt(${idx}, ${oi})">
-            <span class="opt-letter">${letters[oi]}</span>
-            <span>${opt}</span>
-          </button>
-        `).join('');
-
-        cardEl.innerHTML = `
-          <div class="q-meta">
-            <span class="q-tag">Câu ${idx + 1} / 40 · Chương ${item.ch}</span>
-          </div>
-          <p class="q-text">${item.q}</p>
-          <div class="options-list">${optsHtml}</div>
-          <div style="display:flex;justify-content:space-between;gap:var(--space-sm);flex-wrap:wrap;margin-top:var(--space-xs);">
-            <button type="button" class="btn btn-soft" ${idx === 0 ? 'disabled' : ''} onclick="moveMock(-1)">Câu trước</button>
-            <button type="button" class="btn btn-primary" ${idx === 39 ? 'disabled' : ''} onclick="moveMock(1)">Câu tiếp theo</button>
-          </div>
-        `;
-      }
-
-      const dotsEl = document.getElementById('mock-dots');
-      if (dotsEl) {
-        dotsEl.innerHTML = mockSession.questions.map((_, i) => {
-          let cls = 'q-dot';
-          if (i === idx) cls += ' current';
-          if (mockSession.answers[i] !== undefined) cls += ' answered';
-          return `<button type="button" class="${cls}" onclick="jumpMock(${i})">${i + 1}</button>`;
-        }).join('');
-      }
-    }
-
-    function selectMockOpt(localIdx, optIdx) {
-      mockSession.answers[localIdx] = optIdx;
-      persistActiveMock();
-      renderMockQuestion();
-    }
-
-    function moveMock(delta) {
-      mockSession.currentIdx = Math.max(0, Math.min(39, mockSession.currentIdx + delta));
-      persistActiveMock();
-      renderMockQuestion();
-    }
-
-    function jumpMock(i) {
-      mockSession.currentIdx = i;
-      persistActiveMock();
-      renderMockQuestion();
-    }
-
-    function moveMock(delta) {
-      mockSession.currentIdx = Math.max(0, Math.min(39, mockSession.currentIdx + delta));
-      renderMockQuestion();
-    }
-
-    function jumpMock(i) {
-      mockSession.currentIdx = i;
-      renderMockQuestion();
-    }
-
-    function submitMockExam(btn) {
-      const answered = Object.keys(mockSession.answers).length;
-      if (answered < 40 && btn.dataset.armed !== 'true') {
-        btn.dataset.armed = 'true';
-        btn.textContent = `Còn ${40 - answered} câu trống — Bấm lại để nộp`;
-        setTimeout(() => {
-          if (btn.dataset.armed === 'true') {
-            btn.dataset.armed = 'false';
-            btn.textContent = 'Nộp bài ngay';
-          }
-        }, 3500);
-        return;
-      }
-      if (btn) {
-        btn.dataset.armed = 'false';
-        btn.textContent = 'Nộp bài ngay';
-      }
-      finishMockExam();
-    }
-
-    function finishMockExam() {
-      clearInterval(mockSession.timerId);
-      mockSession.active = false;
-      mockSession.finished = true;
-
-      let totalCorrect = 0;
-      const chStats = { 1: [0, 0], 2: [0, 0], 3: [0, 0], 4: [0, 0] };
-      const wrongList = [];
-      const letters = ['A', 'B', 'C', 'D'];
-      const seenSet = new Set(appState.mockSeenQuestions || []);
-
-      mockSession.questions.forEach((gi, i) => {
-        seenSet.add(gi);
-        const item = QUESTIONS[gi];
-        chStats[item.ch][1]++;
-        const uAns = mockSession.answers[i];
-
-        // Đồng bộ câu đã chọn sang trace chung nếu câu đó chưa làm ở phần luyện tập
-        if (uAns !== undefined && appState.practiceAnswers[gi] === undefined) {
-          appState.practiceAnswers[gi] = uAns;
-        }
-
-        if (uAns === item.ans) {
-          totalCorrect++;
-          chStats[item.ch][0]++;
-        } else {
-          wrongList.push({
-            num: i + 1,
-            ch: item.ch,
-            q: item.q,
-            userChoice: uAns !== undefined ? `${letters[uAns]}. ${item.opts[uAns]}` : 'Chưa chọn',
-            rightChoice: `${letters[item.ans]}. ${item.opts[item.ans]}`,
-            exp: item.exp
-          });
-        }
-      });
-
-      // Nếu đã đi qua hết 100 câu trong kho thì reset vòng lặp câu mới cho những đề tiếp theo
-      appState.mockSeenQuestions = seenSet.size >= QUESTIONS.length ? [] : Array.from(seenSet);
-      appState.activeMock = null;
-
-      const score10 = (totalCorrect * 0.25).toFixed(2);
-      const nowStr = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-      if (!Array.isArray(appState.mockHistory)) appState.mockHistory = [];
-      appState.mockHistory.push({ score: score10, correct: totalCorrect, date: nowStr });
-
-      if (appState.bestMock === null || totalCorrect > appState.bestMock) {
-        appState.bestMock = totalCorrect;
-      }
-      updateHeroStats();
-      renderMockLobbyInfo();
-      saveState();
-
-      if (totalCorrect >= 28) {
-        celebrate(`Điểm thi: ${score10} / 10!`, `Bạn làm đúng ${totalCorrect}/40 câu, đỉnh quá đi!`);
-      }
-
-      document.getElementById('mock-active')?.classList.add('hidden');
-      const resEl = document.getElementById('mock-result');
-      if (resEl) {
-        resEl.classList.remove('hidden');
-        const chSummary = [1, 2, 3, 4].map(c => `
-          <div class="stat-pill">
-            <span class="stat-label">Chương ${c}</span>
-            <span class="stat-value" style="font-size:1.25rem;">${chStats[c][0]} / ${chStats[c][1]}</span>
-          </div>
-        `).join('');
-
-        const wrongHtml = wrongList.length === 0
-          ? `<div class="explain-box is-correct"><strong>Tuyệt đối 40/40!</strong><span>Không có câu sai nào để phân tích. Thỏ Bông bái phục bạn luôn!</span></div>`
-          : wrongList.map(w => `
-            <article class="review-item">
-              <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;">
-                <span class="q-tag">Câu ${w.num} · Chương ${w.ch}</span>
-              </div>
-              <strong>${w.q}</strong>
-              <span style="color:var(--error);font-size:0.92rem;">Bạn chọn: ${w.userChoice}</span>
-              <span style="color:var(--positive);font-weight:700;font-size:0.92rem;">Đáp án đúng: ${w.rightChoice}</span>
-              <div class="explain-box" style="margin-top:4px;"><span>${w.exp}</span></div>
-            </article>
-          `).join('');
-
-        resEl.innerHTML = `
-          <div class="result-banner">
-            <span class="theory-badge">Kết quả thi thử</span>
-            <div class="score-big">${score10} điểm <span style="font-size:1.1rem;color:var(--on-surface-variant);">(${totalCorrect}/40 câu đúng)</span></div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--space-sm);">
-              ${chSummary}
-            </div>
-            <div style="display:flex;gap:var(--space-sm);flex-wrap:wrap;">
-              <button type="button" class="btn btn-primary" onclick="startMockExam()">Thi lại đề mới</button>
-              <button type="button" class="btn btn-soft" onclick="switchMode('practice')">Về luyện từng chương</button>
-            </div>
-          </div>
-          <h3 class="section-title" style="margin-top:var(--space-xl);">Phân tích câu sai &amp; Chưa làm (${wrongList.length} câu)</h3>
-          <div class="review-list">${wrongHtml}</div>
-        `;
-      }
-    }
-
-    initApp();
-  </script>
-</body>
-</html>
+            <span class="theory-badge">4.1 Hàm băm (Hash Function
