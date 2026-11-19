@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="artifact-type" content="tool">
   <meta name="design-style" content="sticker">
-  <title>Ôn Thi ATBMTT — Trắc Nghiệm &amp; Lý Thuyết Dễ Hiểu</title>
+  <title>Em yêu, học ATBMTT cùng anh nào~~ | Ôn Thi ATBMTT</title>
+  <!-- Favicon SVG Thỏ Bông Bảo Mật hiển thị trên tab trình duyệt -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6 L88 22 V50 C88 74 71 90 50 96 C29 90 12 74 12 50 V22 Z' fill='%23ffe8f4' stroke='%23c2207f' stroke-width='6'/%3E%3Cellipse cx='38' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Cellipse cx='62' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='50' cy='56' r='22' fill='%23fff5fa' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='42' cy='53' r='3' fill='%232e1a28'/%3E%3Ccircle cx='58' cy='53' r='3' fill='%232e1a28'/%3E%3Cpath d='M46 60 Q50 65 54 60' fill='none' stroke='%23c2207f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Sử dụng Be Vietnam Pro, Lexend và JetBrains Mono hỗ trợ 100% dấu tiếng Việt sắc nét -->
@@ -186,6 +188,41 @@
       color: var(--on-surface-variant);
       max-width: 58ch;
     }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+      border-radius: 1.15rem;
+      background: var(--surface-rose);
+      padding: 4px;
+      box-shadow: var(--shadow-pink);
+      transition: transform var(--dur-short) var(--ease-bounce);
+    }
+    .brand-logo:hover {
+      transform: rotate(-6deg) scale(1.06);
+    }
+    .share-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-sky);
+      color: var(--tertiary);
+      border: none;
+      border-radius: var(--rounded-full);
+      padding: 6px 14px;
+      font-size: var(--label-size);
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform var(--dur-short) var(--ease-bounce);
+    }
+    .share-pill:hover { transform: var(--pop-scale); }
 
     /* Stats strip inside hero */
     .stats-grid {
@@ -829,10 +866,41 @@
     <!-- Hero Panel -->
     <header class="hero-panel">
       <div>
-        <span class="kicker">
-          <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
-          Học phần An toàn &amp; Bảo mật Thông tin
-        </span>
+        <div class="brand-row">
+          <!-- Logo Thỏ Bông & Khiên ATBMTT -->
+          <svg class="brand-logo" viewBox="0 0 100 100" aria-label="Logo Thỏ Bông ATBMTT">
+            <defs>
+              <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffe8f4"/>
+                <stop offset="100%" stop-color="#f5c6e4"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 5 L88 21 V49 C88 73 71 89 50 95 C29 89 12 73 12 49 V21 Z" fill="url(#shieldGrad)" stroke="#c2207f" stroke-width="5" stroke-linejoin="round"/>
+            <ellipse cx="38" cy="27" rx="7" ry="15" fill="#ffd6eb" stroke="#c2207f" stroke-width="3.5"/>
+            <ellipse cx="38" cy="28" rx="3.2" ry="9" fill="#ff9ed2"/>
+            <ellipse cx="62" cy="27" rx="7" ry="15" fill="#ffd6eb" stroke="#c2207f" stroke-width="3.5"/>
+            <ellipse cx="62" cy="28" rx="3.2" ry="9" fill="#ff9ed2"/>
+            <circle cx="50" cy="55" r="22" fill="#fff5fa" stroke="#c2207f" stroke-width="3.5"/>
+            <circle cx="42" cy="52" r="3.2" fill="#2e1a28"/>
+            <circle cx="58" cy="52" r="3.2" fill="#2e1a28"/>
+            <circle cx="43.2" cy="50.8" r="1.1" fill="#ffffff"/>
+            <circle cx="59.2" cy="50.8" r="1.1" fill="#ffffff"/>
+            <ellipse cx="35" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
+            <ellipse cx="65" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
+            <path d="M45 59 Q50 64 55 59" fill="none" stroke="#c2207f" stroke-width="2.8" stroke-linecap="round"/>
+            <!-- Ổ khóa mini ở đáy khiên -->
+            <rect x="42" y="74" width="16" height="12" rx="3" fill="#c2207f"/>
+            <path d="M46 74 V70 A4 4 0 0 1 54 70 V74" fill="none" stroke="#c2207f" stroke-width="2.5"/>
+          </svg>
+          <span class="kicker" style="margin-bottom:0;">
+            <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+            Học phần An toàn &amp; Bảo mật Thông tin
+          </span>
+          <button type="button" class="share-pill" id="btn-copy-link" onclick="copyWebLink(this)">
+            <i data-lucide="link" style="width:13px;height:13px;"></i>
+            Sao chép link web
+          </button>
+        </div>
         <h1 class="display">Em yêu, học <em>ATBMTT</em> cùng anh nào~~</h1>
         <p class="hero-desc">
           Lý thuyết 4 chương được dịch sang ngôn ngữ đời thường cực dễ nhớ (kèm từ khóa chuẩn đi thi), mẹo bấm Casio 570/580/880, 100 câu trắc nghiệm và đề thi thử 40 câu.
@@ -1038,18 +1106,20 @@
     <!-- VIEW 4: MOCK EXAM -->
     <section id="view-mock" class="hidden">
       <div id="mock-lobby" class="card" style="text-align:left;">
-        <span class="theory-badge">Phòng thi thử tổng hợp</span>
+        <span class="theory-badge">Phòng thi thử tổng hợp · Tự động lưu tiến độ</span>
         <h2 class="section-title" style="margin-top:var(--space-sm);">Đề thi thử 40 câu — 60 phút</h2>
         <p class="section-sub">
-          Hệ thống chọn ngẫu nhiên 40 câu hỏi phân bổ đều từ cả 4 chương (10 câu mỗi chương), mô phỏng áp lực thời gian thật. Sau khi nộp bài, bạn nhận điểm số chi tiết và phân tích toàn bộ câu sai kèm hướng dẫn giải.
+          Hệ thống ghi nhớ toàn bộ các câu bạn đã làm qua từng lần thi để <strong>ưu tiên bốc câu mới chưa gặp</strong> (10 câu mỗi chương). Nếu lỡ tải lại trang giữa chừng, bài thi đang làm dở cũng được tự động khôi phục!
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);align-items:center;">
           <button type="button" class="btn btn-primary" onclick="startMockExam()">
             <i data-lucide="play" style="width:18px;height:18px;"></i>
-            Bắt đầu làm bài (60:00)
+            Bắt đầu đề mới (60:00)
           </button>
-          <span style="color:var(--on-surface-variant);font-size:0.9rem;">Thang điểm: 10,0 điểm (0,25 điểm / câu)</span>
+          <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="mock-pool-status">Đã chinh phục: 0 / 100 câu trong kho đề</span>
         </div>
+        <div id="mock-history-box" style="margin-top:var(--space-lg);"></div>
+      </div>
       </div>
 
       <div id="mock-active" class="hidden">
@@ -1657,6 +1727,9 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       practiceIdx: { 1: 0, 2: 0, 3: 0, 4: 0 },
       practiceOrder: { 1: null, 2: null, 3: null, 4: null },
       practiceAnswers: {},
+      mockSeenQuestions: [], // Lưu danh sách ID các câu đã từng gặp trong thi thử
+      mockHistory: [],       // Lưu lịch sử điểm các lần thi thử
+      activeMock: null,      // Lưu bài thi thử đang làm dở nếu tắt/reload trang
       streak: 0,
       bestMock: null
     };
@@ -1672,8 +1745,12 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
     };
 
     let toastTimeout = null;
+    const LOCAL_STORAGE_KEY = 'atbmtt_bunny_study_v1';
 
     async function saveState() {
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(appState));
+      } catch (e) { /* ignore storage quota */ }
       try {
         if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === 'function') {
           await window.notebookAppApi.setAppState(appState);
@@ -1682,20 +1759,32 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
     }
 
     async function initApp() {
+      let saved = null;
       try {
-        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
-          const saved = await window.notebookAppApi.getAppState();
-          if (saved && typeof saved === 'object') {
-            appState = {
-              ...appState,
-              ...saved,
-              practiceIdx: { ...appState.practiceIdx, ...(saved.practiceIdx || {}) },
-              practiceOrder: { ...appState.practiceOrder, ...(saved.practiceOrder || {}) },
-              practiceAnswers: saved.practiceAnswers || {}
-            };
-          }
-        }
+        const rawLocal = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (rawLocal) saved = JSON.parse(rawLocal);
       } catch (e) { /* ignore */ }
+
+      if (!saved) {
+        try {
+          if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
+            saved = await window.notebookAppApi.getAppState();
+          }
+        } catch (e) { /* ignore */ }
+      }
+
+      if (saved && typeof saved === 'object') {
+        appState = {
+          ...appState,
+          ...saved,
+          practiceIdx: { ...appState.practiceIdx, ...(saved.practiceIdx || {}) },
+          practiceOrder: { ...appState.practiceOrder, ...(saved.practiceOrder || {}) },
+          practiceAnswers: saved.practiceAnswers || {},
+          mockSeenQuestions: Array.isArray(saved.mockSeenQuestions) ? saved.mockSeenQuestions : [],
+          mockHistory: Array.isArray(saved.mockHistory) ? saved.mockHistory : [],
+          activeMock: saved.activeMock || null
+        };
+      }
 
       // Mỗi lần mở lại trang: xáo trộn thứ tự các câu CHƯA làm (giữ nguyên trace các câu đã làm)
       [1, 2, 3, 4].forEach(ch => {
@@ -1707,9 +1796,15 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       calcCasioInv();
       calcCasioBase();
       updateHeroStats();
+      renderMockLobbyInfo();
       switchMode(appState.mode || 'theory', true);
       selectTheoryChapter(appState.theoryCh || 1, true);
       selectPracticeChapter(appState.practiceCh || 1, true);
+
+      // Nếu trước đó đang thi thử dở dang thì khôi phục lại đúng phiên thi đó
+      if (appState.activeMock && appState.activeMock.active && Array.isArray(appState.activeMock.questions) && appState.activeMock.questions.length === 40) {
+        resumeSavedMockExam();
+      }
 
       if (typeof lucide !== 'undefined') lucide.createIcons();
       if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === 'function') {
@@ -1729,6 +1824,7 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
         if (tab) tab.classList.toggle('active', m === mode);
       });
       if (mode === 'practice') renderPractice();
+      if (mode === 'mock' && !mockSession.active) renderMockLobbyInfo();
       if (!skipSave) saveState();
     }
 
@@ -1741,6 +1837,26 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       const container = document.getElementById('theory-content');
       if (container) container.innerHTML = THEORY_HTML[ch] || '';
       if (!skipSave) saveState();
+    }
+
+    function copyWebLink(btn) {
+      const url = window.location.href;
+      const tempInput = document.createElement('input');
+      tempInput.value = url;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        btn.innerHTML = '<i data-lucide="check" style="width:13px;height:13px;"></i> Đã chép link!';
+      } catch (e) {
+        btn.textContent = 'Hãy lưu file & tải lên Netlify';
+      }
+      document.body.removeChild(tempInput);
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      setTimeout(() => {
+        btn.innerHTML = '<i data-lucide="link" style="width:13px;height:13px;"></i> Sao chép link web';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }, 2400);
     }
 
     function updateHeroStats() {
@@ -1784,11 +1900,20 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       }
       btn.dataset.armed = 'false';
       btn.textContent = 'Đặt lại tiến độ';
+      clearInterval(mockSession.timerId);
+      mockSession.active = false;
       appState.practiceAnswers = {};
       appState.practiceIdx = { 1: 0, 2: 0, 3: 0, 4: 0 };
+      appState.mockSeenQuestions = [];
+      appState.mockHistory = [];
+      appState.activeMock = null;
       appState.streak = 0;
       appState.bestMock = null;
+      document.getElementById('mock-active')?.classList.add('hidden');
+      document.getElementById('mock-result')?.classList.add('hidden');
+      document.getElementById('mock-lobby')?.classList.remove('hidden');
       updateHeroStats();
+      renderMockLobbyInfo();
       renderPractice();
       saveState();
     }
@@ -2119,7 +2244,7 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
     }
 
     /* ============================================================
-       8. MOCK EXAM (40 QUESTIONS / 60 MINUTES)
+       8. MOCK EXAM (40 QUESTIONS / 60 MINUTES + FULL TRACE)
        ============================================================ */
     function shuffleArray(arr) {
       const a = arr.slice();
@@ -2130,12 +2255,101 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       return a;
     }
 
+    function renderMockLobbyInfo() {
+      const seenSet = new Set(appState.mockSeenQuestions || []);
+      const statusEl = document.getElementById('mock-pool-status');
+      if (statusEl) {
+        const remain = QUESTIONS.length - seenSet.size;
+        statusEl.textContent = remain > 0
+          ? `Đã gặp trong thi thử: ${seenSet.size} / ${QUESTIONS.length} câu (còn ${remain} câu mới tinh)`
+          : `Đã cày hết 100 / 100 câu! Đề tiếp theo sẽ tự động trộn vòng mới`;
+      }
+      const histBox = document.getElementById('mock-history-box');
+      if (histBox) {
+        const hist = appState.mockHistory || [];
+        if (hist.length === 0) {
+          histBox.innerHTML = '';
+        } else {
+          const rows = hist.slice(-5).reverse().map((h, i) => `
+            <tr>
+              <td>Lần #${hist.length - i}</td>
+              <td><strong>${h.score} điểm</strong> (${h.correct}/40)</td>
+              <td>${h.date}</td>
+            </tr>
+          `).join('');
+          histBox.innerHTML = `
+            <div style="font-size:0.85rem;font-weight:700;color:var(--on-surface-variant);margin-bottom:6px;">Lịch sử thi thử gần đây (lưu trên trình duyệt):</div>
+            <div class="table-wrap">
+              <table class="cute-table">
+                <thead><tr><th>Lượt thi</th><th>Kết quả</th><th>Thời gian</th></tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>
+          `;
+        }
+      }
+    }
+
+    function persistActiveMock() {
+      if (mockSession.active) {
+        appState.activeMock = {
+          active: true,
+          questions: mockSession.questions,
+          answers: mockSession.answers,
+          currentIdx: mockSession.currentIdx,
+          secondsLeft: mockSession.secondsLeft
+        };
+      } else {
+        appState.activeMock = null;
+      }
+      saveState();
+    }
+
+    function startMockTimer() {
+      clearInterval(mockSession.timerId);
+      updateMockTimerDisplay();
+      mockSession.timerId = setInterval(() => {
+        mockSession.secondsLeft--;
+        updateMockTimerDisplay();
+        if (mockSession.secondsLeft % 5 === 0) persistActiveMock();
+        if (mockSession.secondsLeft <= 0) {
+          finishMockExam();
+        }
+      }, 1000);
+    }
+
+    function resumeSavedMockExam() {
+      const saved = appState.activeMock;
+      if (!saved) return;
+      mockSession = {
+        active: true,
+        questions: saved.questions,
+        answers: saved.answers || {},
+        currentIdx: saved.currentIdx || 0,
+        secondsLeft: Math.max(10, saved.secondsLeft || 3600),
+        timerId: null,
+        finished: false
+      };
+      document.getElementById('mock-lobby')?.classList.add('hidden');
+      document.getElementById('mock-result')?.classList.add('hidden');
+      document.getElementById('mock-active')?.classList.remove('hidden');
+      startMockTimer();
+      renderMockQuestion();
+    }
+
     function startMockExam() {
+      const seenSet = new Set(appState.mockSeenQuestions || []);
       const picked = [];
+
+      // Ưu tiên bốc 10 câu CHƯA TỪNG GẶP ở mỗi chương; nếu thiếu mới lấy bù từ câu đã gặp
       [1, 2, 3, 4].forEach(ch => {
-        const chIndices = shuffleArray(getChapterIndices(ch)).slice(0, 10);
-        picked.push(...chIndices);
+        const allCh = getRawChapterIndices(ch);
+        const unseen = shuffleArray(allCh.filter(idx => !seenSet.has(idx)));
+        const seen = shuffleArray(allCh.filter(idx => seenSet.has(idx)));
+        const chosen = [...unseen, ...seen].slice(0, 10);
+        picked.push(...chosen);
       });
+
       mockSession = {
         active: true,
         questions: shuffleArray(picked),
@@ -2150,16 +2364,8 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       document.getElementById('mock-result')?.classList.add('hidden');
       document.getElementById('mock-active')?.classList.remove('hidden');
 
-      clearInterval(mockSession.timerId);
-      updateMockTimerDisplay();
-      mockSession.timerId = setInterval(() => {
-        mockSession.secondsLeft--;
-        updateMockTimerDisplay();
-        if (mockSession.secondsLeft <= 0) {
-          finishMockExam();
-        }
-      }, 1000);
-
+      persistActiveMock();
+      startMockTimer();
       renderMockQuestion();
     }
 
@@ -2217,6 +2423,19 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
 
     function selectMockOpt(localIdx, optIdx) {
       mockSession.answers[localIdx] = optIdx;
+      persistActiveMock();
+      renderMockQuestion();
+    }
+
+    function moveMock(delta) {
+      mockSession.currentIdx = Math.max(0, Math.min(39, mockSession.currentIdx + delta));
+      persistActiveMock();
+      renderMockQuestion();
+    }
+
+    function jumpMock(i) {
+      mockSession.currentIdx = i;
+      persistActiveMock();
       renderMockQuestion();
     }
 
@@ -2259,11 +2478,19 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
       const chStats = { 1: [0, 0], 2: [0, 0], 3: [0, 0], 4: [0, 0] };
       const wrongList = [];
       const letters = ['A', 'B', 'C', 'D'];
+      const seenSet = new Set(appState.mockSeenQuestions || []);
 
       mockSession.questions.forEach((gi, i) => {
+        seenSet.add(gi);
         const item = QUESTIONS[gi];
         chStats[item.ch][1]++;
         const uAns = mockSession.answers[i];
+
+        // Đồng bộ câu đã chọn sang trace chung nếu câu đó chưa làm ở phần luyện tập
+        if (uAns !== undefined && appState.practiceAnswers[gi] === undefined) {
+          appState.practiceAnswers[gi] = uAns;
+        }
+
         if (uAns === item.ans) {
           totalCorrect++;
           chStats[item.ch][0]++;
@@ -2279,11 +2506,20 @@ Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
         }
       });
 
+      // Nếu đã đi qua hết 100 câu trong kho thì reset vòng lặp câu mới cho những đề tiếp theo
+      appState.mockSeenQuestions = seenSet.size >= QUESTIONS.length ? [] : Array.from(seenSet);
+      appState.activeMock = null;
+
       const score10 = (totalCorrect * 0.25).toFixed(2);
+      const nowStr = new Date().toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
+      if (!Array.isArray(appState.mockHistory)) appState.mockHistory = [];
+      appState.mockHistory.push({ score: score10, correct: totalCorrect, date: nowStr });
+
       if (appState.bestMock === null || totalCorrect > appState.bestMock) {
         appState.bestMock = totalCorrect;
       }
       updateHeroStats();
+      renderMockLobbyInfo();
       saveState();
 
       if (totalCorrect >= 28) {
