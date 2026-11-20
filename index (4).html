@@ -1,0 +1,2994 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="tool">
+  <meta name="design-style" content="sticker">
+  <title>Em yêu, học ATBMTT cùng anh nào~~ | Ôn Thi ATBMTT</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6 L88 22 V50 C88 74 71 90 50 96 C29 90 12 74 12 50 V22 Z' fill='%23ffe8f4' stroke='%23c2207f' stroke-width='6'/%3E%3Cellipse cx='38' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Cellipse cx='62' cy='28' rx='7' ry='15' fill='%23ffd6eb' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='50' cy='56' r='22' fill='%23fff5fa' stroke='%23c2207f' stroke-width='4'/%3E%3Ccircle cx='42' cy='53' r='3' fill='%232e1a28'/%3E%3Ccircle cx='58' cy='53' r='3' fill='%232e1a28'/%3E%3Cpath d='M46 60 Q50 65 54 60' fill='none' stroke='%23c2207f' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&family=Lexend:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #fef7ff;
+      --surface-container-low: #ffffff;
+      --surface-container: #f8eef8;
+      --surface-container-high: #f2e8f2;
+      --surface-rose: #ffe8f4;
+      --surface-mint: #e8fbf3;
+      --surface-amber: #fff5e4;
+      --surface-sky: #e8f7ff;
+      --on-surface: #2e1a28;
+      --on-surface-variant: #5e4666;
+      --outline: #907898;
+      --outline-variant: #dcc8e0;
+      --primary: #c2207f;
+      --on-primary: #ffffff;
+      --primary-container: #f598ce;
+      --on-primary-container: #2e1a28;
+      --secondary: #7c52aa;
+      --on-secondary: #ffffff;
+      --tertiary: #0088ba;
+      --error: #c53030;
+      --on-error: #ffffff;
+      --error-bg: #ffe9eb;
+      --positive: #0d7a54;
+      --on-positive: #ffffff;
+      --warning: #b85800;
+      --data-1: #c2207f;
+      --data-2: #7c52aa;
+      --data-3: #0088ba;
+      --data-4: #d96a00;
+      --font-headline: 'Lexend', 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      --font-body: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+      --rounded: 1rem;
+      --rounded-lg: 1.75rem;
+      --rounded-full: 9999px;
+      --shadow-pink: 0 4px 16px rgb(224 64 160 / 0.16);
+      --shadow-pink-deep: 0 10px 28px rgb(224 64 160 / 0.28);
+      --shadow-grape: 0 4px 16px rgb(124 82 170 / 0.16);
+      --shadow-sky: 0 4px 16px rgb(0 150 204 / 0.16);
+      --pop-scale: scale(1.02);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --bunny-fur: #fff5fa;
+      --bunny-ear: #ffd6eb;
+      --bunny-ear-inner: #ff9ed2;
+      --focus-ring-soft: 0 0 0 3px rgb(194 32 127 / 0.16);
+      --keycap-shadow: 0 2px 0 var(--outline-variant);
+      --focus: #c2207f;
+      --display-size: clamp(1.65rem, 1.35rem + 1.1vw, 2.2rem);
+      --headline-size: clamp(1.2rem, 1.05rem + 0.45vw, 1.45rem);
+      --subhead-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.15rem);
+      --body-size: clamp(0.94rem, 0.91rem + 0.12vw, 1rem);
+      --label-size: 0.74rem;
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.25rem;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    header { position: static !important; }
+    button, input, select, textarea { font-family: inherit; }
+
+    code {
+      font-family: var(--font-mono);
+      background: var(--surface-container-high);
+      padding: 0.12em 0.42em;
+      border-radius: 0.4rem;
+      font-size: 0.88em;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .app-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-lg);
+    }
+    .app-shell * { min-width: 0; }
+
+    .hero-panel {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-xl);
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      background: var(--surface-rose);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: var(--label-size);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--rounded-full);
+      margin-bottom: var(--space-sm);
+    }
+    .display {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: var(--display-size);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      margin: 0 0 var(--space-sm) 0;
+      color: var(--on-surface);
+    }
+    .display em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .hero-desc {
+      margin: 0;
+      color: var(--on-surface-variant);
+      max-width: 58ch;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: var(--space-sm);
+      flex-wrap: wrap;
+    }
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+      border-radius: 1.15rem;
+      background: var(--surface-rose);
+      padding: 4px;
+      box-shadow: var(--shadow-pink);
+      transition: transform var(--dur-short) var(--ease-bounce);
+    }
+    .brand-logo:hover {
+      transform: rotate(-6deg) scale(1.06);
+    }
+    .share-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-sky);
+      color: var(--tertiary);
+      border: none;
+      border-radius: var(--rounded-full);
+      padding: 6px 14px;
+      font-size: var(--label-size);
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform var(--dur-short) var(--ease-bounce);
+    }
+    .share-pill:hover { transform: var(--pop-scale); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+    .stat-pill {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .stat-label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--on-surface-variant);
+    }
+    .stat-value {
+      font-family: var(--font-headline);
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .stat-sub {
+      font-size: 0.8rem;
+      color: var(--on-surface-variant);
+    }
+
+    .mode-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      background: var(--surface-container-high);
+      padding: var(--space-sm);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-grape);
+    }
+    .mode-btn {
+      flex: 1 1 170px;
+      min-height: 46px;
+      border: none;
+      border-radius: var(--rounded-full);
+      padding: var(--space-sm) var(--space-md);
+      background: transparent;
+      color: var(--on-surface-variant);
+      font-weight: 700;
+      font-size: 0.93rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-short) var(--ease-out),
+                  color var(--dur-short) var(--ease-out),
+                  box-shadow var(--dur-short) var(--ease-out);
+    }
+    .mode-btn:hover {
+      transform: var(--pop-scale);
+      color: var(--on-surface);
+    }
+    .mode-btn.active {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .btn {
+      min-height: 44px;
+      border: none;
+      border-radius: var(--rounded-full);
+      padding: var(--space-sm) var(--space-lg);
+      font-weight: 700;
+      font-size: 0.93rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  box-shadow var(--dur-short) var(--ease-out),
+                  background-color var(--dur-short) var(--ease-out);
+    }
+    .btn:hover:not(:disabled) { transform: var(--pop-scale); }
+    .btn:active:not(:disabled) { transform: scale(0.97); }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+    .btn-primary:hover:not(:disabled) { box-shadow: var(--shadow-pink-deep); }
+    .btn-grape {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      box-shadow: var(--shadow-grape);
+    }
+    .btn-soft {
+      background: var(--surface-container);
+      color: var(--primary);
+    }
+    .btn-soft:hover:not(:disabled) { background: var(--surface-rose); }
+
+    .card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-lg);
+    }
+    .card-grape { box-shadow: var(--shadow-grape); }
+    .card-sky { box-shadow: var(--shadow-sky); }
+
+    .section-title {
+      font-family: var(--font-headline);
+      font-size: var(--headline-size);
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 0 0 var(--space-xs) 0;
+      color: var(--on-surface);
+    }
+    .section-sub {
+      margin: 0 0 var(--space-lg) 0;
+      color: var(--on-surface-variant);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+    .chip {
+      min-height: 44px;
+      border: 2px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      color: var(--on-surface-variant);
+      border-radius: var(--rounded-full);
+      padding: var(--space-xs) var(--space-md);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  background-color var(--dur-short) var(--ease-out),
+                  border-color var(--dur-short) var(--ease-out),
+                  color var(--dur-short) var(--ease-out);
+    }
+    .chip:hover {
+      transform: var(--pop-scale);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .chip.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--on-primary);
+      box-shadow: var(--shadow-pink);
+    }
+
+    .theory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+    .theory-card {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .theory-card:nth-child(3n+2) { box-shadow: var(--shadow-sky); }
+    .theory-card:nth-child(3n+3) { box-shadow: var(--shadow-grape); }
+    .theory-card h3 {
+      font-family: var(--font-headline);
+      font-size: var(--subhead-size);
+      line-height: 1.35;
+      margin: 0;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .theory-card p { margin: 0; color: var(--on-surface); }
+    .theory-card ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+    .theory-badge {
+      display: inline-block;
+      background: var(--surface-rose);
+      color: var(--primary);
+      font-size: var(--label-size);
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--rounded-full);
+      align-self: flex-start;
+    }
+    .tldr-box {
+      background: var(--surface-amber);
+      border-left: 4px solid var(--warning);
+      border-radius: 0.75rem;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.9rem;
+      color: var(--on-surface);
+    }
+    .tldr-box strong { color: var(--warning); }
+    .formula-box {
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      padding: var(--space-sm) var(--space-md);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--on-surface);
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--rounded);
+    }
+    table.cute-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    table.cute-table th {
+      background: var(--surface-container-high);
+      color: var(--on-surface);
+      text-align: left;
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--label-size);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    table.cute-table td {
+      padding: var(--space-sm) var(--space-md);
+      font-variant-numeric: tabular-nums;
+    }
+    table.cute-table tr:nth-child(even) td {
+      background: var(--surface-container);
+    }
+
+    .casio-workbench {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(330px, 100%), 1fr));
+      gap: var(--space-lg);
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      margin-bottom: var(--space-sm);
+    }
+    .input-group label {
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--on-surface-variant);
+    }
+    .input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: end;
+    }
+    .input-row .input-group { flex: 1 1 90px; margin-bottom: 0; }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      min-height: 44px;
+      background: var(--surface-container);
+      border: 2px solid var(--outline-variant);
+      border-radius: var(--rounded-full);
+      padding: var(--space-xs) var(--space-md);
+      color: var(--on-surface);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+    input[type="text"]:focus, input[type="number"]:focus, select:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: var(--focus-ring-soft);
+    }
+    .casio-output {
+      background: var(--surface-rose);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      margin-top: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+    }
+    .casio-output strong {
+      font-family: var(--font-mono);
+      color: var(--primary);
+      font-size: 1.02rem;
+    }
+    .key-seq {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin: var(--space-xs) 0;
+    }
+    .keycap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 10px;
+      border-radius: var(--rounded-full);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: var(--keycap-shadow);
+    }
+    .keycap.shift { background: var(--surface-amber); color: var(--warning); }
+    .keycap.alpha { background: var(--surface-rose); color: var(--primary); }
+
+    .quiz-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+    .progress-track {
+      width: 100%;
+      height: 12px;
+      background: var(--surface-container-high);
+      border-radius: var(--rounded-full);
+      overflow: hidden;
+      margin-bottom: var(--space-lg);
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: var(--rounded-full);
+      transition: width var(--dur-short) var(--ease-out);
+    }
+    .quiz-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .question-box {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink);
+      padding: var(--space-xl);
+      display: grid;
+      gap: var(--space-md);
+    }
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .q-tag {
+      background: var(--surface-rose);
+      color: var(--primary);
+      font-size: var(--label-size);
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--rounded-full);
+    }
+    .q-tag.gen-tag {
+      background: var(--surface-sky);
+      color: var(--tertiary);
+    }
+    .q-text, .opt-btn, .explain-box { overflow-wrap: anywhere; }
+    .q-text {
+      font-family: var(--font-headline);
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.55;
+      color: var(--on-surface);
+    }
+    .options-list {
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .opt-btn {
+      width: 100%;
+      min-height: 50px;
+      text-align: left;
+      background: var(--surface-container);
+      border: 2px solid transparent;
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      color: var(--on-surface);
+      font-weight: 500;
+      font-size: 0.96rem;
+      line-height: 1.5;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      transition: transform var(--dur-micro) var(--ease-bounce),
+                  background-color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out);
+    }
+    .opt-btn:where(button):hover:not(:disabled) {
+      transform: translateX(4px);
+      background: var(--surface-rose);
+      border-color: var(--primary-container);
+    }
+    .opt-btn.selected {
+      background: var(--surface-rose);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    .opt-btn.correct {
+      background: var(--surface-mint);
+      border-color: var(--positive);
+      color: var(--positive);
+      font-weight: 600;
+    }
+    .opt-btn.wrong {
+      background: var(--error-bg);
+      border-color: var(--error);
+      color: var(--error);
+      font-weight: 600;
+    }
+    .opt-letter {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: var(--rounded-full);
+      background: var(--surface-container-low);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .opt-btn.correct .opt-letter { background: var(--positive); color: var(--on-positive); }
+    .opt-btn.wrong .opt-letter { background: var(--error); color: var(--on-error); }
+
+    .explain-box {
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+      background: var(--surface-sky);
+      color: var(--on-surface);
+      display: grid;
+      gap: var(--space-xs);
+      line-height: 1.6;
+    }
+    .explain-box.is-correct { background: var(--surface-mint); }
+    .explain-box.is-wrong { background: var(--error-bg); }
+
+    .q-nav-panel {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-grape);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-md);
+    }
+    .q-dots {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .q-dot {
+      min-height: 36px;
+      border: none;
+      border-radius: 0.75rem;
+      background: var(--surface-container);
+      color: var(--on-surface-variant);
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-variant-numeric: tabular-nums;
+      transition: transform var(--dur-micro) var(--ease-bounce);
+    }
+    .q-dot:hover { transform: scale(1.08); }
+    .q-dot.current { outline: 2px solid var(--primary); color: var(--primary); }
+    .q-dot.answered { background: var(--primary-container); color: var(--on-primary-container); }
+    .q-dot.ok { background: var(--positive); color: var(--on-positive); }
+    .q-dot.bad { background: var(--error); color: var(--on-error); }
+
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      background: var(--surface-amber);
+      color: var(--warning);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: var(--rounded-full);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .timer-badge.urgent {
+      background: var(--error-bg);
+      color: var(--error);
+    }
+    .result-banner {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink-deep);
+      padding: var(--space-xl);
+      display: grid;
+      gap: var(--space-md);
+    }
+    .score-big {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+    .review-list {
+      display: grid;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+    }
+    .review-item {
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      box-shadow: var(--shadow-grape);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .mascot-toast {
+      position: fixed;
+      right: var(--space-lg);
+      bottom: var(--space-lg);
+      z-index: 60;
+      background: var(--surface-container-low);
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-pink-deep);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      max-width: 340px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(28px) scale(0.88);
+      transition: transform var(--dur-short) var(--ease-bounce),
+                  opacity var(--dur-short) var(--ease-out);
+    }
+    .mascot-toast.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .mascot-avatar {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+    }
+    .mascot-speech {
+      display: grid;
+      gap: 2px;
+    }
+    .mascot-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.02rem;
+    }
+    .mascot-sub {
+      font-size: 0.85rem;
+      color: var(--on-surface-variant);
+    }
+
+    .fx-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 70;
+      overflow: hidden;
+    }
+    .fx-particle {
+      position: fixed;
+      bottom: 80px;
+      font-size: 1.4rem;
+      opacity: 1;
+      will-change: transform, opacity;
+      animation: floatUp 1.35s var(--ease-out) forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translate(0, 0) scale(0.6) rotate(0deg); opacity: 0; }
+      18% { opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(1.25) rotate(var(--rot)); opacity: 0; }
+    }
+
+    .theory-grid { align-items: start; }
+    .theory-card { min-width: 0; }
+    .lesson-visual {
+      margin: 0;
+      padding: clamp(12px, 2.4vw, 17px);
+      min-width: 0;
+      border: 1px solid var(--primary-container);
+      border-radius: var(--rounded);
+      background: linear-gradient(145deg, var(--surface-rose), var(--surface-container-low) 85%);
+    }
+    .lesson-visual figcaption {
+      margin-bottom: .75rem;
+      font-family: var(--font-headline);
+      font-size: .96rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .theory-card .lesson-steps {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: .45rem;
+      list-style: none;
+    }
+    .lesson-steps li {
+      position: relative;
+      display: grid;
+      gap: .12rem;
+      min-width: 0;
+      padding: .48rem .63rem;
+      border-radius: .6rem;
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      line-height: 1.42;
+      overflow-wrap: anywhere;
+    }
+    .lesson-steps li > strong { font-size: .79rem; color: var(--primary); }
+    .lesson-steps li > span { font-size: .84rem; }
+    .lesson-flow .lesson-steps { counter-reset: lesson-step; }
+    .lesson-flow .lesson-steps li { padding-left: 2.2rem; counter-increment: lesson-step; }
+    .lesson-flow .lesson-steps li::before {
+      content: counter(lesson-step);
+      position: absolute;
+      top: .53rem;
+      left: .58rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--on-primary-container);
+      background: var(--primary-container);
+      font-size: .69rem;
+      font-weight: 700;
+    }
+    .lesson-flow .lesson-steps li + li { margin-top: .43rem; }
+    .lesson-flow .lesson-steps li + li::after {
+      content: "↓";
+      position: absolute;
+      top: -.94rem;
+      left: .96rem;
+      font-size: .79rem;
+      color: var(--primary);
+    }
+    .lesson-compare .lesson-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .lesson-compare .lesson-steps li:nth-child(2n) { background: var(--surface-sky); }
+    .lesson-compare .lesson-steps li:nth-child(3n) { background: var(--surface-mint); }
+    .lesson-rails .lesson-steps li {
+      grid-template-columns: 5rem minmax(0, 1fr);
+      align-items: baseline;
+      background: var(--surface-container-low);
+    }
+    .lesson-rails .lesson-steps li > span {
+      white-space: nowrap;
+      font-family: var(--font-mono);
+      font-size: clamp(.69rem, 2.3vw, .86rem);
+      letter-spacing: -.04em;
+      color: var(--tertiary);
+    }
+    .theory-card .lesson-note {
+      margin-top: .7rem;
+      padding: .5rem .63rem;
+      background: var(--surface-mint);
+      border-radius: .55rem;
+      font-size: .83rem;
+      line-height: 1.46;
+    }
+    .lesson-details { min-width: 0; overflow-wrap: anywhere; }
+    .lesson-details > summary {
+      padding: .45rem 0;
+      color: var(--primary);
+      cursor: pointer;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+    .lesson-details[open] > * + * { margin-top: .6rem; }
+    .lesson-details .formula-box { overflow-wrap: anywhere; }
+    @media (max-width: 360px) {
+      .lesson-compare .lesson-steps { grid-template-columns: 1fr; }
+      .lesson-rails .lesson-steps li { grid-template-columns: 1fr; }
+    }
+    .rail-track {
+      width: 100%;
+      display: block;
+      background: var(--surface-container-low);
+      border-radius: .6rem;
+      margin-bottom: .5rem;
+    }
+    .rail-track path { stroke: var(--primary-container); stroke-dasharray: 4 4; }
+    .rail-track polyline { fill: none; stroke: var(--primary); stroke-width: 2.5; }
+    .rail-track circle { fill: var(--surface-mint); stroke: var(--primary); stroke-width: 1.35; }
+    .rail-track text {
+      text-anchor: middle;
+      fill: var(--on-surface);
+      font: 700 13px var(--font-mono);
+    }
+    .playfair-grid {
+      width: min(100%, 218px);
+      border-spacing: 4px;
+      table-layout: fixed;
+      text-align: center;
+      font: 700 .86rem var(--font-mono);
+    }
+    .playfair-grid td {
+      padding: .25rem .1rem;
+      background: var(--surface-sky);
+      border-radius: .3rem;
+      color: var(--on-surface);
+    }
+    .playfair-grid td:nth-child(3) { background: var(--surface-rose); }
+    .mascot-toast {
+      right: max(10px, env(safe-area-inset-right));
+      bottom: max(14px, env(safe-area-inset-bottom));
+      width: min(410px, calc(100vw - 20px));
+      max-width: none;
+      min-height: 86px;
+      padding: .55rem .84rem;
+      border: 1px solid var(--primary-container);
+      background: var(--surface-container-low);
+    }
+    .mascot-avatar { width: 78px; height: 78px; overflow: visible; }
+    .mascot-toast.show .mascot-avatar { animation: bunny-hop .51s ease-out both; }
+    .mascot-toast.show.is-sad .mascot-avatar { animation: bunny-droop .35s ease-out both; }
+    .mascot-toast.is-sad { border-color: var(--error); }
+    .mascot-toast.is-sad .mascot-title { color: var(--error); }
+    .mascot-speech { min-width: 0; overflow-wrap: anywhere; }
+    .bunny-ear { transform-box: fill-box; transform-origin: 50% 90%; }
+    .mascot-toast.is-sad .bunny-ear-left { transform: rotate(-24deg); }
+    .mascot-toast.is-sad .bunny-ear-right { transform: rotate(24deg); }
+    #mascot-face { fill: var(--on-surface); }
+    #mascot-face .bunny-glint { fill: #fff; }
+    #mascot-face .bunny-line {
+      fill: none;
+      stroke: var(--on-surface);
+      stroke-width: 2.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    #mascot-face .bunny-mouth { fill: #ed8ab2; stroke: var(--primary); stroke-width: 1.6; }
+    #mascot-face .bunny-star { fill: #f3ad3a; stroke: #975802; stroke-width: 1.3; }
+    #mascot-face .bunny-blush { fill: #ee8bb1; opacity: .67; }
+    #mascot-face .bunny-heart { fill: #df3e85; }
+    #mascot-face .bunny-tear { fill: #78bff0; stroke: #2874a1; stroke-width: 1.2; }
+    @keyframes bunny-hop {
+      0% { transform: translateY(26px) scale(.84, 1.07); }
+      38% { transform: translateY(-18px) rotate(-7deg) scale(1.03); }
+      68% { transform: translateY(1px) scale(1.12, .91); }
+      100% { transform: translateY(0) scale(1); }
+    }
+    @keyframes bunny-droop {
+      from { transform: translateY(-5px) rotate(0); }
+      to { transform: translateY(2px) rotate(-8deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mascot-toast.show .mascot-avatar,
+      .mascot-toast.show.is-sad .mascot-avatar { animation: none; }
+    }
+    .history-panel { margin-block: var(--space-lg); }
+    .history-panel > summary {
+      cursor: pointer;
+      color: var(--primary);
+      font-family: var(--font-headline);
+      font-weight: 700;
+    }
+    .history-stats { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-block: var(--space-sm); }
+    .history-list, .history-review-list { display: grid; gap: var(--space-sm); }
+    .history-entry {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: .6rem .8rem;
+      border-radius: var(--rounded);
+      background: var(--surface-container);
+    }
+    .history-entry .btn, .history-controls .btn { min-height: 36px; padding: .35rem .8rem; }
+    .history-meta { color: var(--on-surface-variant); font-size: .85rem; }
+    .history-review { margin-block: var(--space-md); }
+    .history-controls { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
+    .history-controls [aria-pressed="true"] { outline: 2px solid var(--primary); outline-offset: -2px; }
+    .history-review-list .review-item { display: block; overflow-wrap: anywhere; }
+    .history-question-title { margin: 0; font-size: inherit; font-weight: 700; }
+    .history-review-list .review-item > div { margin-top: .4rem; }
+    .history-options { list-style: none; padding: 0; margin: .65rem 0; }
+    .history-option { cursor: default; }
+    .history-option-body { min-width: 0; }
+    .history-option-label { display: block; font-size: .8rem; font-weight: 700; }
+    #storage-notice { margin-block: var(--space-sm); }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 860px) {
+      .hero-panel { grid-template-columns: 1fr; }
+      .quiz-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .app-shell { padding: var(--space-sm); }
+      .hero-panel { padding: var(--space-lg); }
+      .question-box { padding: var(--space-lg); }
+      .mascot-toast { right: var(--space-sm); left: var(--space-sm); bottom: var(--space-sm); max-width: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Hero Panel -->
+    <header class="hero-panel">
+      <div>
+        <div class="brand-row">
+          <svg class="brand-logo" viewBox="0 0 100 100" aria-label="Logo Thỏ Bông ATBMTT">
+            <defs>
+              <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffe8f4"/>
+                <stop offset="100%" stop-color="#f5c6e4"/>
+              </linearGradient>
+            </defs>
+            <path d="M50 5 L88 21 V49 C88 73 71 89 50 95 C29 89 12 73 12 49 V21 Z" fill="url(#shieldGrad)" stroke="#c2207f" stroke-width="5" stroke-linejoin="round"/>
+            <ellipse cx="38" cy="27" rx="7" ry="15" fill="#ffd6eb" stroke="#c2207f" stroke-width="3.5"/>
+            <ellipse cx="38" cy="28" rx="3.2" ry="9" fill="#ff9ed2"/>
+            <ellipse cx="62" cy="27" rx="7" ry="15" fill="#ffd6eb" stroke="#c2207f" stroke-width="3.5"/>
+            <ellipse cx="62" cy="28" rx="3.2" ry="9" fill="#ff9ed2"/>
+            <circle cx="50" cy="55" r="22" fill="#fff5fa" stroke="#c2207f" stroke-width="3.5"/>
+            <circle cx="42" cy="52" r="3.2" fill="#2e1a28"/>
+            <circle cx="58" cy="52" r="3.2" fill="#2e1a28"/>
+            <circle cx="43.2" cy="50.8" r="1.1" fill="#ffffff"/>
+            <circle cx="59.2" cy="50.8" r="1.1" fill="#ffffff"/>
+            <ellipse cx="35" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
+            <ellipse cx="65" cy="58" rx="4.2" ry="2.4" fill="#f598ce" opacity="0.75"/>
+            <path d="M45 59 Q50 64 55 59" fill="none" stroke="#c2207f" stroke-width="2.8" stroke-linecap="round"/>
+            <rect x="42" y="74" width="16" height="12" rx="3" fill="#c2207f"/>
+            <path d="M46 74 V70 A4 4 0 0 1 54 70 V74" fill="none" stroke="#c2207f" stroke-width="2.5"/>
+          </svg>
+          <span class="kicker" style="margin-bottom:0;">
+            <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
+            ATBMTT · Luyện tập và thi thử
+          </span>
+          <button type="button" class="share-pill" id="btn-copy-link" onclick="copyWebLink(this)">
+            <i data-lucide="link" style="width:13px;height:13px;"></i>
+            Sao chép link web
+          </button>
+        </div>
+        <h1 class="display">Em yêu, học <em>ATBMTT</em> cùng anh nào~~</h1>
+        <p class="hero-desc">
+          Lý thuyết 4 chương dịch sang ngôn ngữ đời thường cực dễ nhớ, mẹo bấm Casio 570/580/880, <strong>đề mới theo 4 chương</strong> với tình huống lý thuyết, bài tính và lời giải.
+        </p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-pill">
+          <span class="stat-label">Đã luyện tập</span>
+          <span class="stat-value" id="stat-answered">0</span>
+          <span class="stat-sub">Lượt trả lời khi luyện tập</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Tỉ lệ chính xác</span>
+          <span class="stat-value" id="stat-accuracy">0%</span>
+          <span class="stat-sub" id="stat-streak">Chuỗi đúng: 0</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Điểm thi thử cao nhất</span>
+          <span class="stat-value" id="stat-best-mock">--</span>
+          <span class="stat-sub">Thang 40 câu</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Trạng thái học</span>
+          <span class="stat-value" style="font-size:1.1rem;" id="stat-mood">Sẵn sàng học!</span>
+          <span class="stat-sub">
+            <button type="button" class="btn-soft" style="border:none;border-radius:9999px;padding:3px 10px;font-size:0.78rem;font-weight:700;cursor:pointer;" onclick="handleResetProgress(this)">Đặt lại tiến độ</button>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Primary Mode Switcher -->
+    <nav class="mode-bar" aria-label="Chế độ học tập">
+      <button type="button" class="mode-btn active" id="tab-theory" onclick="switchMode('theory')">
+        <i data-lucide="book-open" style="width:18px;height:18px;"></i>
+        Lý thuyết 4 Chương
+      </button>
+      <button type="button" class="mode-btn" id="tab-casio" onclick="switchMode('casio')">
+        <i data-lucide="calculator" style="width:18px;height:18px;"></i>
+        Mẹo Casio 570/580/880
+      </button>
+      <button type="button" class="mode-btn" id="tab-practice" onclick="switchMode('practice')">
+        <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+        Luyện tập &amp; Sinh đề mới
+      </button>
+      <button type="button" class="mode-btn" id="tab-mock" onclick="switchMode('mock')">
+        <i data-lucide="timer" style="width:18px;height:18px;"></i>
+        Thi thử 40 câu / 60p
+      </button>
+    </nav>
+
+    <!-- VIEW 1: THEORY -->
+    <main id="view-theory">
+      <div class="pill-row" role="tablist" aria-label="Chọn chương lý thuyết">
+        <button type="button" class="chip active" id="th-chip-1" onclick="selectTheoryChapter(1)">Chương 1: Tổng quan ATBMTT</button>
+        <button type="button" class="chip" id="th-chip-2" onclick="selectTheoryChapter(2)">Chương 2: Mã hóa đối xứng</button>
+        <button type="button" class="chip" id="th-chip-3" onclick="selectTheoryChapter(3)">Chương 3: Mã hóa công khai</button>
+        <button type="button" class="chip" id="th-chip-4" onclick="selectTheoryChapter(4)">Chương 4: Hàm băm &amp; Chữ ký số</button>
+      </div>
+      <div id="theory-content"></div>
+    </main>
+
+    <!-- VIEW 2: CASIO TRICKS & LAB -->
+    <section id="view-casio" class="hidden">
+      <h2 class="section-title">Cẩm nang bấm máy tính Casio 570 / 580 / 880</h2>
+      <p class="section-sub">Đi thi không cần nhẩm tay toát mồ hôi! Thuộc 3 tổ hợp phím này là cân trọn bài tập tính toán Chương 2, 3, 4.</p>
+
+      <div class="casio-workbench">
+        <article class="card">
+          <span class="theory-badge">Mẹo 1 · Chia lấy dư &amp; Lũy thừa lớn</span>
+          <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--primary);">Tính a mod n &amp; a<sup>k</sup> mod n</h3>
+          <div class="tldr-box">
+            <strong>Hiểu nôm na:</strong> <code>17 mod 5 = 2</code> nghĩa là lấy 17 chia 5 được 3 <strong>dư 2</strong>. Máy Casio có sẵn phím chia lấy dư <code>÷R</code> để bạn không phải trừ nhẩm!
+          </div>
+          <p style="font-size:0.9rem;color:var(--on-surface-variant);">
+            Cách bấm phép chia lấy dư trên <strong>fx-580VN X / 880BTG</strong> (trên 570VN PLUS dùng <code>ALPHA</code> + nút chia có dư):
+          </p>
+          <div class="key-seq">
+            <span class="keycap">Số bị chia</span>
+            <span class="keycap alpha">ALPHA</span>
+            <span class="keycap">÷R</span>
+            <span class="keycap">Số chia</span>
+            <span class="keycap">=</span>
+          </div>
+          <p style="font-size:0.88rem;color:var(--on-surface-variant);">
+            <strong>Mẹo mũ to (VD: 5<sup>117</sup> mod 19):</strong> Đừng bấm thẳng <code>5^117</code> vì máy sẽ báo lỗi <em>Math ERROR</em>. Hãy rút gọn mũ bằng định lý Fermat (<code>5<sup>18</sup> ≡ 1 mod 19</code> nên <code>117 = 18×6 + 9</code>, chỉ còn tính <code>5<sup>9</sup> mod 19</code>), sau đó bình phương từng bước và bấm <code>÷R 19</code> liên tục!
+          </p>
+          <div class="input-row" style="margin-top:var(--space-md);">
+            <div class="input-group">
+              <label for="casio-base">Cơ số (a)</label>
+              <input type="number" id="casio-base" value="5" oninput="calcCasioMod()">
+            </div>
+            <div class="input-group">
+              <label for="casio-exp">Số mũ (k)</label>
+              <input type="number" id="casio-exp" value="117" min="0" oninput="calcCasioMod()">
+            </div>
+            <div class="input-group">
+              <label for="casio-mod">Modulo (n)</label>
+              <input type="number" id="casio-mod" value="19" min="2" oninput="calcCasioMod()">
+            </div>
+          </div>
+          <div class="casio-output" id="casio-mod-out"></div>
+        </article>
+
+        <article class="card card-grape">
+          <span class="theory-badge">Mẹo 2 · Tìm khóa giải mã RSA bằng TABLE</span>
+          <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--secondary);">Tìm nghịch đảo a<sup>-1</sup> mod n</h3>
+          <div class="tldr-box">
+            <strong>Hiểu nôm na:</strong> Tìm <code>a<sup>-1</sup> mod n</code> nghĩa là tìm số <code>d</code> sao cho <code>(a × d) chia n dư 1</code>.
+          </div>
+          <p style="font-size:0.9rem;color:var(--on-surface-variant);">
+            Thay vì kẻ bảng Euclid mở rộng dễ nhầm dấu, hãy dùng chế độ lập bảng <strong>TABLE</strong> trên Casio để dò nghiệm:
+          </p>
+          <div class="key-seq">
+            <span class="keycap">MENU 8 (570: MODE 7)</span>
+            <span class="keycap">f(X) = (nX + 1) ÷ a</span>
+            <span class="keycap">Start 0, End 25, Step 1</span>
+          </div>
+          <p style="font-size:0.88rem;color:var(--on-surface-variant);">
+            Lướt cột <code>f(X)</code>: thấy số nào <strong>nguyên đẹp</strong> (không có dấu phẩy thập phân) thì đó chính là đáp án! (Nếu kết quả lớn hơn <code>n</code> thì lấy nó <code>mod n</code>). Nếu <code>GCD(a, n) ≠ 1</code> thì vô nghiệm.
+          </p>
+          <div class="input-row" style="margin-top:var(--space-md);">
+            <div class="input-group">
+              <label for="inv-a">Số cần nghịch đảo (a)</label>
+              <input type="number" id="inv-a" value="37" oninput="calcCasioInv()">
+            </div>
+            <div class="input-group">
+              <label for="inv-n">Modulo (n)</label>
+              <input type="number" id="inv-n" value="120" min="2" oninput="calcCasioInv()">
+            </div>
+          </div>
+          <div class="casio-output" id="casio-inv-out"></div>
+        </article>
+
+        <article class="card card-sky">
+          <span class="theory-badge">Mẹo 3 · Bấm bit Nhị phân &amp; Hex</span>
+          <h3 style="margin:8px 0;font-family:var(--font-headline);color:var(--tertiary);">Chế độ BASE-N (TinyDES, MD5 thu nhỏ)</h3>
+          <div class="tldr-box">
+            <strong>Nhớ nhanh phép XOR (⊕):</strong> Hai bit <strong>giống nhau</strong> ra <code>0</code>; hai bit <strong>khác nhau</strong> ra <code>1</code>.
+          </div>
+          <p style="font-size:0.9rem;color:var(--on-surface-variant);">
+            Chuyển máy tính sang chế độ hệ cơ số để đổi nhanh giữa <strong>HEX (hệ 16)</strong> và <strong>BIN (nhị phân)</strong>, kèm phép <code>xor, and, or</code>:
+          </p>
+          <div class="key-seq">
+            <span class="keycap">fx-570: MODE 4</span>
+            <span class="keycap">fx-580: MENU 3</span>
+            <span class="keycap">880BTG: HOME → Base-N</span>
+          </div>
+          <p style="font-size:0.88rem;color:var(--on-surface-variant);">
+            Nhấn <span class="keycap alpha">OPTN</span> (hoặc <span class="keycap shift">SHIFT</span>+<span class="keycap">3</span> trên 570) để gọi <strong>xor</strong>, <strong>and</strong>, <strong>or</strong>. Khi gặp phép quay trái <code>&lt;&lt;&lt; s</code> trên 8 bit (MD5/SHA thu nhỏ), viết đủ 8 bit rồi cắt <code>s</code> bit đầu chuyển xuống cuối!
+          </p>
+          <div class="input-row" style="margin-top:var(--space-md);">
+            <div class="input-group">
+              <label for="base-x">Giá trị X (Hex hoặc 0b...)</label>
+              <input type="text" id="base-x" value="0x6A" oninput="calcCasioBase()">
+            </div>
+            <div class="input-group">
+              <label for="base-y">Giá trị Y (Hex hoặc 0b...)</label>
+              <input type="text" id="base-y" value="0xC5" oninput="calcCasioBase()">
+            </div>
+          </div>
+          <div class="casio-output" id="casio-base-out"></div>
+        </article>
+      </div>
+    </section>
+
+    <div id="storage-notice" class="explain-box is-wrong hidden" role="status">Trình duyệt chưa lưu được tiến độ mới. Lịch sử cũ đã lưu vẫn còn. Hãy kiểm tra quyền lưu dữ liệu hoặc dung lượng của trang trước khi đóng.</div>
+    <!-- VIEW 3: CHAPTER PRACTICE -->
+    <section id="view-practice" class="hidden">
+      <div class="pill-row" role="tablist" aria-label="Chọn chương luyện tập">
+        <button type="button" class="chip active" id="pr-chip-1" onclick="selectPracticeChapter(1)">Chương 1 (25 câu)</button>
+        <button type="button" class="chip" id="pr-chip-2" onclick="selectPracticeChapter(2)">Chương 2 (25 câu)</button>
+        <button type="button" class="chip" id="pr-chip-3" onclick="selectPracticeChapter(3)">Chương 3 (25 câu)</button>
+        <button type="button" class="chip" id="pr-chip-4" onclick="selectPracticeChapter(4)">Chương 4 (25 câu)</button>
+      </div>
+
+      <div class="quiz-topbar">
+        <div>
+          <h2 class="section-title" id="practice-title" style="margin-bottom:2px;">Luyện tập Chương 1</h2>
+          <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="practice-sub">Chọn đáp án để xem giải thích dễ hiểu ngay lập tức!</span>
+        </div>
+        <div style="display:flex;gap:var(--space-sm);flex-wrap:wrap;">
+          <button type="button" class="btn btn-grape" onclick="generateNewBatchForChapter()">
+            <i data-lucide="sparkles" style="width:16px;height:16px;"></i>
+            Sinh 25 câu mới
+          </button>
+          <button type="button" class="btn btn-soft" onclick="resetCurrentChapter(this)">Làm lại bộ này</button>
+          <button type="button" class="btn btn-soft" onclick="openPracticeHistory()">Lịch sử</button>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="practice-progress" style="width:0%"></div>
+      </div>
+
+      <div class="quiz-layout">
+        <div class="question-box" id="practice-card"></div>
+        <aside class="q-nav-panel">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:0.9rem;">Bảng câu hỏi</strong>
+            <span id="practice-score-badge" class="q-tag">0 / 25 đúng</span>
+          </div>
+          <div class="q-dots" id="practice-dots"></div>
+        </aside>
+      </div>
+      <details id="practice-history-panel" class="card history-panel">
+        <summary id="practice-history-label">Lịch sử luyện tập</summary>
+        <div id="practice-history-box"></div>
+        <div id="practice-review" class="history-review"></div>
+      </details>
+    </section>
+
+    <!-- VIEW 4: MOCK EXAM -->
+    <section id="view-mock" class="hidden">
+      <div id="mock-lobby" class="card" style="text-align:left;">
+        <span class="theory-badge">Thi thử tổng hợp</span>
+        <h2 class="section-title" style="margin-top:var(--space-sm);">Đề thi thử 40 câu — 60 phút</h2>
+        <p class="section-sub">
+          Mỗi đề có <strong>10 câu mỗi chương</strong>, gồm 24 câu lý thuyết và 16 bài tính. Hệ thống ưu tiên chủ đề ít xuất hiện ở các lượt trước. Có thể xem đáp án và lời giải sau khi nộp.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-md);align-items:center;">
+          <button type="button" class="btn btn-primary" onclick="startMockExam()">
+            <i data-lucide="play" style="width:18px;height:18px;"></i>
+            Bắt đầu đề mới (60:00)
+          </button>
+        </div>
+        <section class="history-panel"><h3 class="section-title">Lịch sử thi thử</h3><div id="mock-history-box"></div></section>
+      </div>
+
+      <div id="mock-active" class="hidden">
+        <div class="quiz-topbar">
+          <div>
+            <h2 class="section-title" style="margin-bottom:2px;">Bài thi thử ATBMTT (40 câu)</h2>
+            <span style="color:var(--on-surface-variant);font-size:0.9rem;" id="mock-answered-count">Đã chọn: 0 / 40</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-sm);flex-wrap:wrap;">
+            <span class="timer-badge" id="mock-timer">60:00</span>
+            <button type="button" class="btn btn-primary" onclick="submitMockExam(this)">Nộp bài ngay</button>
+          </div>
+        </div>
+        <div class="quiz-layout">
+          <div class="question-box" id="mock-card"></div>
+          <aside class="q-nav-panel">
+            <strong style="font-size:0.9rem;">Phiếu trả lời (40 câu)</strong>
+            <div class="q-dots" id="mock-dots"></div>
+          </aside>
+        </div>
+      </div>
+
+      <div id="mock-result" class="history-review hidden"></div>
+    </section>
+  </div>
+
+  <!-- Cute Mascot Celebration Toast -->
+  <div class="mascot-toast" id="mascot-toast" role="status" aria-live="polite" aria-atomic="true">
+    <svg class="mascot-avatar" id="mascot-svg" viewBox="0 0 100 100" aria-hidden="true">
+      <g class="bunny-ear bunny-ear-left">
+        <ellipse cx="34" cy="25" rx="10" ry="22" fill="var(--bunny-ear)" stroke="var(--primary)" stroke-width="2.5"/>
+        <ellipse cx="34" cy="25" rx="5" ry="15" fill="var(--bunny-ear-inner)"/>
+      </g>
+      <g class="bunny-ear bunny-ear-right">
+        <ellipse cx="66" cy="25" rx="10" ry="22" fill="var(--bunny-ear)" stroke="var(--primary)" stroke-width="2.5"/>
+        <ellipse cx="66" cy="25" rx="5" ry="15" fill="var(--bunny-ear-inner)"/>
+      </g>
+      <ellipse cx="50" cy="82" rx="20" ry="15" fill="var(--bunny-ear)" stroke="var(--primary)" stroke-width="2.5"/>
+      <ellipse cx="25" cy="82" rx="10" ry="7" transform="rotate(-25 25 82)" fill="var(--bunny-fur)" stroke="var(--primary)" stroke-width="2"/>
+      <ellipse cx="75" cy="82" rx="10" ry="7" transform="rotate(25 75 82)" fill="var(--bunny-fur)" stroke="var(--primary)" stroke-width="2"/>
+      <circle cx="50" cy="58" r="30" fill="var(--bunny-fur)" stroke="var(--primary)" stroke-width="2.5"/>
+      <path d="M24 49Q27 40 34 36M67 36Q74 41 76 49" fill="none" stroke="var(--primary)" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1 3" opacity=".48"/>
+      <g id="mascot-face"></g>
+      <path d="M47 60Q50 58 53 60L50 63Z" fill="var(--primary)"/>
+      <path d="M50 87l-8-4v8zM50 87l8-4v8z" fill="var(--bunny-ear-inner)" stroke="var(--primary)" stroke-width="1.15"/>
+      <circle cx="50" cy="87" r="2" fill="var(--primary)"/>
+    </svg>
+    <div class="mascot-speech">
+      <div class="mascot-title" id="mascot-title"></div>
+      <div class="mascot-sub" id="mascot-sub"></div>
+    </div>
+  </div>
+
+  <!-- Particle Effects Layer -->
+  <div class="fx-layer" id="fx-layer" aria-hidden="true"></div>
+
+  <script>
+    /* ============================================================
+       1. THEORY DATA (4 CHAPTERS - EASY TO UNDERSTAND + EXAM TERMS)
+       ============================================================ */
+    const THEORY_HTML = {
+      1: `
+        <div class="theory-grid">
+          <article class="theory-card">
+            <span class="theory-badge">1.1 Các kiểu phá đám hệ thống</span>
+            <h3>3 Mối đe dọa &amp; Cách phân loại hiểm họa</h3><figure class="lesson-visual lesson-compare"><figcaption>Một tệp, ba kiểu sự cố</figcaption><ul class="lesson-steps"><li><strong>Tệp bị đọc lén</strong><span>Can thiệp · nội dung vẫn nguyên.</span></li><li><strong>Tệp bị sửa số liệu</strong><span>Sửa đổi · nội dung đã thay đổi.</span></li><li><strong>Tệp bị xóa</strong><span>Phá hoại · dữ liệu không còn dùng được.</span></li></ul><p class="lesson-note">Hỏi tiếp hai câu riêng: Có cố ý không? Có thay đổi dữ liệu hoặc dịch vụ không?</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Tưởng tượng đơn giản:</strong> Bạn gửi thư tay cho bạn thân. Kẻ xấu có 3 trò: <strong>xé thư</strong> (Phá hoại), <strong>sửa chữ</strong> (Sửa đổi), hoặc <strong>mở ra đọc lén</strong> rồi dán lại (Can thiệp).
+            </div>
+            <ul>
+              <li><strong>Phá hoại (Destruction):</strong> Làm sập web, hỏng máy chủ, đứt mạng (VD: lao công đá nhầm dây nguồn, mã độc làm nghẽn mạng).</li>
+              <li><strong>Sửa đổi (Modification):</strong> Đổi nội dung trái phép (VD: hacker sửa 1 triệu thành 10 triệu trên lệnh chuyển tiền).</li>
+              <li><strong>Can thiệp (Interception):</strong> Nghe trộm, xem lén dữ liệu không được phép (VD: bắt gói tin Wi-Fi, kế toán xem trộm bảng lương sếp).</li>
+              <li><strong>Mẹo phân biệt 2 cặp tính chất:</strong>
+                <br>• <em>Vô tình vs Cố ý:</em> Lỡ tay (quên thoát quyền admin) ≠ Cố tình tấn công.
+                <br>• <em>Thụ động vs Chủ động:</em> Chưa đụng chạm/sửa hệ thống (chỉ nghe lén, dòm ngó) là <strong>Thụ động</strong>; đã làm thay đổi dữ liệu hoặc làm sập dịch vụ là <strong>Chủ động</strong>.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">1.2 Bốn tiêu chuẩn vàng của bảo mật</span>
+            <h3>4 Mục tiêu ATBMTT &amp; Công cụ đi kèm</h3><figure class="lesson-visual lesson-compare"><figcaption>Nhìn dấu hiệu để gọi đúng tên</figcaption><ul class="lesson-steps"><li><strong>Đọc nhầm người</strong><span>Bí mật · giới hạn người được xem.</span></li><li><strong>Nội dung bị đổi</strong><span>Toàn vẹn · phát hiện thay đổi trái phép.</span></li><li><strong>Giả danh người gửi</strong><span>Xác thực · kiểm tra danh tính hoặc nguồn.</span></li><li><strong>Dịch vụ bị ngừng</strong><span>Sẵn sàng · khôi phục khả năng truy cập.</span></li></ul><p class="lesson-note">Một sự cố có thể ảnh hưởng nhiều mục tiêu. Khi đề hỏi mục tiêu trực tiếp, chọn cái bị vi phạm ngay trong tình huống.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Mẹo nhớ 4 chữ cái:</strong> <strong>Bí - Toàn - Xác - Sẵn</strong> (Bí mật, Toàn vẹn, Xác thực, Sẵn sàng). Đề thi rất hay hỏi "mất cái gì thì dùng cái gì để đỡ?".
+            </div>
+            <ul>
+              <li><strong>Bí mật (Confidentiality):</strong> Không cho người ngoài đọc trộm. → Vũ khí: <em>Mã hóa</em>.</li>
+              <li><strong>Toàn vẹn (Integrity):</strong> Dữ liệu gửi đi sao thì nhận về y hệt, không bị sửa bậy. → Vũ khí: <em>Hàm băm (Hash), mã MAC</em>.</li>
+              <li><strong>Xác thực (Authentication):</strong> Chứng minh đúng là "chính chủ" gửi chứ không phải kẻ giả mạo. → Vũ khí: <em>Chữ ký số, chứng chỉ số</em>.</li>
+              <li><strong>Sẵn sàng (Availability):</strong> Cần dùng lúc nào là hệ thống chạy mượt lúc đó, không bị treo. → Vũ khí: <em>Dự phòng, sao lưu, chống DDoS</em>.</li>
+              <li><strong>3 thành phần chính của ATBMTT:</strong> Mức <em>vật lý</em> (khóa cửa, camera), mức <em>tác nghiệp</em> (mật khẩu, phân quyền, mạng), mức <em>quản lý và chính sách</em> (nội quy công ty).</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">1.3 Bài toán kinh tế khi mua bảo mật</span>
+            <h3>Quản lý rủi ro &amp; Công thức tính tiền</h3><figure class="lesson-visual lesson-flow"><figcaption>Tính lợi ích khi mua giải pháp sao lưu</figcaption><ol class="lesson-steps"><li><strong>Tổn thất kỳ vọng</strong><span>20% × 500 = 100 triệu/năm.</span></li><li><strong>Giảm 60% tổn thất</strong><span>Tiết kiệm 60 triệu/năm. Còn lại 40 triệu/năm.</span></li><li><strong>Trừ chi phí giải pháp</strong><span>60 − 25 = 35 triệu/năm lợi ích ròng.</span></li></ol><p class="lesson-note">Tổn thất còn lại và lợi ích ròng là hai kết quả khác nhau.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Tư duy đi buôn:</strong> Không bao giờ bỏ 100 triệu ra mua ổ khóa chỉ để bảo vệ chiếc xe đạp trị giá 2 triệu! Mục tiêu là <strong>giảm rủi ro xuống mức chấp nhận được</strong>, không phải đưa rủi ro về 0.
+            </div>
+            <div class="formula-box">Tổn thất kỳ vọng (1 năm) = Xác suất xảy ra × Thiệt hại mỗi lần
+Lợi ích ròng = Tiền thiệt hại giảm được − Giá mua giải pháp</div>
+            <ul>
+              <li><strong>Ví dụ dễ hiểu:</strong> Rủi ro sập web thiệt hại 3.000 triệu/lần, xác suất 0,1/năm → Tổn thất kỳ vọng = <code>0,1 × 3.000 = 300 triệu/năm</code>.</li>
+              <li>Mua tường lửa giá 80 triệu giúp giảm 80% thiệt hại (cứu được <code>80% × 300 = 240 triệu</code>) → Lợi ích ròng = <code>240 − 80 = +160 triệu</code> (Nên mua!).</li>
+              <li>Nếu giải pháp nào tính ra <strong>Lợi ích ròng âm (&lt; 0)</strong> thì <strong>tuyệt đối không mua</strong> dù ngân sách còn dư.</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">1.4 Phân loại Hacker &amp; 6 loại Mã độc</span>
+            <h3>Kẻ xâm nhập &amp; Họ hàng nhà Virus</h3><figure class="lesson-visual lesson-compare"><figcaption>Nhận dạng qua hành vi</figcaption><ul class="lesson-steps"><li><strong>Virus</strong><span>Tự nhân bản bằng cách gắn vào tệp hoặc vật chủ.</span></li><li><strong>Sâu</strong><span>Tự lan qua mạng mà không cần bám vào tệp chủ.</span></li><li><strong>Trojan</strong><span>Giả dạng chương trình hợp lệ để che chức năng có hại.</span></li></ul><p class="lesson-note">Với người dùng: mượn danh tính là giả danh, dùng quyền vượt nhiệm vụ là lạm quyền.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>3 loại kẻ xâm nhập:</strong>
+                <br>• <em>Kẻ giả danh (Masquerader):</em> Người ngoài chôm được mật khẩu của bạn rồi đăng nhập như thật.
+                <br>• <em>Kẻ lạm quyền (Misfeasor):</em> Người trong công ty (có tài khoản thật) nhưng tò mò chui vào mục không thuộc nhiệm vụ của mình.
+                <br>• <em>Người dùng giấu mặt (Clandestine):</em> Hacker chiếm quyền trùm cuối (Admin) rồi tắt luôn camera/nhật ký (log) để xóa sạch dấu vết.
+              </li>
+              <li><strong>4 bước hacker đột nhập:</strong> Dò thám thu thập thông tin → Đột nhập cửa ngoài → Leo thang lên quyền Admin → Xóa dấu vết.</li>
+              <li><strong>Phân biệt 6 loại mã độc cực nhanh:</strong>
+                <br>• <em>Biết tự nhân bản:</em> <strong>Virus</strong> (phải bám vào file khác, có "bộ tải" để tự nhân bản &amp; phá ngầm); <strong>Sâu (Worm)</strong> (tự bò lây lan qua mạng mà không cần bám file).
+                <br>• <em>Không tự nhân bản:</em> <strong>Cửa sau (Trapdoor)</strong> &amp; <strong>Bom logic</strong> (do chính lập trình viên gài sẵn trong code); <strong>Trojan</strong> (giả dạng phần mềm xịn lừa người dùng tải về) &amp; <strong>Zombie</strong> (máy tính bị chiếm quyền biến thành "xác sống" đi đánh DDoS).
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">1.5 Tấn công DDoS &amp; Tràn bộ đệm</span>
+            <h3>Nghẽn cổ chai DDoS &amp; Lỗi tràn RAM (Buffer Overflow)</h3><figure class="lesson-visual lesson-flow"><figcaption>Đọc bảng năng lực phục vụ</figcaption><ol class="lesson-steps"><li><strong>Sức chứa</strong><span>Máy chủ xử lý 25.000 yêu cầu/giây.</span></li><li><strong>Lưu lượng</strong><span>8.000 bình thường + 10.000 tăng thêm = 18.000 yêu cầu/giây.</span></li><li><strong>So sánh</strong><span>Còn dư 7.000 yêu cầu/giây.</span></li></ol><p class="lesson-note">Cùng nguyên tắc kiểm tra sức chứa: vùng đệm 64 byte chứa tối đa 63 byte nội dung nếu cần dành một byte kết thúc chuỗi.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>Chống DDoS theo 3 giai đoạn:</strong> <em>Trước</em> (vá lỗi, đổi mật khẩu mặc định, thuê dịch vụ lọc); <em>Trong</em> (phát hiện lưu lượng tăng đột biến, giới hạn số request mỗi IP); <em>Sau</em> (truy vết nguồn tấn công).</li>
+              <li><strong>Tràn bộ đệm (Buffer Overflow) là gì?</strong> Tưởng tượng cái cốc chỉ chứa được 64ml nước (64 byte), nhưng lập trình viên C lại đổ thẳng 80ml vào mà không đo. 16ml nước tràn ra sẽ đè lên <em>Con trỏ khung (4 byte)</em> và <em>Địa chỉ trả về (4 byte)</em> nằm ngay cạnh, khiến CPU nhảy nhầm sang chạy code của hacker!</li>
+              <li><strong>3 khiên bảo vệ bộ nhớ:</strong>
+                <br>• <em>DEP / NX bit:</em> Đánh dấu vùng chứa dữ liệu là "cấm chạy code".
+                <br>• <em>ASLR:</em> Xáo trộn ngẫu nhiên vị trí bộ nhớ mỗi lần bật app để hacker đoán trượt.
+                <br>• <em>Stack Canary:</em> Đặt một "con chim hoàng yến" (4 byte ngẫu nhiên) đứng canh trước địa chỉ trả về; nếu bị nước tràn đè chết canary thì app tự tắt ngay. <strong>Lưu ý thi:</strong> DEP và ASLR bật được cho phần mềm đã đóng gói sẵn, riêng <strong>Stack Canary bắt buộc phải biên dịch lại mã nguồn</strong>.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">1.6 Tường lửa, VPN &amp; Phong bì số</span>
+            <h3>Các lớp khiên bảo vệ hệ thống mạng</h3><figure class="lesson-visual lesson-flow"><figcaption>Phong bì số cho một tệp lớn</figcaption><ol class="lesson-steps"><li><strong>Người gửi</strong><span>Dùng khóa phiên K để mã hóa tệp.</span></li><li><strong>Gửi hai thứ</strong><span>Tệp mã hóa + K được bọc bằng khóa công khai của người nhận.</span></li><li><strong>Người nhận</strong><span>Dùng khóa riêng mở K, rồi dùng K giải mã tệp.</span></li></ol><p class="lesson-note">Tách hai câu hỏi: Ai mở được khóa phiên? Khóa nào mở nội dung?</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>3 đời Tường lửa (từ đơn giản đến xịn nhất):</strong>
+                <br>• <em>Bộ lọc gói (Packet Filter):</em> Chỉ soi địa chỉ IP và cổng (tầng mạng), nhanh nhưng dễ bị giả mạo IP.
+                <br>• <em>Cổng mức mạch (Circuit-level):</em> Soi phiên kết nối TCP (tầng phiên), không đọc nội dung bên trong.
+                <br>• <em>Cổng mức ứng dụng (Application-level):</em> Soi tận nội dung HTTP/FTP/Email (tầng ứng dụng) — <strong>an toàn nhất</strong> nhưng phải cài proxy riêng cho từng dịch vụ.
+              </li>
+              <li><strong>Ma trận phân quyền:</strong> Cắt dọc theo <em>cột</em> (từng file một, kiểu lệnh <code>ls -l</code> xem file này ai được đọc/ghi) gọi là <strong>ACL</strong>; cắt ngang theo <em>hàng</em> (một người được vào những file nào) gọi là <strong>Capability List</strong>.</li>
+              <li><strong>IPSec (bảo mật tầng IP):</strong>
+                <br>• Giao thức <strong>AH</strong>: Chỉ ký chống sửa đổi, <em>không mã hóa nội dung</em> (dùng khi cần cho hệ thống phát hiện xâm nhập IDS ở giữa đọc kiểm tra gói tin).
+                <br>• Giao thức <strong>ESP</strong>: Mã hóa kín mít nội dung. Dùng <em>chế độ ống (Tunnel)</em> để bọc kín cả địa chỉ IP nội bộ khi làm mạng VPN nối 2 chi nhánh.
+              </li>
+              <li><strong>Phong bì số (Digital Envelope):</strong> Mã hóa file nặng bằng <em>mã đối xứng (AES)</em> cho nhanh, sau đó lấy <em>mã bất đối xứng (RSA)</em> bọc cái khóa AES đó lại gửi cho người nhận.</li>
+            </ul>
+          </details></article>
+        </div>
+      `,
+      2: `
+        <div class="theory-grid">
+          <article class="theory-card">
+            <span class="theory-badge">2.1 Nguyên lý chung &amp; Phá mã</span>
+            <h3>Mã hóa đối xứng &amp; 4 Cấp độ thám mã</h3><figure class="lesson-visual lesson-flow"><figcaption>Mã hóa và giải mã với cùng khóa</figcaption><ol class="lesson-steps"><li><strong>Bản rõ</strong><span>P = 1010. Khóa K = 1100.</span></li><li><strong>Mã hóa</strong><span>C = P ⊕ K = 0110.</span></li><li><strong>Giải mã</strong><span>C ⊕ K = 1010, trở về P.</span></li></ol><p class="lesson-note">Đây là ví dụ XOR để thấy mô hình dùng chung khóa. Với XOR, mỗi bit giống nhau cho 0, khác nhau cho 1.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Hiểu đơn giản:</strong> Mã đối xứng giống như cái <strong>ổ khóa nhà</strong>: bạn khóa cửa bằng chìa nào thì vợ/chồng bạn cũng mở cửa bằng <strong>đúng chiếc chìa y hệt</strong> đó (<code>K_E = K_D</code>).
+            </div>
+            <div class="formula-box">Bản mã C = E(K, P)   |   Bản rõ P = D(K, C)   |   K_E = K_D</div>
+            <ul>
+              <li><strong>An toàn không điều kiện:</strong> Kể cả hacker có siêu máy tính vô hạn sức mạnh cũng không giải nổi. Duy nhất hệ mã <strong>One-Time Pad (OTP)</strong> đạt được (khóa ngẫu nhiên hoàn toàn, dài bằng tin nhắn, dùng đúng 1 lần rồi đốt).</li>
+              <li><strong>An toàn tính toán:</strong> Phá được nhưng mất vài nghìn năm, lúc phá xong thì thông tin hết giá trị rồi.</li>
+              <li><strong>4 kiểu tấn công thám mã (từ "nghèo thông tin" đến "giàu thông tin"):</strong>
+                <br>1. <em>Chỉ dùng bản mã</em> (chỉ nhặt được tin đã mã hóa) → 2. <em>Biết bản rõ</em> (có sẵn vài cặp tin gốc + tin mã) → 3. <em>Chọn bản rõ</em> (lén bấm được máy mã hóa của nạn nhân) → 4. <em>Chọn bản tin</em> (vừa bấm được máy mã hóa vừa bấm được máy giải mã).
+              </li>
+              <li><strong>Mẹo tính vét cạn (Brute-Force):</strong> Khóa dài <code>n</code> bit có <code>2^n</code> trường hợp; trung bình dò một nửa (<code>2^(n-1)</code>) là ra. Tăng khóa thêm <strong>1 bit</strong> thì thời gian dò tăng <strong>gấp đôi</strong>!</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">2.2 Mã thay thế cổ điển</span>
+            <h3>Caesar, Bảng chữ đơn, Playfair &amp; Vigenère</h3><figure class="lesson-visual lesson-flow"><figcaption>Caesar với k = 3: mã hóa ZEB</figcaption><ol class="lesson-steps"><li><strong>Đổi chữ sang số</strong><span>Z E B → 25, 4, 1 với A = 0.</span></li><li><strong>Cộng 3 và lấy dư 26</strong><span>28, 7, 4 → 2, 7, 4.</span></li><li><strong>Đổi lại sang chữ</strong><span>2, 7, 4 → C H E.</span></li></ol><p class="lesson-note">Vigenère đổi độ dịch theo từng chữ khóa lặp lại. Playfair dùng bảng 5 × 5, xử lý từng cặp chữ.</p></figure><details class="lesson-details"><summary>Playfair: đọc bảng 5 × 5</summary><figure class="lesson-visual lesson-playfair"><figcaption>Playfair: đọc bảng 5 × 5</figcaption><ul class="lesson-steps"><li><strong>Bảng từ khóa KEYWORD</strong><table class="playfair-grid" aria-label="Ma trận khóa Playfair"><tbody><tr><td>K</td><td>E</td><td>Y</td><td>W</td><td>O</td></tr><tr><td>R</td><td>D</td><td>A</td><td>B</td><td>C</td></tr><tr><td>F</td><td>G</td><td>H</td><td>I</td><td>L</td></tr><tr><td>M</td><td>N</td><td>P</td><td>Q</td><td>S</td></tr><tr><td>T</td><td>U</td><td>V</td><td>X</td><td>Z</td></tr></tbody></table></li><li><strong>Cùng hàng: C R</strong><span>Dịch phải một ô và quay vòng ở mép bảng. C → R, R → D.</span></li><li><strong>Cùng cột: Y P</strong><span>Dịch xuống một ô. Y → A, P → V.</span></li><li><strong>Khác hàng, khác cột: T O</strong><span>Giữ hàng, đổi cột cho nhau. T → Z, O → K.</span></li></ul><p class="lesson-note">CRYPTO tách thành CR · YP · TO, mã hóa được RD · AV · ZK, tức RDAVZK. Bảng gộp I và J.</p></figure></details><details class="lesson-details"><summary>Vigenère: lặp khóa theo từng vị trí</summary><figure class="lesson-visual lesson-flow"><figcaption>Vigenère: lặp khóa theo từng vị trí</figcaption><ol class="lesson-steps"><li><strong>Căn hàng</strong><span>Bản rõ I N F O R M A T I O N, khóa K E Y K E Y K E Y K E.</span></li><li><strong>Cộng từng cột theo mod 26</strong><span>I + K = (8+10) mod 26 = 18 → S. N + E = 17 → R.</span></li><li><strong>Ghép các chữ kết quả</strong><span>S R D Y V K K X G Y R → SRDYVKKXGYR.</span></li></ol><p class="lesson-note">Mỗi vị trí lấy độ dịch của chữ khóa ngay dưới nó, với A = 0.</p></figure></details><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Bản chất:</strong> Mã thay thế là giữ nguyên vị trí các chữ cái, chỉ <strong>đổi mặt chữ</strong> (chữ A biến thành chữ D chẳng hạn).
+            </div>
+            <ul>
+              <li><strong>Caesar:</strong> Dịch chữ cái tiến <code>k</code> bước: <code>C = (P + k) mod 26</code> (A=0, B=1,…, Z=25). Chỉ có 25 khóa hữu ích (<code>k = 1..25</code>) nên dò tay 5 phút là ra.</li>
+              <li><strong>Bảng chữ đơn:</strong> Trộn lung tung 26 chữ cái tạo ra <code>26! ≈ 4×10²⁶</code> khóa. Tưởng nhiều nhưng vẫn chết vì <strong>thống kê tần suất</strong> (trong tiếng Anh chữ E xuất hiện nhiều nhất, nên chữ nào xuất hiện nhiều nhất trong bản mã khả năng cao chính là E).</li>
+              <li><strong>Playfair:</strong> Xếp từ khóa vào bảng 5×5 (gộp I và J chung 1 ô). Chia bản rõ thành <strong>từng cặp 2 chữ</strong>: gặp 2 chữ giống nhau thì chèn <code>X</code> vào giữa; lẻ chữ cuối thì thêm <code>X</code>. Cùng hàng → dịch phải; cùng cột → dịch xuống; chéo nhau → lấy 2 góc đối diện của hình chữ nhật (cùng hàng với chữ gốc).</li>
+              <li><strong>Vigenère:</strong> Lặp đi lặp lại từ khóa <code>K</code> rồi cộng với bản rõ theo mod 26. Khắc phục được nhược điểm của Caesar vì cùng một chữ E nhưng ở các vị trí khác nhau sẽ biến thành các chữ mã khác nhau.</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">2.3 Mã hoán vị cổ điển</span>
+            <h3>Rail Fence (Hàng rào) &amp; Dịch chuyển dòng</h3><figure class="lesson-visual lesson-rails"><figcaption>Rail Fence 3 hàng: mã hóa ABCDEFGH</figcaption><svg class="rail-track" viewBox="0 0 320 110" role="img" aria-label="Đường zíc zắc của tám chữ A đến H qua ba hàng"><path d="M0 21H320 M0 54H320 M0 87H320"/><polyline points="20,21 60,54 100,87 140,54 180,21 220,54 260,87 300,54"/><circle cx="20" cy="21" r="13"/><text x="20" y="21" dy=".34em">A</text><circle cx="60" cy="54" r="13"/><text x="60" y="54" dy=".34em">B</text><circle cx="100" cy="87" r="13"/><text x="100" y="87" dy=".34em">C</text><circle cx="140" cy="54" r="13"/><text x="140" y="54" dy=".34em">D</text><circle cx="180" cy="21" r="13"/><text x="180" y="21" dy=".34em">E</text><circle cx="220" cy="54" r="13"/><text x="220" y="54" dy=".34em">F</text><circle cx="260" cy="87" r="13"/><text x="260" y="87" dy=".34em">G</text><circle cx="300" cy="54" r="13"/><text x="300" y="54" dy=".34em">H</text></svg><ul class="lesson-steps"><li><strong>Hàng trên</strong><span>A · · · E · · ·</span></li><li><strong>Hàng giữa</strong><span>· B · D · F · H</span></li><li><strong>Hàng dưới</strong><span>· · C · · · G ·</span></li></ul><p class="lesson-note">Viết zíc zắc xuống rồi lên. Đọc từng hàng từ trái sang phải: AE + BDFH + CG = AEBDFHCG.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Bản chất:</strong> Mã hoán vị <strong>không đổi mặt chữ</strong>, chỉ <strong>xáo trộn vị trí</strong> (giống đảo chữ "HỌC" thành "CỌH"). Dấu hiệu nhận biết khi thi: <em>tần suất xuất hiện các chữ cái trong bản mã giống hệt bản rõ!</em>
+            </div>
+            <ul>
+              <li><strong>Rail Fence (Hàng rào):</strong> Viết chữ chạy zic-zac lên xuống qua <code>d</code> dòng như hàng rào, sau đó đọc ngang từ trên xuống dưới.</li>
+              <li><strong>Dịch chuyển dòng (Columnar):</strong> Viết bản rõ theo từng hàng ngang vào bảng có <code>m</code> cột (thiếu ô cuối thì điền thêm chữ <code>X</code>), sau đó đọc dọc từng cột theo thứ tự số khóa từ 1, 2, 3…</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">2.4 Mã dòng (Stream Cipher)</span>
+            <h3>TinyA5/1 &amp; TinyRC4 (Mã hóa từng bit/byte)</h3><figure class="lesson-visual lesson-flow"><figcaption>TinyA5/1: lần lượt sinh ba bit</figcaption><ol class="lesson-steps"><li><strong>Tách khóa K thành X | Y | Z</strong><span>101000 | 10000110 | 001000010</span></li><li><strong>Bước 0</strong><span>Bit điều khiển 0, 0, 0 → quay X, Y, Z → s₀ = 0.</span></li><li><strong>Bước 1</strong><span>Bit điều khiển 1, 0, 1 → quay X, Z → s₁ = 1.</span></li><li><strong>Bước 2</strong><span>Bit điều khiển 1, 0, 0 → quay Y, Z → s₂ = 1.</span></li></ol><p class="lesson-note">Lấy bit đầu ra sau khi quay. Ghép S = 011. Nếu P = 101 thì C = 101 ⊕ 011 = 110 (bài 7).</p></figure><details class="lesson-details"><summary>TinyRC4: đi qua KSA rồi PRGA</summary><figure class="lesson-visual lesson-flow"><figcaption>TinyRC4: đi qua KSA rồi PRGA</figcaption><ol class="lesson-steps"><li><strong>Lặp khóa K = (5, 2, 7)</strong><span>T = (5, 2, 7, 5, 2, 7, 5, 2). Bắt đầu với S = (0, 1, 2, 3, 4, 5, 6, 7).</span></li><li><strong>Chạy KSA</strong><span>Ở i = 0, j = (0 + S[0] + T[0]) mod 8 = 5, đổi S[0] và S[5]. Sau 8 bước: S = (1, 4, 5, 0, 7, 6, 2, 3).</span></li><li><strong>Chạy PRGA với i = j = 0 ban đầu</strong><span>Ba số khóa đầu là 0, 4, 6 → 000 100 110.</span></li><li><strong>XOR với bản rõ</strong><span>011 100 010 ⊕ 000 100 110 = 011 000 100.</span></li></ol><p class="lesson-note">KSA xáo mảng theo khóa. PRGA dùng mảng đã xáo để sinh từng số khóa (bài 8).</p></figure></details><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Cách hoạt động chung:</strong> Tạo ra một chuỗi khóa ngẫu nhiên dài ngoằng rồi đem <strong>XOR (⊕)</strong> từng bit với tin nhắn gốc: <code>C = P ⊕ K</code>.
+            </div>
+            <ul>
+              <li><strong>TinyA5/1 (23 bit):</strong> Chia vào 3 thanh ghi <code>X</code> (6 bit: x0..x5), <code>Y</code> (8 bit: y0..y7), <code>Z</code> (9 bit: z0..z8).
+                <br>• Lấy 3 bit điều khiển <code>x1, y3, z3</code> bầu cử xem số 0 hay số 1 thắng (gọi là bit đa số <code>m</code>).
+                <br>• Thanh ghi nào có bit điều khiển <strong>trùng với phe thắng <code>m</code></strong> thì mới được quay (dịch phải 1 bit, bit đầu nhận giá trị XOR phản hồi). Vì bầu cử 3 người nên <strong>luôn có 2 hoặc 3 thanh ghi quay</strong> (không bao giờ chỉ 1).
+                <br>• Bit khóa sinh ra ở cuối bước: <code>s = x5 ⊕ y7 ⊕ z8</code>.
+              </li>
+              <li><strong>TinyRC4 (mảng 8 số từ 0 đến 7):</strong>
+                <br>• <em>Bước 1 (Khởi tạo KSA):</em> Lặp khóa <code>K</code> thành mảng <code>T</code>, chạy vòng lặp <code>i = 0..7</code> để tráo đổi lộn xộn mảng <code>S = [0,1,2,3,4,5,6,7]</code>.
+                <br>• <em>Bước 2 (Sinh khóa PRGA):</em> Mỗi lần lấy 1 số khóa thì tăng <code>i</code>, cập nhật <code>j</code>, tráo <code>S[i]</code> với <code>S[j]</code> rồi bốc phần tử tại vị trí <code>(S[i] + S[j]) mod 8</code>.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">2.5 Mã khối (Block Cipher)</span>
+            <h3>Mạng Feistel, TinyDES &amp; 4 Con số của DES</h3><figure class="lesson-visual lesson-flow"><figcaption>Một vòng TinyDES: từ L₀, R₀ đến L₁, R₁</figcaption><ol class="lesson-steps"><li><strong>Đầu vào</strong><span>L₀ = 0101, R₀ = 1100, K₁ = 101110.</span></li><li><strong>Expand và XOR</strong><span>E(R₀) = 001011. XOR K₁ cho 100101.</span></li><li><strong>S-box và P-box</strong><span>Hàng 11, cột 0010 → 1000. P-box cho F = 0100.</span></li><li><strong>Ghép hai nửa</strong><span>L₁ = R₀ = 1100. R₁ = 0101 ⊕ 0100 = 0001.</span></li></ol><p class="lesson-note">Vòng sau tiếp tục với (1100, 0001). Khi giải mã, lần ngược các khóa vòng để tìm lại hai nửa trước.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Hiểu nôm na:</strong> Thay vì mã từng chữ một, mã khối chặt tin nhắn thành từng cục (khối) 64 bit rồi đem "nhào bột" qua nhiều vòng trộn (mạng Feistel).
+            </div>
+            <ul>
+              <li><strong>TinyDES (khối 8 bit, 3 vòng):</strong> Chặt 8 bit thành nửa trái <code>L0</code> (4 bit) và nửa phải <code>R0</code> (4 bit). Mỗi vòng: <code>L_mới = R_cũ</code>; <code>R_mới = L_cũ ⊕ F(R_cũ, K_i)</code>.</li>
+              <li><strong>Bên trong hàm F của TinyDES:</strong>
+                <br>1. <em>Expand:</em> Mở rộng 4 bit <code>b0b1b2b3</code> thành 6 bit <code>b2b3b1b2b1b0</code>.
+                <br>2. <em>XOR khóa:</em> Lấy 6 bit vừa mở rộng ⊕ với khóa vòng <code>K_i</code>.
+                <br>3. <em>S-box (tra bảng):</em> Lấy <strong>2 bit ngoài cùng (b0b5)</strong> chọn hàng; <strong>4 bit ở giữa (b1b2b3b4)</strong> chọn cột để rút gọn về 4 bit.
+                <br>4. <em>P-box (hoán vị):</em> Đảo vị trí 4 bit thành <code>b2b0b3b1</code>.
+              </li>
+              <li><strong>4 con số bắt buộc thuộc của DES thật:</strong> Mạng Feistel <strong>16 vòng</strong>; khối dữ liệu <strong>64 bit</strong>; khóa chính hiệu dụng <strong>56 bit</strong> (bỏ 8 bit chẵn lẻ từ 64 bit); khóa con mỗi vòng <strong>48 bit</strong>.</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">2.6 Điểm yếu chết người của mã đối xứng</span>
+            <h3>Tại sao không chống từ chối được &amp; Trạm chia khóa KDC</h3><figure class="lesson-visual lesson-flow"><figcaption>KDC chia một khóa phiên cho A và B</figcaption><ol class="lesson-steps"><li><strong>A → KDC</strong><span>A yêu cầu khóa phiên để liên lạc với B.</span></li><li><strong>KDC → A và B</strong><span>KDC tạo K_AB và bọc riêng cho từng người bằng khóa dài hạn của họ.</span></li><li><strong>A ↔ B</strong><span>Hai bên mở phần của mình, lấy cùng K_AB và giao tiếp bằng khóa phiên.</span></li></ol><p class="lesson-note">Không có KDC, 10 người cần 10×9/2 = 45 khóa khác nhau để mỗi cặp có một khóa riêng.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>Tại sao mã đối xứng KHÔNG thực hiện được tính "Không từ chối"?</strong> Vì cả A và B đều cầm chung một chìa khóa <code>K</code>. Nếu A gửi lệnh chuyển tiền rồi sau đó lật lọng bảo <em>"Tôi không gửi, chính B tự dùng khóa K để tạo tin nhắn giả vu oan cho tôi!"</em> thì tòa án cũng chịu, không phân xử được.</li>
+              <li><strong>Ác mộng chia chìa khóa:</strong> Có <code>N</code> người muốn nhắn riêng từng cặp thì cần tới <code>N(N - 1)/2</code> chìa khóa (10 người cần 45 chìa).</li>
+              <li><strong>Giải pháp KDC (Trung tâm phân phối khóa):</strong> Mỗi người chỉ cần giữ <strong>1 chìa khóa chính</strong> với tổng đài KDC. Khi A muốn chat với B, KDC sẽ đúc một chìa khóa tạm thời <code>KAB</code> (khóa phiên), bọc riêng cho A và B dùng xong rồi hủy.</li>
+            </ul>
+          </details></article>
+        </div>
+      `,
+      3: `
+        <div class="theory-grid">
+          <article class="theory-card">
+            <span class="theory-badge">3.1 Cách mạng khóa công khai</span>
+            <h3>Mã hóa bất đối xứng giải quyết vấn đề gì?</h3><figure class="lesson-visual lesson-flow"><figcaption>A muốn gửi bí mật cho B</figcaption><ol class="lesson-steps"><li><strong>A có bản rõ</strong><span>Mã hóa bằng khóa công khai của B.</span></li><li><strong>Qua đường truyền</strong><span>Gửi bản mã.</span></li><li><strong>B nhận bản mã</strong><span>Dùng khóa riêng của B để lấy lại bản rõ.</span></li></ol><p class="lesson-note">Với chữ ký, người gửi dùng khóa riêng của mình để ký. Người nhận dùng khóa công khai của chính người gửi để kiểm tra.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Tưởng tượng cái hòm thư trước cửa nhà:</strong> Ai đi ngang qua cũng có thể nhét thư vào khe hở (<strong>Khóa công khai</strong>), nhưng chỉ duy nhất chủ nhà cầm chìa khóa riêng (<strong>Khóa bí mật</strong>) mới mở hòm lấy thư ra đọc được!
+            </div>
+            <ul>
+              <li><strong>Quy tắc dùng khóa để bảo mật:</strong> Muốn gửi tin bí mật cho B, A phải lấy <strong>Khóa công khai của B</strong> để mã hóa. Khi nhận được, B dùng <strong>Khóa riêng của B</strong> để giải mã.</li>
+              <li><strong>Giải quyết trọn vẹn 2 điểm yếu của Chương 2:</strong>
+                <br>1. Không cần gặp mặt lén lút trao chìa khóa trước nữa (khóa công khai cứ đăng công khai lên mạng).
+                <br>2. Tạo được <strong>Chữ ký số</strong> giúp chống chối bỏ trách nhiệm.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">3.2 Các định lý toán "cứu cánh" khi tính tay</span>
+            <h3>Euclid, Fermat, Euler &amp; Phần dư Trung Hoa</h3><figure class="lesson-visual lesson-flow"><figcaption>Euclid mở rộng: tìm 37⁻¹ mod 120</figcaption><ol class="lesson-steps"><li><strong>Chia lấy dư</strong><span>120 = 3×37 + 9 và 37 = 4×9 + 1.</span></li><li><strong>Thế ngược</strong><span>1 = 37 − 4(120 − 3×37) = 13×37 − 4×120.</span></li><li><strong>Đọc hệ số của 37</strong><span>37⁻¹ mod 120 = 13.</span></li></ol><p class="lesson-note">Kiểm lại: 37×13 = 481 = 4×120 + 1. Với ước chung lớn nhất khác 1, nghịch đảo không tồn tại.</p></figure><details class="lesson-details"><summary>Phần dư Trung Hoa: ghép hai điều kiện</summary><figure class="lesson-visual lesson-flow"><figcaption>Phần dư Trung Hoa: ghép hai điều kiện</figcaption><ol class="lesson-steps"><li><strong>Viết từ điều kiện thứ nhất</strong><span>x ≡ 2 mod 5 → x = 2 + 5t.</span></li><li><strong>Thế vào điều kiện thứ hai</strong><span>x ≡ 3 mod 7 → 5t ≡ 1 mod 7. Vì 5×3 ≡ 1 mod 7, t ≡ 3 mod 7.</span></li><li><strong>Ghép nghiệm</strong><span>x = 2 + 5×3 = 17 mod 35.</span></li></ol><p class="lesson-note">Kiểm lại: 17 chia 5 dư 2, chia 7 dư 3.</p></figure></details><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>Điều kiện có nghịch đảo <code>a⁻¹ mod n</code>:</strong> Phải nguyên tố cùng nhau, tức là <code>GCD(a, n) = 1</code>. Nếu ước chung lớn nhất khác 1 thì <strong>vô nghiệm</strong>!</li>
+              <li><strong>Hàm đếm Euler Φ(n) (đếm số lượng số nhỏ hơn n và nguyên tố cùng nhau với n):</strong>
+                <br>• Nếu <code>p</code> là số nguyên tố: <code>Φ(p) = p − 1</code> (VD: <code>Φ(61) = 60</code>).
+                <br>• Nếu <code>n = p × q</code> (2 số nguyên tố khác nhau): <code>Φ(n) = (p − 1)(q − 1)</code>.
+                <br>• Nếu <code>n = p^k</code>: <code>Φ(p^k) = p^k − p^(k−1)</code> (VD: <code>Φ(125) = Φ(5³) = 125 − 25 = 100</code>).
+              </li>
+              <li><strong>Định lý Fermat nhỏ (hạ bậc số mũ cực nhanh):</strong> Với <code>p</code> nguyên tố và <code>a</code> <strong>không chia hết cho p</strong>, ta luôn có <code>a^(p−1) ≡ 1 (mod p)</code>. (Bẫy thi: nếu <code>a</code> chia hết cho <code>p</code>, vd <code>14⁶ mod 7</code>, thì đáp án là <strong>0</strong> chứ không phải 1!).</li>
+              <li><strong>Định lý Euler:</strong> Tổng quát hơn Fermat, áp dụng cho mọi <code>n</code> miễn <code>GCD(a, n) = 1</code>: <code>a^Φ(n) ≡ 1 (mod n)</code>.</li>
+              <li><strong>Định lý Phần dư Trung Hoa (CRT):</strong> Chẻ một bài toán chia dư số to đùng (<code>mod p·q</code>) thành 2 bài toán số nhỏ (<code>mod p</code> và <code>mod q</code>) rồi ghép nghiệm lại → Giúp <strong>tăng tốc giải mã RSA</strong> lên gấp nhiều lần.</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">3.3 Hệ mã Ba lô MHK</span>
+            <h3>Merkle-Hellman Knapsack (Xếp đồ vào ba lô)</h3><figure class="lesson-visual lesson-flow"><figcaption>Ba lô MHK: đổi dãy, mã rồi giải</figcaption><ol class="lesson-steps"><li><strong>Tạo khóa công khai</strong><span>A′ = (2, 3, 7, 14, 30), M = 61, u = 7 → S = (14, 21, 49, 37, 27).</span></li><li><strong>Mã hóa 10101</strong><span>Chọn vị trí 1, 3, 5: C = (14 + 49 + 27) mod 61 = 29.</span></li><li><strong>Đưa về dãy siêu tăng</strong><span>u⁻¹ = 35. C′ = 29×35 mod 61 = 39.</span></li><li><strong>Chọn từ lớn đến nhỏ</strong><span>39 = 30 + 7 + 2 → 10101.</span></li></ol><p class="lesson-note">Dùng đúng cùng thứ tự phần tử và thứ tự bit khi chuyển giữa dãy riêng và dãy công khai.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Ý tưởng:</strong> Bạn có một dãy quả cân "siêu tăng" (quả sau nặng hơn tổng tất cả quả trước cộng lại). Nhìn tổng cân nặng là biết ngay đã bỏ những quả nào vào túi! Để đánh lừa hacker, bạn nhân tất cả quả cân với số <code>u</code> rồi lấy dư cho <code>M</code> để biến chúng thành dãy số lộn xộn.
+            </div>
+            <div class="formula-box">Dãy siêu tăng A': a'_i &gt; tổng các số đứng trước nó
+Chọn M &gt; 2 × a'_cuối (hoặc M &gt; tổng A') và GCD(u, M) = 1
+Khóa công khai S_i = (a'_i × u) mod M
+Mã hóa P: C = (Tổng các S_i tại vị trí bit P = 1) mod M
+Giải mã C: Tính C' = (C × u⁻¹) mod M rồi trừ dần từ phải sang trái trên A'</div>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">3.4 Hệ mã huyền thoại RSA</span>
+            <h3>4 Bước làm bài tập RSA không bao giờ sai</h3><figure class="lesson-visual lesson-flow"><figcaption>RSA: từ p, q đến bản mã và bản rõ</figcaption><ol class="lesson-steps"><li><strong>Tạo n và φ(n)</strong><span>p = 11, q = 13 → n = 143, φ = 10×12 = 120.</span></li><li><strong>Tìm số mũ bí mật</strong><span>e = 7 → d = 103 vì 7×103 ≡ 1 mod 120.</span></li><li><strong>Mã hóa</strong><span>M = 42 → C = 42⁷ mod 143 = 81.</span></li><li><strong>Giải mã để kiểm tra</strong><span>81¹⁰³ mod 143 = 42.</span></li></ol><p class="lesson-note">Ví dụ dùng số nhỏ để tính tay. Tính lũy thừa bằng bình phương và nhân, lấy dư ở từng bước.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="formula-box">Bước 1: Tính N = p × q  và  Φ(N) = (p − 1)(q − 1)
+Bước 2: Chọn e sao cho 1 &lt; e &lt; Φ(N) và GCD(e, Φ(N)) = 1
+Bước 3: Tìm khóa giải mã d = e⁻¹ mod Φ(N)  (bấm TABLE trên Casio)
+  → Khóa công khai KU = {e, N}  |  Khóa bí mật KR = {d, p, q}
+Bước 4: Mã hóa: C = M^e mod N   |   Giải mã: M = C^d mod N</div>
+            <p><strong>Câu hỏi bẫy hay gặp:</strong> Tại sao ngoài <code>d</code>, ta phải giấu kín cả hai số nguyên tố <code>p</code> và <code>q</code>? Vì <code>N</code> và <code>e</code> đã công khai; nếu hacker biết <code>p, q</code> thì tính được ngay <code>Φ(N) = (p-1)(q-1)</code> rồi tự bấm ra <code>d</code>!</p>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">3.5 Giao thức trao đổi khóa Diffie-Hellman</span>
+            <h3>Pha màu bí mật qua đường truyền công khai</h3><figure class="lesson-visual lesson-flow"><figcaption>Diffie–Hellman: hai phía cùng ra K</figcaption><ol class="lesson-steps"><li><strong>Tham số chung</strong><span>p = 23, g = 5. A giữ a = 6, B giữ b = 15.</span></li><li><strong>Trao đổi giá trị công khai</strong><span>A gửi 5⁶ mod 23 = 8. B gửi 5¹⁵ mod 23 = 19.</span></li><li><strong>Tính riêng khóa chung</strong><span>A tính 19⁶ mod 23 = 2. B tính 8¹⁵ mod 23 = 2.</span></li></ol><p class="lesson-note">Hai bên tính cùng một lũy thừa g^(ab) mod p. Số mũ a và b được giữ riêng.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Lưu ý cực quan trọng:</strong> Diffie-Hellman <strong>KHÔNG dùng để mã hóa tin nhắn</strong>! Nó chỉ giúp A và B đứng ở hai đầu Trái Đất tự thống nhất được với nhau một mật khẩu chung <code>KAB</code> mà kẻ nghe trộm ở giữa không đoán được.
+            </div>
+            <div class="formula-box">Công khai: số nguyên tố q và căn nguyên tố α
+A chọn số bí mật xA → tính yA = α^xA mod q gửi cho B
+B chọn số bí mật xB → tính yB = α^xB mod q gửi cho A
+Khóa bí mật chung: KAB = yB^xA mod q = yA^xB mod q</div>
+            <p><strong>Cơ sở an toàn:</strong> Dựa trên độ khó của <strong>bài toán logarit rời rạc</strong> (cho <code>α^xA mod q</code> rất dễ, nhưng tìm ngược lại số mũ <code>xA</code> thì siêu khó).</p>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">3.6 Phân phối khóa &amp; Hạ tầng PKI</span>
+            <h3>Làm sao biết khóa công khai đó đúng là của bạn mình?</h3><figure class="lesson-visual lesson-flow"><figcaption>Từ chứng chỉ đến khóa đáng tin cậy</figcaption><ol class="lesson-steps"><li><strong>Nhận chứng chỉ</strong><span>Thông tin danh tính và khóa công khai được gắn với nhau.</span></li><li><strong>Kiểm tra</strong><span>Xác minh chuỗi chữ ký tới CA tin cậy, thời hạn và danh tính cần dùng.</span></li><li><strong>Sử dụng</strong><span>Dùng khóa đã xác minh để kiểm tra chữ ký hoặc tham gia thiết lập kết nối.</span></li></ol><p class="lesson-note">Khóa công khai là dữ liệu được dùng trong phép toán. Chứng chỉ giúp kiểm tra khóa đó thuộc về ai.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>4 cách phân phối khóa công khai:</strong> (1) Thông báo công khai; (2) Thư mục truy cập công cộng; (3) Chủ quyền khóa công khai; (4) Chứng nhận khóa công khai (xịn nhất).</li>
+              <li><strong>PKI (Hạ tầng khóa công khai):</strong> Giống như cơ quan công an cấp Căn cước công dân. Tổ chức CA uy tín sẽ đóng dấu chữ ký số lên chiếc "CCCD điện tử" (gọi là <strong>Chứng chỉ số</strong>) để xác nhận: <em>"Khóa công khai này đích thị là của Ngân hàng X"</em>.</li>
+              <li><strong>2 thành phần cốt lõi của PKI (theo slide):</strong> (1) <em>Chứng chỉ khóa công khai</em> và (2) <em>Hệ thống phân phối khóa tin cậy</em>.</li>
+            </ul>
+          </details></article>
+        </div>
+      `,
+      4: `
+        <div class="theory-grid">
+          <article class="theory-card">
+            <span class="theory-badge">4.1 Hàm băm (Hash Function)</span>
+            <h3>"Máy xay sinh tố" dữ liệu &amp; 3 Tính chất vàng</h3><figure class="lesson-visual lesson-compare"><figcaption>Đề bài cho sẵn cái gì?</figcaption><ul class="lesson-steps"><li><strong>Cho sẵn mã băm h</strong><span>Tiền ảnh: tìm x sao cho H(x) = h.</span></li><li><strong>Cho sẵn thông điệp x</strong><span>Tiền ảnh thứ hai: tìm x′ khác x nhưng H(x′) = H(x).</span></li><li><strong>Tự chọn cả hai thông điệp</strong><span>Đụng độ: tìm x và x′ khác nhau sao cho H(x) = H(x′).</span></li></ul><p class="lesson-note">Cùng là “trùng cốt”, nhưng đề cho dữ kiện khác nhau. Xác định dữ kiện trước rồi mới gọi tên.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Tưởng tượng dễ hiểu:</strong> Hàm băm giống như chiếc máy xay sinh tố 1 chiều: bạn bỏ một hạt táo hay cả xe tải táo (<em>đầu vào dài tùy ý</em>) vào xay thì đều thu được đúng <strong>1 cốc nước ép 250ml</strong> (<em>đầu ra cố định</em>, gọi là <strong>cốt bức điện</strong>). Một thay đổi nhỏ ở đầu vào thường làm nhiều bit của cốt thay đổi.
+            </div>
+            <ul>
+              <li><strong>1. Tính một chiều (Preimage resistance):</strong> Nhìn cốc nước ép (cốt <code>z</code>), rất khó tìm lại một đầu vào phù hợp (bức điện <code>x</code>).</li>
+              <li><strong>2. Tính không đụng độ cao (Second-preimage):</strong> Đã có hợp đồng thật <code>x</code>, rất khó tìm một hợp đồng giả <code>x' ≠ x</code> mà cho ra cùng mã băm với <code>x</code>.</li>
+              <li><strong>3. Tính đụng độ cao (Collision resistance):</strong> Rất khó tìm <em>hai văn bản</em> khác nhau mà lại trùng mã băm <code>h(x) = h(x')</code>.</li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">4.2 Nghịch lý ngày sinh (Birthday Attack)</span>
+            <h3>Tại sao cốt 128 bit của MD5 không còn an toàn?</h3><figure class="lesson-visual lesson-flow"><figcaption>Cốt 24 bit: ước lượng số mẫu</figcaption><ol class="lesson-steps"><li><strong>Số cốt có thể có</strong><span>N = 2²⁴ = 16.777.216.</span></li><li><strong>Bậc số mẫu</strong><span>√N = 2¹² = 4.096.</span></li><li><strong>Mốc khoảng 50%</strong><span>√(2 ln 2) × √N ≈ 4.823 mẫu.</span></li></ol><p class="lesson-note">Nếu đề hỏi bậc độ lớn, dùng 2^(b/2). Nếu hỏi mốc 50%, dùng thêm hệ số xấp xỉ 1,177.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Sự thật thú vị:</strong> Một năm có 365 ngày, nhưng chỉ cần nhốt ngẫu nhiên <strong>23 người</strong> vào một phòng là xác suất có 2 người trùng ngày sinh đã lên tới <strong>50% (1/2)</strong>!
+            </div>
+            <ul>
+              <li><strong>Công thức đi thi:</strong> Nếu hàm băm tạo ra cốt dài <code>m</code> bit (tức là có <code>n = 2^m</code> kết quả khác nhau), kẻ tấn công không cần thử hết <code>2^m</code> lần mà chỉ cần thử khoảng <strong><code>√n = 2^(m/2)</code></strong> văn bản ngẫu nhiên là đạt bậc độ lớn cần thiết. Mốc 50% xấp xỉ <code>1,177 × √n</code>.</li>
+              <li><strong>Ví dụ thực tế:</strong>
+                <br>• Cốt 24 bit → mốc 50% xấp xỉ <code>1,177 × 2^12 ≈ 4.823</code> mẫu.
+                <br>• Cốt 128 bit (MD5) → tìm va chạm ngẫu nhiên có bậc <code>2^64</code>. MD5 có các điểm yếu va chạm thực tế.
+                <br>• Cốt 160 bit (SHA-1) → cần <code>2^80</code> lần thử.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">4.3 So sánh MD5 và SHA (Theo slide bài giảng)</span>
+            <h3>Quy tắc đệm bit &amp; Bảng so sánh thuộc lòng</h3><figure class="lesson-visual lesson-flow"><figcaption>Đệm thông điệp 700 bit theo bài tập</figcaption><ol class="lesson-steps"><li><strong>Thêm bit 1</strong><span>700 + 1 = 701 bit.</span></li><li><strong>Bù tới bội của 512</strong><span>1.024 − 701 = 323 bit 0.</span></li><li><strong>Đếm đơn vị và bước</strong><span>2 khối, 32 từ 32 bit. MD5: 128 bước. SHA-1: 160 bước.</span></li></ol><p class="lesson-note">Quy ước bài tập bỏ qua trường độ dài 64 bit. Nếu độ dài đã là bội của 512, vẫn phải thêm bit 1.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="tldr-box">
+              <strong>Bẫy đệm bit cực hay ra thi:</strong> Theo quy ước bài tập (bỏ qua trường độ dài 64 bit), ta thêm <strong>1 bit "1"</strong> vào đuôi tin nhắn, sau đó nhét thêm toàn bit <strong>"0"</strong> cho đến khi tổng độ dài chia hết cho <strong>512</strong>. Nếu tin nhắn dài sẵn <code>1.024 bit</code> (chia hết 512 rồi) thì vẫn <strong>bắt buộc thêm bit "1"</strong> thành 1.025 bit, nên phải đệm lên <code>1.536 bit</code> (3 khối)!
+            </div>
+            <div class="table-wrap">
+              <table class="cute-table">
+                <thead><tr><th>Đặc điểm</th><th>MD5</th><th>SHA (SHA-1)</th></tr></thead>
+                <tbody>
+                  <tr><td>Độ dài mã băm (cốt)</td><td><strong>128 bit</strong></td><td><strong>160 bit</strong></td></tr>
+                  <tr><td>Số thanh ghi 32 bit</td><td><strong>4 thanh ghi</strong></td><td><strong>5 thanh ghi</strong></td></tr>
+                  <tr><td>Số vòng lặp</td><td>4 vòng</td><td>4 vòng</td></tr>
+                  <tr><td>Số bước mỗi vòng</td><td>16 bước</td><td>20 bước</td></tr>
+                  <tr><td>Tổng phép biến đổi / khối 512b</td><td><strong>64 lần</strong></td><td><strong>80 lần</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">4.4 Bài tập MD5 &amp; SHA thu nhỏ (8 bit)</span>
+            <h3>Công thức bước biến đổi &amp; Mẹo quay bit</h3><figure class="lesson-visual lesson-flow"><figcaption>MD5 thu nhỏ: một bước biến đổi</figcaption><ol class="lesson-steps"><li><strong>Tính hàm f</strong><span>b = 6A, c = C5, d = 91 → (b AND c) OR (NOT b AND d) = D1.</span></li><li><strong>Cộng theo modulo 256</strong><span>a + f + M + t = 3D + D1 + 27 + 4E → 83.</span></li><li><strong>Quay trái 3 bit</strong><span>10000011 → 00011100 = 1C.</span></li><li><strong>Cộng lại b</strong><span>(1C + 6A) mod 256 = 86.</span></li></ol><p class="lesson-note">Các số hai chữ số ở trên viết theo hệ hex. Với SHA thu nhỏ, quay trái 6 bit cho B3 → EC.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="formula-box">MD5 thu nhỏ: a_mới = b ⊞ ((a ⊞ f(b,c,d) ⊞ M_j ⊞ t_i) &lt;&lt;&lt; s)
+  • Hàm f(b,c,d) = (b AND c) OR ((NOT b) AND d)
+  • Phép ⊞ là cộng thông thường rồi lấy mod 256 (vì 1 byte = 2⁸ = 256)
+SHA thu nhỏ: c_mới = b &lt;&lt;&lt; 6 (quay trái 6 bit trên 8 bit)</div>
+            <p><strong>Mẹo quay trái <code>&lt;&lt;&lt; s</code> không bao giờ nhầm:</strong> Viết đủ <strong>8 chữ số nhị phân</strong> ra giấy, gạch chân <code>s</code> bit đầu tiên bên trái rồi bê nguyên cụm đó dán ra sau đuôi!</p>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">4.5 Chữ ký điện tử &amp; Chữ ký RSA</span>
+            <h3>Ký trước hay Mã trước? &amp; Chữ ký RSA</h3><figure class="lesson-visual lesson-flow"><figcaption>Kiểm chứng chữ ký RSA theo bài tập</figcaption><ol class="lesson-steps"><li><strong>Khóa của người ký</strong><span>n = 247, b = 5 công khai. Số mũ riêng a = 173.</span></li><li><strong>Ký giá trị đại diện x</strong><span>x = 40 → y = 40¹⁷³ mod 247 = 53.</span></li><li><strong>Kiểm chứng</strong><span>53⁵ mod 247 = 40. Kết quả trùng x nên chữ ký hợp lệ.</span></li></ol><p class="lesson-note">Trong sơ đồ ký cốt, đầu vào x là giá trị đại diện từ hàm băm. Người nhận băm lại thông điệp để kiểm tra.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <ul>
+              <li><strong>Thứ tự chuẩn khi vừa muốn bí mật vừa muốn ký tên:</strong>
+                <br>1. A dùng <strong>Khóa bí mật của A</strong> ký lên thư trước: <code>y = sig_A(x)</code>.
+                <br>2. A dùng <strong>Khóa công khai của B</strong> bọc kín cả thư lẫn chữ ký rồi mới gửi đi: <code>z = e_B(x, y)</code>.
+              </li>
+              <li><strong>Tại sao khi dùng hàm băm, A chỉ cần gửi <code>(x, y)</code> mà không cần gửi kèm mã băm <code>z = h(x)</code>?</strong> Vì hàm băm là công khai, B nhận được thư <code>x</code> là tự bấm máy tính ra <code>h(x)</code> để đối chiếu với chữ ký <code>y</code> được ngay!</li>
+              <li><strong>Chữ ký RSA (ngược chiều với mã hóa RSA):</strong>
+                <br>• Ký bằng <strong>khóa bí mật <code>a</code></strong>: <code>y = x^a mod n</code>.
+                <br>• Mọi người xác minh bằng <strong>khóa công khai <code>b</code></strong>: kiểm tra xem <code>y^b mod n</code> có bằng đúng nội dung thư <code>x</code> hay không.
+              </li>
+            </ul>
+          </details></article>
+
+          <article class="theory-card">
+            <span class="theory-badge">4.6 Chuẩn chữ ký điện tử DSS</span>
+            <h3>Công thức DSS &amp; Thảm họa dùng lại số k</h3><figure class="lesson-visual lesson-flow"><figcaption>DSS: đi từ tham số đến chữ ký</figcaption><ol class="lesson-steps"><li><strong>Tham số ví dụ</strong><span>p = 47, q = 23, g = 2. Suy ra α = 4. Với a = 5, β = 37.</span></li><li><strong>Ký x = 12, dùng k = 7</strong><span>γ = (4⁷ mod 47) mod 23 = 5. k⁻¹ mod 23 = 10, nên δ = (12 + 5×5)×10 mod 23 = 2.</span></li><li><strong>Xác minh</strong><span>δ⁻¹ = 12 → e₁ = 6, e₂ = 14. ((4⁶ × 37¹⁴) mod 47) mod 23 = 5.</span></li></ol><p class="lesson-note">Kết quả xác minh trùng γ. Khi làm bài, ghi rõ phép nào lấy mod p và phép nào lấy mod q.</p></figure><details class="lesson-details"><summary>Lý thuyết và công thức</summary>
+            <div class="formula-box">Tham số: q nguyên tố, p nguyên tố sao cho q chia hết (p − 1)
+α = g^((p−1)/q) mod p (α ≠ 1)  |  Khóa công khai β = α^a mod p
+Ký (chọn số ngẫu nhiên k mới mỗi lần, 1 ≤ k ≤ q−1):
+  γ = (α^k mod p) mod q
+  δ = (x + a·γ)·k⁻¹ mod q
+Xác minh: e1 = x·δ⁻¹ mod q, e2 = γ·δ⁻¹ mod q
+  Hợp lệ ⟺ (α^e1 · β^e2 mod p) mod q = γ</div>
+            <div class="tldr-box">
+              <strong>Lỗi chí tử hay hỏi thi:</strong> Mỗi lần ký bắt buộc phải gieo một số ngẫu nhiên <code>k</code> hoàn toàn mới! Nếu lười dùng lại cùng một số <code>k</code> cho 2 văn bản khác nhau, chúng sẽ có cùng giá trị <code>γ</code>, giúp hacker lập hệ phương trình tìm ra ngay <code>k</code> và <strong>lộ sạch khóa bí mật <code>a</code></strong>!
+            </div>
+          </details></article>
+        </div>
+      `
+    };
+
+const QuizEngine = (() => {
+  const list = [];
+  const pick = xs => xs[Math.floor(Math.random() * xs.length)];
+  const int = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+  function shuffle(xs) {
+    const copy = [...xs];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = int(0, i);
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+  function question(prompt, correct, distractors, explanation) {
+    const answer = String(correct);
+    const options = shuffle([...new Set(distractors.map(String))].filter(x => x !== answer)).slice(0, 3);
+    if (options.length !== 3) throw new Error('Thiếu phương án cho câu: ' + prompt);
+    const choices = shuffle([answer, ...options]);
+    return { prompt, choices, correct: choices.indexOf(answer), explanation };
+  }
+  function num(prompt, answer, explanation, distractors = [], show = String) {
+    const alternatives = [...distractors];
+    for (let i = 1; i <= 8; i++) alternatives.push(answer + i, answer - i);
+    const normalized = [...new Set(alternatives.map(show))].filter(x => x !== show(answer));
+    return question(prompt, show(answer), normalized.slice(0, 3), explanation);
+  }
+  function register(ch, topic, kind, make) {
+    list.push({ id: list.length, ch, topic, kind, make });
+  }
+  function theory(ch, topic, rows) {
+    if (rows.length < 4) throw new Error('Mỗi nhóm lý thuyết cần ít nhất 4 khái niệm.');
+    rows.forEach(([term, definition, scenario], index) => {
+      const others = rows.filter((_, i) => i !== index);
+      const explanation = term + ' — ' + definition;
+      register(ch, topic, 'theory', () => {
+        const forms = [
+          ['Khái niệm nào phù hợp với mô tả sau? ' + definition, term, others.map(r => r[0])],
+          ['Mô tả nào đúng về ' + term + '?', definition, others.map(r => r[1])]
+        ];
+        if (scenario) forms.push([scenario, term, others.map(r => r[0])]);
+        return forms.map(form => question(...form, explanation));
+      });
+    });
+  }
+  const calc = (ch, topic, make) => register(ch, topic, 'calc', make);
+  const mod = (a, n) => ((a % n) + n) % n;
+  function gcd(a, b) {
+    while (b) [a, b] = [b, a % b];
+    return Math.abs(a);
+  }
+  function inverse(a, n) {
+    a = mod(a, n);
+    let [r, s, x, y] = [n, a, 0, 1];
+    while (s) {
+      const q = Math.floor(r / s);
+      [r, s, x, y] = [s, r - q * s, y, x - q * y];
+    }
+    return r === 1 ? mod(x, n) : null;
+  }
+  function pow(a, e, n) {
+    let base = BigInt(a), exp = BigInt(e), m = BigInt(n);
+    base = ((base % m) + m) % m;
+    let result = 1n % m;
+    while (exp > 0n) {
+      if (exp & 1n) result = result * base % m;
+      base = base * base % m;
+      exp >>= 1n;
+    }
+    return Number(result);
+  }
+  const bits = (n, width = 8) => mod(n, 2 ** width).toString(2).padStart(width, '0');
+  const hex = n => '0x' + mod(n, 256).toString(16).toUpperCase().padStart(2, '0');
+
+  theory(1, 'Mối đe dọa và mục tiêu bảo mật', [
+    ['Bí mật', 'Giới hạn việc đọc thông tin cho người có quyền.', 'Một hồ sơ lương bị đọc bởi người ngoài nhưng nội dung vẫn nguyên vẹn. Thuộc tính nào bị vi phạm trực tiếp?'],
+    ['Toàn vẹn', 'Bảo đảm dữ liệu không bị sửa đổi trái phép.', 'Số tiền trên lệnh giao dịch bị thay đổi trong khi truyền. Thuộc tính nào bị vi phạm trực tiếp?'],
+    ['Xác thực', 'Kiểm chứng danh tính hoặc nguồn gốc thông điệp.', 'Một lệnh giả được tiếp nhận như thể do đúng chủ tài khoản gửi. Mục tiêu nào thất bại trực tiếp?'],
+    ['Sẵn sàng', 'Bảo đảm tài nguyên có thể được sử dụng khi người có quyền cần.', 'Mất điện khiến phòng đăng ký học phần ngừng phục vụ. Thuộc tính nào bị ảnh hưởng trực tiếp?']
+  ]);
+  theory(1, 'Hiểm họa và quản lý rủi ro', [
+    ['Can thiệp thụ động', 'Quan sát thông tin trái phép mà không làm thay đổi dữ liệu hoặc dịch vụ.'],
+    ['Hiểm họa chủ động do vô ý', 'Thao tác ngoài ý muốn làm thay đổi hoặc gián đoạn hệ thống.', 'Nhân viên bảo trì nhầm dây điện và khiến hệ thống ngừng phục vụ. Phân loại sự cố nào phù hợp?'],
+    ['Sửa đổi có chủ ý', 'Thay đổi dữ liệu trái phép một cách cố tình.', 'Một người cố tình đổi thời điểm ghi trên biên bản. Phân loại nào phù hợp?'],
+    ['Rủi ro còn lại', 'Phần rủi ro vẫn tồn tại sau khi áp dụng biện pháp giảm thiểu.'],
+    ['Tổn thất kỳ vọng', 'Mức tổn thất trung bình theo mô hình xác suất nhân hậu quả.']
+  ]);
+  theory(1, 'Tài nguyên và các lớp bảo vệ', [
+    ['Phần cứng', 'Tài nguyên hữu hình như máy chủ, ổ đĩa và thiết bị mạng.'],
+    ['Bảo vệ vật lý', 'Kiểm soát tiếp cận nơi đặt thiết bị bằng cửa khóa hoặc bảo vệ.'],
+    ['Bảo vệ tác nghiệp', 'Vận hành phân quyền, xác thực và kiểm soát truy cập hằng ngày.'],
+    ['Quản lý và chính sách', 'Đặt ra quy định, trách nhiệm, quy trình và cơ chế kiểm tra tuân thủ.'],
+    ['Sao lưu', 'Tạo bản sao để có thể khôi phục dữ liệu khi bản đang dùng bị mất hoặc hỏng.']
+  ]);
+  theory(1, 'Kẻ xâm nhập và mã độc', [
+    ['Kẻ giả danh', 'Người sử dụng danh tính của người khác để được hệ thống chấp nhận.'],
+    ['Kẻ lạm quyền', 'Người có tài khoản hợp lệ dùng quyền hoặc dữ liệu vượt quá nhiệm vụ.'],
+    ['Người dùng giấu mặt', 'Người chiếm quyền kiểm soát và che giấu hoạt động khỏi cơ chế giám sát.'],
+    ['Virus', 'Mã tự nhân bản bằng cách gắn vào đối tượng chủ. Bộ tải là phần thi hành tác động ngoài việc nhân bản.'],
+    ['Sâu máy tính', 'Mã có thể tự lan truyền qua mạng mà không cần gắn vào tệp chủ.'],
+    ['Trojan', 'Chương trình có vẻ hợp lệ nhưng ẩn chức năng có hại.'],
+    ['Bom logic', 'Mã có hại kích hoạt khi một điều kiện định trước được thỏa mãn.'],
+    ['Zombie', 'Máy bị chiếm quyền và có thể nhận lệnh từ bên điều khiển.'],
+    ['Cửa sau', 'Đường truy cập bỏ qua cơ chế xác thực hoặc kiểm soát thông thường.']
+  ]);
+  theory(1, 'Phòng thủ và an toàn bộ nhớ', [
+    ['Stack canary', 'Kiểm tra một giá trị bảo vệ nhằm phát hiện việc ghi đè ngăn xếp trước khi trả về.'],
+    ['DEP/NX', 'Đánh dấu các trang chứa dữ liệu là không thực thi được.'],
+    ['ASLR', 'Ngẫu nhiên hóa vị trí vùng nhớ để địa chỉ khó đoán hơn.'],
+    ['Kiểm tra biên', 'Kiểm tra độ dài theo sức chứa vùng đích trước khi sao chép.'],
+    ['Phát hiện theo chữ ký', 'Đối chiếu sự kiện với mẫu đã biết.'],
+    ['Phát hiện bất thường', 'So sánh hoạt động với hành vi nền để phát hiện sai lệch.'],
+    ['Lọc lưu lượng chống quá tải', 'Loại bớt lưu lượng không mong muốn trước khi tài nguyên xử lý bị bão hòa.']
+  ]);
+  theory(1, 'Tường lửa, phân quyền và kênh an toàn', [
+    ['Lọc gói', 'Áp dụng luật theo thông tin như địa chỉ, cổng và giao thức.'],
+    ['Cổng mức mạch', 'Kiểm soát phiên hoặc kết nối ở mức mạch.'],
+    ['Cổng mức ứng dụng', 'Hiểu và kiểm tra thông điệp theo giao thức ứng dụng.'],
+    ['ACL theo đối tượng', 'Liệt kê chủ thể và quyền liên quan đến một tài nguyên cụ thể.'],
+    ['Danh sách năng lực theo chủ thể', 'Liệt kê những đối tượng và quyền mà một chủ thể nắm giữ.'],
+    ['IPsec AH', 'Cung cấp xác thực nguồn và toàn vẹn cho các phần được bảo vệ mà không mã hóa tải trọng.'],
+    ['IPsec ESP chế độ tunnel', 'Có thể mã hóa gói IP bên trong để kết nối các mạng qua một đường hầm.'],
+    ['Bắt tay TLS', 'Thỏa thuận tham số, thiết lập khóa phiên và xác thực máy chủ trong cấu hình dùng chứng chỉ thông thường.'],
+    ['Phong bì số', 'Mã hóa nội dung với khóa phiên đối xứng và mã hóa khóa phiên bằng khóa công khai của người nhận.']
+  ]);
+  theory(2, 'Mô hình mã hóa và giả định thám mã', [
+    ['Mã hóa đối xứng', 'Hai bên dùng chung khóa bí mật trong mô hình cơ bản.'],
+    ['Chỉ có bản mã', 'Bên phân tích chỉ được cung cấp các bản mã.'],
+    ['Biết bản rõ', 'Bên phân tích có một số cặp bản rõ và bản mã tương ứng nhưng không tự chọn chúng.'],
+    ['Chọn bản rõ', 'Bên phân tích được chọn bản rõ và nhận bản mã tương ứng.'],
+    ['Chọn bản mã', 'Bên phân tích được chọn bản mã và nhận kết quả giải mã trong mô hình xét.'],
+    ['An toàn tính toán', 'Chi phí hoặc thời gian phá mã vượt nguồn lực thực tế của đối phương.'],
+    ['One-time pad', 'Dùng khóa ngẫu nhiên đều, dài bằng bản rõ, giữ bí mật và mỗi khóa chỉ dùng một lần.']
+  ]);
+  theory(2, 'Thay thế và hoán vị cổ điển', [
+    ['Caesar', 'Dùng cùng một độ dịch chữ cái trên mọi vị trí.'],
+    ['Bảng chữ đơn', 'Áp dụng cùng một bảng ánh xạ chữ cái thay thế trên mọi vị trí.'],
+    ['Playfair', 'Dùng bảng 5 × 5 và biến đổi theo từng cặp chữ.'],
+    ['Vigenère', 'Lặp khóa chữ để chọn độ dịch khác nhau tùy vị trí.'],
+    ['Rail Fence', 'Viết chữ theo đường zíc zắc rồi đọc lần lượt từng hàng.'],
+    ['Dịch chuyển dòng', 'Viết vào lưới theo hàng và đọc cột theo thứ tự khóa.']
+  ]);
+  theory(2, 'Mã dòng, mã khối và chế độ vận hành', [
+    ['TinyA5/1', 'Đồng hồ của ba thanh ghi được điều khiển theo bit đa số.'],
+    ['TinyRC4', 'Xáo mảng 8 phần tử bằng KSA rồi dùng PRGA sinh chuỗi khóa.'],
+    ['TinyDES', 'Mô hình Feistel 3 vòng, khối 8 bit và khóa con 6 bit.'],
+    ['DES', 'Mạng Feistel 16 vòng, khối 64 bit và khóa chính hiệu dụng 56 bit.'],
+    ['AES', 'Mã khối 128 bit với khóa 128, 192 hoặc 256 bit.'],
+    ['ECB', 'Mã hóa từng khối độc lập, nên các khối bản rõ giống nhau cho các khối bản mã giống nhau dưới cùng khóa.'],
+    ['CBC', 'XOR mỗi khối bản rõ với khối bản mã trước đó, dùng IV ở khối đầu.'],
+    ['CTR', 'Mã hóa các giá trị bộ đếm rồi XOR kết quả với dữ liệu.'],
+    ['CFB', 'Phản hồi bản mã vào bước sinh đầu ra kế tiếp.'],
+    ['OFB', 'Phản hồi đầu ra của phép mã khối vào bước sinh đầu ra kế tiếp.']
+  ]);
+  theory(2, 'Chứng thực, chống phát lại và KDC', [
+    ['KDC', 'Trung tâm tin cậy thiết lập hoặc phân phối khóa phiên cho các bên.'],
+    ['Khóa phiên', 'Khóa cấp cho một phiên liên lạc, khác với khóa dài hạn dùng với trung tâm.'],
+    ['MAC', 'Mã xác thực thông điệp dùng khóa bí mật chia sẻ, hỗ trợ kiểm tra toàn vẹn và nguồn trong nhóm nắm khóa.'],
+    ['Phát lại', 'Bản tin đã gửi được chuyển tiếp lần nữa để nó bị tiếp nhận như một thông điệp mới.'],
+    ['Nonce', 'Giá trị chỉ dùng một lần trong một ngữ cảnh để hỗ trợ kiểm tra tính mới.'],
+    ['Không chối bỏ', 'Bên thứ ba cần phân biệt ai đã tạo thông điệp; một MAC với khóa chung giữa hai bên không đủ để phân biệt.']
+  ]);
+  theory(3, 'Số học modulo', [
+    ['Thuật toán Euclid', 'Lặp phép chia lấy dư để tìm ước chung lớn nhất.'],
+    ['Euclid mở rộng', 'Đồng thời tìm hệ số Bézout sao cho ax + by = gcd(a,b).'],
+    ['Nghịch đảo modulo', 'Phần tử nhân với a cho số dư 1; tồn tại khi a và modulo nguyên tố cùng nhau.'],
+    ['Hàm Euler', 'Đếm số nguyên từ 1 đến n nguyên tố cùng nhau với n.'],
+    ['Fermat nhỏ', 'Nếu p nguyên tố và p không chia hết a thì a^(p−1) ≡ 1 mod p.'],
+    ['Định lý Euler', 'Nếu gcd(a,n) = 1 thì a^φ(n) ≡ 1 mod n.'],
+    ['Phần dư Trung Hoa', 'Ghép các đồng dư có modulo đôi một nguyên tố cùng nhau thành một nghiệm theo tích các modulo.'],
+    ['Bình phương và nhân', 'Dùng các bit của số mũ để tính lũy thừa modulo qua các bước bình phương và nhân.']
+  ]);
+  theory(3, 'RSA, ba lô và Diffie–Hellman', [
+    ['RSA mã hóa', 'Mã hóa với khóa công khai của người nhận và giải mã với khóa riêng tương ứng.'],
+    ['RSA ký', 'Tạo chữ ký với khóa riêng của người ký và xác minh với khóa công khai tương ứng.'],
+    ['Dãy siêu tăng', 'Mỗi phần tử lớn hơn tổng tất cả phần tử trước đó.'],
+    ['Diffie–Hellman', 'Hai bên tính cùng một bí mật chung từ các tham số công khai và số mũ bí mật của mình.'],
+    ['Logarit rời rạc', 'Tìm số mũ khi đã biết cơ số và kết quả lũy thừa trong nhóm.'],
+    ['Mã hóa lai', 'Dùng mật mã bất đối xứng để hỗ trợ thiết lập hoặc bọc khóa và mã đối xứng để xử lý nội dung.']
+  ]);
+  theory(3, 'Phân phối khóa và PKI', [
+    ['Thông báo công khai', 'Chủ khóa tự quảng bá khóa công khai, thiếu đảm bảo nguồn nếu thông báo không được xác thực.'],
+    ['Thư mục công khai', 'Duy trì danh bạ khóa để người dùng tra cứu.'],
+    ['Chủ quyền khóa công khai', 'Một cơ quan trực tuyến trả lời yêu cầu tra cứu khóa có xác thực.'],
+    ['Chứng chỉ khóa công khai', 'Ràng buộc khóa công khai và danh tính bằng chữ ký của bên phát hành.'],
+    ['CA', 'Tổ chức phát hành và ký chứng chỉ trong hạ tầng khóa công khai.'],
+    ['Thu hồi chứng chỉ', 'Đưa chứng chỉ ra khỏi trạng thái tin cậy trước khi hết hạn, ví dụ sau sự cố khóa riêng.']
+  ]);
+  theory(4, 'Hàm băm và các tính chất', [
+    ['Digest', 'Kết quả độ dài cố định của một hàm băm đã chọn.'],
+    ['Kháng tiền ảnh', 'Khó tìm đầu vào bất kỳ tương ứng với một giá trị băm cho trước.'],
+    ['Kháng tiền ảnh thứ hai', 'Cho sẵn một thông điệp, khó tìm thông điệp khác có cùng cốt.'],
+    ['Kháng đụng độ', 'Khó tìm một cặp đầu vào khác nhau có cùng cốt khi cả hai đầu vào đều được chọn.'],
+    ['Nghịch lý ngày sinh', 'Với đầu ra băm đều b bit, tìm va chạm ngẫu nhiên cần cỡ 2^(b/2) mẫu.'],
+    ['Hiệu ứng lan truyền', 'Một thay đổi nhỏ ở đầu vào thường làm nhiều bit đầu ra thay đổi.']
+  ]);
+  theory(4, 'MD5, SHA và quy ước đệm', [
+    ['MD5', 'Cốt 128 bit, bốn thanh ghi và 64 bước trên mỗi khối 512 bit.'],
+    ['SHA-1', 'Cốt 160 bit, năm thanh ghi và 80 bước trên mỗi khối 512 bit.'],
+    ['Đệm theo quy ước môn học', 'Thêm bit 1 rồi thêm các bit 0 tới bội 512; bài tập nêu rõ không dùng trường độ dài.'],
+    ['Đệm chuẩn MD5', 'Thêm bit 1, đệm 0 tới mốc 448 mod 512 rồi thêm trường độ dài 64 bit.'],
+    ['Quay trái', 'Đưa các bit rời đầu bên trái trở lại cuối bên phải.']
+  ]);
+  theory(4, 'Chữ ký số và xác minh', [
+    ['Tạo chữ ký', 'Dùng khóa riêng để tạo giá trị gắn với thông điệp.'],
+    ['Xác minh chữ ký', 'Dùng khóa công khai đã xác thực của người ký để kiểm tra.'],
+    ['Ký cốt bức điện', 'Bên nhận băm lại thông điệp rồi dùng cốt vừa tính để xác minh.'],
+    ['Ký và mã hóa theo bài giảng', 'Ký bằng khóa riêng của người gửi rồi mã hóa gói thông điệp và chữ ký cho người nhận.'],
+    ['Bộ tham số của sơ đồ chữ ký', 'Gồm tập thông điệp, tập chữ ký, tập khóa, họ hàm ký và họ hàm xác minh.'],
+    ['DSS/DSA trong bài tập', 'Mỗi lần ký dùng tham số k phù hợp và tránh dùng lại k cho các thông điệp khác nhau.']
+  ]);
+
+  calc(1, 'Tổn thất kỳ vọng', () => {
+    const [incident, consequence] = pick([
+      ['mất điện', 'dừng vận hành'], ['hỏng ổ đĩa', 'khôi phục dữ liệu'],
+      ['sự cố mạng', 'gián đoạn dịch vụ'], ['hỏng hệ thống làm mát', 'sửa thiết bị']
+    ]);
+    const p = int(1, 9), damage = 20 * int(5, 60);
+    const loss = p * damage / 10;
+    return num(`Xác suất ${incident} trong một năm là ${p * 10}%. Chi phí ${consequence} nếu xảy ra là ${damage} triệu đồng. Tổn thất kỳ vọng một năm là bao nhiêu triệu đồng?`,
+      loss, `${p * 10}% × ${damage} = ${loss} triệu đồng/năm.`, [damage, loss * 2, damage - loss]);
+  });
+  calc(1, 'Lợi ích và rủi ro còn lại', () => {
+    const loss = 100 * int(3, 16), rate = int(2, 9) * 10, cost = 10 * int(2, 18);
+    const reduction = loss * rate / 100;
+    const [target, answer, detail] = pick([
+      ['lợi ích ròng', reduction - cost, `Lấy phần giảm ${reduction} trừ chi phí ${cost}.`],
+      ['tổn thất còn lại', loss - reduction, `Lấy tổn thất ban đầu ${loss} trừ phần giảm ${reduction}.`],
+      ['tổn thất giảm được', reduction, 'Nhân tổn thất ban đầu với phần trăm giảm.']
+    ]);
+    return num(`Tổn thất kỳ vọng là ${loss} triệu đồng/năm. Giải pháp giá ${cost} triệu đồng/năm và giảm ${rate}% tổn thất. Tính ${target} theo triệu đồng/năm.`,
+      answer, `${detail} Kết quả ${answer} triệu đồng/năm.`, [reduction, loss - reduction, reduction - cost, cost]);
+  });
+  calc(1, 'Chọn biện pháp trong ngân sách', () => {
+    const budget = pick([90, 100, 110]);
+    const costs = [40, 50, 70];
+    const net = [int(2, 6), int(7, 11), int(5, 14)].map(x => x * 10);
+    const options = [
+      ['Chỉ G2', net[1]], ['Chỉ G3', net[2]], ['G1 và G2', net[0] + net[1]],
+      ['G1 và G3', budget >= 110 ? net[0] + net[2] : -Infinity], ['G2 và G3', -Infinity]
+    ].sort((a, b) => b[1] - a[1]);
+    const max = options[0][1];
+    const winners = options.filter(x => x[1] === max);
+    const right = winners.map(x => x[0]).join(' hoặc ');
+    return question(`Ba giải pháp tác động độc lập. G1, G2, G3 lần lượt có chi phí ${costs.join(', ')} triệu và giảm tổn thất ${net.map((x, i) => x + costs[i]).join(', ')} triệu. Ngân sách ${budget} triệu. Trong các phương án sau, phương án nào có lợi ích ròng cao nhất trong giới hạn?`,
+      right, options.filter(x => x[1] !== max).map(x => x[0]),
+      `Lợi ích ròng riêng lẻ là ${net.join(', ')} triệu. Loại các tổ hợp vượt ${budget} triệu. ${right} đạt mức cao nhất là ${max} triệu.`);
+  });
+  calc(1, 'Năng lực phục vụ và dự phòng', () => {
+    const avg = int(7, 19) * 400, spike = int(3, 12) * 160, capacity = 10_000;
+    const total = avg + spike;
+    return num(`Cổng đăng ký phục vụ tối đa ${capacity} yêu cầu/giây. Người dùng tạo ${avg} yêu cầu/giây, đợt đăng ký mới tăng thêm ${spike}. Sau khi cộng hai luồng, năng lực còn dư bao nhiêu yêu cầu/giây?`,
+      capacity - total, `Năng lực còn dư = ${capacity} − (${avg} + ${spike}) = ${capacity - total}.`, [capacity - avg, capacity - spike, total]);
+  });
+
+  calc(1, 'Kiểm tra độ dài an toàn', () => {
+    const capacity = int(24, 128), count = capacity + int(-10, 20);
+    const answer = Math.min(count, capacity - 1);
+    return num(`Một bộ đệm có ${capacity} byte. Đầu vào có ${count} byte nội dung. Hàm sao chép an toàn chừa 1 byte kết thúc chuỗi và cắt phần dư. Hàm sẽ chép bao nhiêu byte nội dung?`,
+      answer, `Chừa 1 byte nên tối đa ${capacity - 1} byte nội dung. Lấy min(${count}, ${capacity - 1}) = ${answer}.`, [capacity, count, count + 1, capacity - 2]);
+  });
+
+  const abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const words = ['NETWORK', 'SECURITY', 'MESSAGE', 'BALANCE', 'NOTEBOOK', 'BACKUP', 'CRYPTO', 'SUCCESS', 'PROTECT', 'DATALINK', 'INFORMATION', 'VERIFY', 'DATABASE', 'BROWSER', 'EXAMPLE', 'SCHOOL', 'SIGNATURE', 'PRIVACY', 'KEYBOARD', 'TERMINAL'];
+  const shift = (word, offset) => [...word].map((x, i) => abc[mod(abc.indexOf(x) + offset(i), 26)]).join('');
+  function textQuestion(prompt, answer, wrong, detail, alphabet = abc) {
+    const last = alphabet.indexOf(answer.at(-1));
+    const variants = [1, 2, 3].map(d => answer.slice(0, -1) + alphabet[mod(last + d, alphabet.length)]);
+    return question(prompt, answer, [...wrong, ...variants], detail);
+  }
+  calc(2, 'Caesar', () => {
+    const word = pick(words), k = int(1, 25), enc = shift(word, () => k);
+    if (int(0, 2) === 0) return num(`Caesar với A=0: ${word} được mã thành ${enc}. Tìm khóa dịch k trong 1…25.`,
+      k, `Lấy mã số chữ đầu ${enc[0]} trừ mã số ${word[0]} theo mod 26 để được ${k}.`, [26 - k, k % 25 + 1, (k + 1) % 25 + 1]);
+    const decrypt = int(0, 1);
+    return textQuestion(`Caesar (A=0), k=${k}. Hãy ${decrypt ? 'giải mã ' + enc : 'mã hóa ' + word}.`,
+      decrypt ? word : enc, [shift(decrypt ? enc : word, () => decrypt ? k : -k)],
+      `${decrypt ? 'Trừ' : 'Cộng'} ${k} vào chỉ số mỗi chữ theo mod 26. Kết quả ${decrypt ? word : enc}.`);
+  });
+  calc(2, 'Mã bảng chữ đơn', () => {
+    const mapping = shuffle(abc).join(''), word = pick(words).slice(0, 5);
+    const coded = [...word].map(x => mapping[abc.indexOf(x)]).join('');
+    const decrypt = int(0, 1);
+    return textQuestion(`Mã bảng chữ đơn. Hàng bản rõ: ${abc}. Hàng bản mã: ${mapping}. Hãy ${decrypt ? 'giải mã ' + coded : 'mã hóa ' + word}.`,
+      decrypt ? word : coded, [], `Tra từng chữ ở hàng ${decrypt ? 'bản mã' : 'bản rõ'} rồi đọc ký tự tại cùng cột ở hàng còn lại. ${word} ↔ ${coded}.`);
+  });
+  const playAlphabet = abc.replace('J', '');
+  calc(2, 'Playfair', () => {
+    const key = pick(words), table = [...new Set((key + playAlphabet).replaceAll('J', 'I'))].join('');
+    const word = pick(words).replaceAll('J', 'I');
+    const pairs = [];
+    for (let i = 0; i < word.length;) {
+      const a = word[i++];
+      const b = word[i] && word[i] !== a ? word[i++] : 'X';
+      pairs.push(a + b);
+    }
+    const decrypt = int(0, 1);
+    function transform(pair, delta) {
+      const [a, b] = [...pair].map(x => table.indexOf(x));
+      const ra = Math.floor(a / 5), rb = Math.floor(b / 5), ca = a % 5, cb = b % 5;
+      if (ra === rb) return table[ra * 5 + mod(ca + delta, 5)] + table[rb * 5 + mod(cb + delta, 5)];
+      if (ca === cb) return table[mod(ra + delta, 5) * 5 + ca] + table[mod(rb + delta, 5) * 5 + cb];
+      return table[ra * 5 + cb] + table[rb * 5 + ca];
+    }
+    const coded = pairs.map(pair => transform(pair, 1));
+    const answer = (decrypt ? pairs : coded).join('');
+    return textQuestion(`Playfair với từ khóa ${key}, gộp I/J, chèn X cho chữ lặp hoặc cuối lẻ. ${decrypt ? 'Giải mã ' + coded.join('') + ' và giữ nguyên chữ đệm' : 'Mã hóa ' + word}. Kết quả là gì?`,
+      answer, [], `Bảng theo hàng: ${table.match(/.{5}/g).join(' / ')}. Cùng hàng dịch ngang, cùng cột dịch dọc, khác hàng cột đổi cột. Các cặp ${pairs.join(' ')} ↔ ${coded.join(' ')}.`, playAlphabet);
+  });
+  calc(2, 'Vigenère', () => {
+    const key = pick(words).slice(0, int(3, 5)), word = pick(words);
+    const offset = i => abc.indexOf(key[i % key.length]);
+    const coded = shift(word, offset), decrypt = int(0, 1);
+    return textQuestion(`Vigenère (A=0), khóa ${key}. Hãy ${decrypt ? 'giải mã ' + coded : 'mã hóa ' + word}.`,
+      decrypt ? word : coded, [shift(decrypt ? coded : word, i => decrypt ? offset(i) : -offset(i))],
+      `Lặp khóa ${key}, ${decrypt ? 'trừ' : 'cộng'} từng vị trí theo mod 26. ${word} ↔ ${coded}.`);
+  });
+  calc(2, 'Rail Fence', () => {
+    const word = pick(words) + pick(words), rails = int(2, 5), period = 2 * (rails - 1);
+    const rows = Array.from({ length: rails }, () => []);
+    [...word].forEach((x, i) => rows[Math.min(i % period, period - i % period)].push(x));
+    const parts = rows.map(r => r.join('')), coded = parts.join(''), decrypt = int(0, 1);
+    return textQuestion(`Rail Fence ${rails} dòng (đi zíc zắc từ hàng trên cùng). Hãy ${decrypt ? 'giải mã ' + coded : 'mã hóa ' + word}.`,
+      decrypt ? word : coded, [parts.slice().reverse().join('')], `Các hàng lần lượt là ${parts.join(' / ')}. Đọc theo hàng để mã hóa và theo zíc zắc để khôi phục ${word}.`);
+  });
+  calc(2, 'Dịch chuyển dòng', () => {
+    const word = pick(words) + pick(words), m = int(3, 6);
+    const order = shuffle(Array.from({ length: m }, (_, j) => j + 1));
+    const padded = word.padEnd(Math.ceil(word.length / m) * m, 'X');
+    const columns = Array.from({ length: m }, (_, j) => [...padded].filter((_, i) => i % m === j).join(''));
+    const coded = order.map(j => columns[j - 1]).join(''), decrypt = int(0, 1);
+    return textQuestion(`Dịch chuyển dòng với ${m} cột, đọc theo thứ tự cột ${order.join('–')} (đánh số từ 1), đệm X. Hãy ${decrypt ? 'giải mã ' + coded + ' và giữ ký tự đệm' : 'mã hóa ' + word}.`,
+      decrypt ? padded : coded, [columns.join('')], `Cột theo vị trí gốc: ${columns.join(' / ')}. Ghép theo khóa được ${coded}, đọc ngang hàng được ${padded}.`);
+  });
+  calc(2, 'TinyA5/1', () => {
+    const key = bits(int(1, 2 ** 23 - 1), 23), plain = int(0, 7);
+    let registers = [key.slice(0, 6), key.slice(6, 14), key.slice(14)].map(s => [...s].map(Number));
+    const traces = [];
+    const controls = [1, 3, 3], taps = [[2, 4, 5], [6, 7], [2, 7, 8]];
+    for (let i = 0; i < 3; i++) {
+      const control = registers.map((r, j) => r[controls[j]]);
+      const majority = Number(control.reduce((a, b) => a + b) >= 2);
+      registers = registers.map((r, j) => control[j] === majority
+        ? [taps[j].reduce((a, t) => a ^ r[t], 0), ...r.slice(0, -1)] : r);
+      const s = registers.reduce((x, r) => x ^ r.at(-1), 0);
+      traces.push({ s, text: `bước ${i}: m=${majority}, ${registers.map(r => r.join('')).join('/')}, s=${s}` });
+    }
+    const stream = parseInt(traces.map(x => x.s).join(''), 2), cipher = stream ^ plain;
+    const [prompt, answer] = pick([['Tìm C=P⊕S', cipher], ['Tìm 3 bit đầu của S', stream]]);
+    return num(`TinyA5/1: K=${key}, P=${bits(plain, 3)}. Chia X/Y/Z 6/8/9 bit từ trái. Điều khiển x1,y3,z3, phản hồi x2⊕x4⊕x5, y6⊕y7, z2⊕z7⊕z8. Lấy XOR bit cuối sau dịch. ${prompt}.`,
+      answer, traces.map(x => x.text).join(' | ') + `. S=${bits(stream, 3)}, C=${bits(cipher, 3)}.`, [cipher, stream, plain], n => bits(n, 3));
+  });
+  calc(2, 'TinyRC4', () => {
+    const key = Array.from({ length: int(2, 4) }, () => int(0, 7)), plain = int(0, 511);
+    const s = [0, 1, 2, 3, 4, 5, 6, 7];
+    let j = 0;
+    for (let i = 0; i < 8; i++) {
+      j = (j + s[i] + key[i % key.length]) % 8;
+      [s[i], s[j]] = [s[j], s[i]];
+    }
+    const initial = s.join(',');
+    j = 0;
+    const out = [];
+    for (let i = 1; i <= 3; i++) {
+      j = (j + s[i]) % 8;
+      [s[i], s[j]] = [s[j], s[i]];
+      out.push(s[(s[i] + s[j]) % 8]);
+    }
+    const stream = parseInt(out.map(x => bits(x, 3)).join(''), 2), cipher = stream ^ plain;
+    const [target, answer] = pick([['C=P⊕S', cipher], ['3 số khóa đầu, ghép mỗi số thành 3 bit', stream]]);
+    return num(`TinyRC4 (mảng 8 số): K=(${key}), P=${bits(plain, 9)}. Chạy KSA, đưa i=j=0 rồi chạy 3 bước PRGA. Tìm ${target}.`,
+      answer, `KSA cho [${initial}]. PRGA cho ${out.join(', ')} → S=${bits(stream, 9)}, C=${bits(cipher, 9)}.`,
+      [plain, stream, cipher, stream ^ 1], n => bits(n, 9));
+  });
+  const desBox = ['E4D12FB83A6C5907', '0F74E2D1A6CB9538', '41E8D62BFC973A50', 'FC8249175B3EA06D'];
+  const permute = (s, indexes) => indexes.map(i => s[i]).join('');
+  const rolStr = (s, d) => s.slice(d) + s.slice(0, d);
+  const tinyDESRules = 'Expand lấy b2 b3 b1 b2 b1 b0. S-box (hàng theo 2 bit ngoài, cột theo 4 bit giữa): ' + desBox.join(' / ') + '. P-box lấy b2 b0 b3 b1.';
+  calc(2, 'TinyDES', () => {
+    const p = int(0, 255), key = bits(int(0, 255));
+    let [kl, kr] = [key.slice(0, 4), key.slice(4)];
+    let [l, r] = [p >> 4, p & 15];
+    const roundKeys = [], trace = [];
+    const applyF = (right, sub) => {
+      const expand = permute(bits(right, 4), [2, 3, 1, 2, 1, 0]);
+      const z = bits(parseInt(expand, 2) ^ parseInt(sub, 2), 6);
+      const s = parseInt(desBox[parseInt(z[0] + z[5], 2)][parseInt(z.slice(1, 5), 2)], 16);
+      const f = parseInt(permute(bits(s, 4), [2, 0, 3, 1]), 2);
+      return { expand, z, s, f };
+    };
+    for (const d of [1, 2, 1]) {
+      kl = rolStr(kl, d);
+      kr = rolStr(kr, d);
+      const sub = permute(kl + kr, [5, 1, 3, 2, 7, 0]);
+      roundKeys.push(sub);
+      const { expand, z, s, f } = applyF(r, sub);
+      [l, r] = [r, l ^ f];
+      trace.push(`E=${expand}, E⊕K=${z}, S=${bits(s, 4)}, F=${bits(f, 4)}, L‖R=${bits(l, 4)}${bits(r, 4)}`);
+    }
+    const round = int(0, 5);
+    const given = `K=${key}. Dịch trái riêng mỗi nửa khóa lần lượt 1, 2, 1 bit; Compress lấy k5 k1 k3 k2 k7 k0.`;
+    if (round < 3) return num(`TinyDES: ${given} Tìm K${round + 1}.`, parseInt(roundKeys[round], 2),
+      `Các khóa vòng lần lượt là ${roundKeys.join(' / ')}.`, roundKeys.map(k => parseInt(k, 2)), n => bits(n, 6));
+    const cipher = (l << 4) | r;
+    if (round === 3 || round === 4) return num(`TinyDES: P=${bits(p)}, ${given} ${tinyDESRules} Tìm C=L3‖R3 (không đổi chỗ cuối).`,
+      cipher, `Sau mỗi vòng: ${trace.join(' | ')}.`, [p, (r << 4) | l], bits);
+    const inverseTrace = [];
+    for (const sub of [...roundKeys].reverse()) {
+      [l, r] = [r ^ applyF(l, sub).f, l];
+      inverseTrace.push(bits((l << 4) | r));
+    }
+    return num(`TinyDES: C=${bits(cipher)} theo quy ước L3‖R3, ${given} ${tinyDESRules} Giải mã để tìm P.`,
+      (l << 4) | r, `Lấy khóa con ngược thứ tự; R trước = L sau, L trước = R sau ⊕ F(L sau,K). Các cặp L‖R khi quay ngược: ${inverseTrace.join(' / ')}.`, [cipher, (r << 4) | l], bits);
+  });
+  calc(2, 'Không gian khóa, XOR và phân phối khóa', () => {
+    const n = int(7, 42);
+    const [prompt, answer, detail] = pick([
+      [`${n} người dùng khóa đối xứng riêng cho mỗi cặp (không có KDC). Cần bao nhiêu khóa?`, n * (n - 1) / 2, `Chọn hai người không xét thứ tự: ${n}×${n - 1}/2.`],
+      [`${n} người, mỗi người có đúng một khóa dài hạn riêng với KDC. Có bao nhiêu khóa dài hạn?`, n, `Mỗi người tương ứng một khóa, tổng ${n}.`],
+      [`Một khóa đối xứng dài ${n} bit sử dụng mọi tổ hợp. Có bao nhiêu giá trị khóa?`, 2 ** n, `Mỗi vị trí có 2 lựa chọn nên có 2^${n} khóa.`]
+    ]);
+    return num(prompt, answer, detail, [n, n * (n - 1), n * (n - 1) / 2, answer / 2].filter(Number.isInteger));
+  });
+  calc(2, 'XOR và mã dòng', () => {
+    const c = int(0, 255), k = int(1, 255), p = c ^ k;
+    return num(`Một mã dòng cho C=${bits(c)} với byte khóa ${bits(k)}. Tính byte bản rõ P.`,
+      p, `P=C⊕K, XOR từng cặp bit được ${bits(p)}.`, [c & k, c | k, c + k], bits);
+  });
+
+  calc(3, 'Euclid và hệ số Bézout', () => {
+    const factor = int(2, 21), a = factor * int(13, 57), b = factor * int(3, 12);
+    let [r, s, x, y, u, v] = [a, b, 1, 0, 0, 1];
+    const steps = [];
+    while (s) {
+      const q = Math.floor(r / s);
+      steps.push(`${r} = ${q}×${s} + ${r % s}`);
+      [r, s, x, y, u, v] = [s, r % s, u, v, x - q * u, y - q * v];
+    }
+    if (int(0, 1)) {
+      const options = [[x + 1, y], [x, y + 1], [x + 1, y + 1]];
+      return question(`Euclid mở rộng với a=${a}, b=${b}. Cặp (x,y) nào thỏa ax+by=gcd(a,b)?`,
+        `(${x}, ${y})`, options.map(([i, j]) => `(${i}, ${j})`),
+        `${steps.join('; ')}. Thế ngược: ${a}×(${x}) + ${b}×(${y}) = ${r}.`);
+    }
+    return num(`Dùng Euclid để tính gcd(${a}, ${b}).`, r, steps.join('; ') + `. Số dư khác 0 cuối cùng là ${r}.`, [factor, b, a % b]);
+  });
+  calc(3, 'Nghịch đảo và đồng dư tuyến tính', () => {
+    const n = int(11, 110), a = int(2, n - 1), inv = inverse(a, n);
+    const b = int(2, n - 1), d = gcd(a, n);
+    if (inv === null) return question(`Xét nghịch đảo của ${a} modulo ${n}. Khẳng định nào đúng?`,
+      `Không tồn tại, gcd = ${d}`,
+      [`Tồn tại, nghịch đảo là ${n - a}`, 'Luôn tồn tại vì a dương', 'Không tồn tại vì modulo lớn hơn số cần nghịch đảo'],
+      `gcd(${a},${n}) = ${d} > 1 nên không có nghịch đảo.`);
+    if (int(0, 1)) return num(`Tìm nghiệm nhỏ nhất không âm của ${a}x ≡ ${b} (mod ${n}).`,
+      mod(inv * b, n), `Nghịch đảo của ${a} là ${inv}. Nhân hai vế với ${inv} rồi lấy dư mod ${n}.`, [inv, b, mod(a * b, n)], x => mod(x, n));
+    return num(`Tìm nghịch đảo của ${a} modulo ${n} trong [0, ${n - 1}].`, inv,
+      `${a}×${inv} = ${a * inv} ≡ 1 (mod ${n}).`, [n - inv, a, b], x => mod(x, n));
+  });
+  calc(3, 'Bình phương và nhân', () => {
+    const a = int(3, 25), n = int(11, 101), e = int(9, 110);
+    const powers = [];
+    for (let k = 1; k <= e; k *= 2) if (e & k) powers.push(k);
+    const answer = pow(a, e, n);
+    return num(`Dùng bình phương và nhân, tính ${a}^${e} mod ${n}.`, answer,
+      `${e} = ${powers.join(' + ')}. Bình phương liên tiếp, nhân các phần dư ${powers.map(k => pow(a, k, n)).join(' × ')} rồi lấy mod ${n} được ${answer}.`,
+      [pow(a, e - 1, n), pow(a, e + 1, n), a % n], x => mod(x, n));
+  });
+  const primes = [5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59];
+  calc(3, 'Hàm Euler và định lý Fermat', () => {
+    const [p, q] = shuffle(primes), kind = int(0, 3);
+    const a = int(2, p - 1), k = int(1, 9), r = int(1, p - 2);
+    if (kind === 0) return num(`Tính φ(${p * q}), biết ${p * q} = ${p}×${q} với hai thừa số nguyên tố khác nhau.`,
+      (p - 1) * (q - 1), `φ(pq)=(p−1)(q−1)=(${p}−1)(${q}−1).`, [p * q - 1, p * q, p + q - 2]);
+    if (kind === 1) return num(`Tính φ(${p}^${k % 3 + 2}).`, p ** (k % 3 + 2) - p ** (k % 3 + 1),
+      `Với p nguyên tố, φ(p^j)=p^j−p^(j−1).`, [p ** (k % 3 + 2) - 1, p ** (k % 3 + 1), p - 1]);
+    if (kind === 2) return num(`Dùng Fermat nhỏ, tính ${a}^${k * (p - 1) + r} mod ${p}.`, pow(a, r, p),
+      `Vì ${a} không chia hết cho ${p}, ${a}^(${p}−1)≡1. Số mũ rút còn ${r} nên kết quả là ${pow(a, r, p)}.`, [r, a, 1], x => mod(x, p));
+    const n = p * q, phi = (p - 1) * (q - 1);
+    const base = int(0, 9) * n + int(2, n - 2);
+    const safeBase = gcd(base, n) === 1 ? base : n - 1;
+    return num(`Dùng định lý Euler, tính ${safeBase}^${k * phi + r} mod ${n}, biết ${n}=${p}×${q}.`,
+      pow(safeBase, r, n), `gcd(${safeBase},${n})=1, φ(n)=${phi} nên rút số mũ còn ${r}.`, [r, 1, safeBase % n], x => mod(x, n));
+  });
+  calc(3, 'Phần dư Trung Hoa', () => {
+    const [p, q] = shuffle(primes.slice(0, 7)), x = int(0, p * q - 1), a = x % p, b = x % q;
+    const inv = inverse(p, q);
+    return num(`Tìm x nhỏ nhất không âm thỏa x ≡ ${a} (mod ${p}) và x ≡ ${b} (mod ${q}).`, x,
+      `Đặt x=${a}+${p}t. Vì ${p}⁻¹ mod ${q}=${inv}, suy ra t≡(${b}−${a})×${inv}≡${mod((b - a) * inv, q)} (mod ${q}). Kết quả x=${x}.`,
+      [mod(x + p, p * q), mod(x + q, p * q), a + b], n => mod(n, p * q));
+  });
+  calc(3, 'Merkle–Hellman Knapsack', () => {
+    const weights = [];
+    let total = 0;
+    for (let i = 0; i < 5; i++) {
+      const w = total + int(1, 5);
+      weights.push(w);
+      total += w;
+    }
+    const m = weights.at(-1) * 2 + int(2, 14);
+    const u = pick(Array.from({ length: m - 2 }, (_, i) => i + 2).filter(i => gcd(i, m) === 1));
+    const pub = weights.map(w => w * u % m);
+    const p = int(1, 30), mask = [...bits(p, 5)].map(Number);
+    const cipher = pub.reduce((sum, w, i) => sum + w * mask[i], 0) % m;
+    const base = `MHK: dãy siêu tăng A′=(${weights}), M=${m}, u=${u}. Quy ước C là tổng trọng số công khai tại bit 1, lấy mod M.`;
+    const decrypt = int(0, 2);
+    if (decrypt === 2) {
+      const idx = int(0, 4);
+      return num(`${base} Tính thành phần công khai S${idx + 1} (đánh số từ 1).`, pub[idx],
+        `S${idx + 1} = (${weights[idx]}×${u}) mod ${m} = ${pub[idx]}.`, pub, n => mod(n, m));
+    }
+    if (decrypt === 0) return num(`${base} Mã hóa P=${bits(p, 5)}. Tìm C.`, cipher,
+      `S=(${pub}). Cộng trọng số ${pub.filter((_, i) => mask[i]).join(' + ')} rồi lấy mod ${m} được ${cipher}.`, pub, n => mod(n, m));
+    const inv = inverse(u, m);
+    return num(`${base} Giải mã C=${cipher} thành 5 bit.`, p,
+      `u⁻¹=${inv}. C′=${cipher}×${inv} mod ${m}=${cipher * inv % m}. Chọn từ phải sang trái: ${weights.filter((_, i) => mask[i]).reverse().join(' + ')} → ${bits(p, 5)}.`, [], n => bits(n, 5));
+  });
+  function rsaInputs() {
+    const [p, q] = shuffle(primes.slice(2, 12)), n = p * q, phi = (p - 1) * (q - 1);
+    const e = pick([3, 5, 7, 11, 17, 19, 23, 31].filter(e => gcd(e, phi) === 1));
+    return { p, q, n, phi, e, d: inverse(e, phi), m: int(2, n - 2) };
+  }
+  calc(3, 'RSA mã hóa và giải mã', () => {
+    const { p, q, n, phi, e, d, m } = rsaInputs(), c = pow(m, e, n);
+    const [target, answer, detail] = pick([
+      ['tìm số mũ bí mật d', d, `d=${e}⁻¹ mod ${phi}=${d}`],
+      [`mã hóa M=${m} để tìm C`, c, `C=${m}^${e} mod ${n}=${c}`],
+      [`giải mã C=${c} để tìm M`, m, `M=${c}^${d} mod ${n}=${m}`]
+    ]);
+    return num(`RSA với p=${p}, q=${q}, e=${e}: ${target}.`, answer,
+      `n=${n}, φ(n)=${phi}, d=${d}. ${detail}.`, [m, c, e, d, phi]);
+  });
+  calc(3, 'Diffie–Hellman', () => {
+    const [p, g] = pick([[23, 5], [29, 2], [31, 3], [47, 5], [467, 2]]);
+    const a = int(2, p - 2), b = int(2, p - 2), ap = pow(g, a, p), bp = pow(g, b, p), key = pow(bp, a, p);
+    const [target, answer] = pick([['khóa công khai Y_A', ap], ['khóa công khai Y_B', bp], ['khóa chung K', key]]);
+    return num(`Diffie–Hellman: p=${p}, g=${g}, a=${a}, b=${b}. Tính ${target}.`, answer,
+      `Y_A=${g}^${a} mod ${p}=${ap}, Y_B=${g}^${b} mod ${p}=${bp}, K=${bp}^${a} mod ${p}=${key}.`,
+      [ap, bp, key, g], n => mod(n, p));
+  });
+
+  calc(4, 'Nghịch lý ngày sinh', () => {
+    const b = int(6, 48) * 2, r = b / 2, more = int(2, 11) * 2;
+    if (int(0, 1)) return num(`Hàm băm đều cho cốt ${b} bit. Nếu chi phí tìm đụng độ ngẫu nhiên ở bậc 2^k, k bằng bao nhiêu?`,
+      r, `Có 2^${b} kết quả băm; lấy căn bậc hai cho bậc chi phí 2^${r}.`, [b, b - 1, r - 1, r + 1]);
+    return num(`Nếu tăng độ dài cốt của hàm băm đều từ ${b} lên ${b + more} bit, số mẫu tìm đụng độ ở cùng xác suất tăng xấp xỉ 2^k lần. Tính k.`,
+      more / 2, `Chênh ${more} bit, số mũ công việc tăng ${more}/2 = ${more / 2} theo quy tắc căn bậc hai.`, [more, more + 1, 1]);
+  });
+  calc(4, 'Xác suất va chạm và số giá trị băm', () => {
+    const bitsOut = int(10, 24), count = 2 ** bitsOut;
+    const samples = Math.floor(Math.sqrt(count) * pick([0.5, 1, 1.5, 2]));
+    const probability = Math.round(100 * (1 - Math.exp(-samples * (samples - 1) / (2 * count))));
+    return num(`Một hàm băm đều có cốt ${bitsOut} bit. Cho k=${samples} mẫu độc lập. Dùng P ≈ 1−exp(−k(k−1)/(2×2^${bitsOut})). Xác suất có ít nhất một va chạm xấp xỉ bao nhiêu %, làm tròn số nguyên?`,
+      probability, `Có ${count} giá trị băm. Thay k=${samples} vào công thức và nhân 100 được xấp xỉ ${probability}%.`,
+      [100 - probability, Math.min(probability * 2, 100), Math.round(probability / 2)]);
+  });
+  calc(4, 'Đệm và đếm MD5/SHA-1', () => {
+    const n = pick([512 * int(1, 15), int(150, 9000)]);
+    const blocks = Math.ceil((n + 1) / 512), padded = blocks * 512, zeros = padded - n - 1;
+    const [target, answer] = pick([
+      ['số bit 0 phải thêm', zeros], ['số khối 512 bit', blocks], ['số từ 32 bit', blocks * 16],
+      ['số bước biến đổi của MD5 (64 bước/khối)', blocks * 64], ['số bước biến đổi của SHA-1 (80 bước/khối)', blocks * 80]
+    ]);
+    return num(`Theo quy ước bài tập: thêm bit 1, đệm 0 đến bội 512 và bỏ qua trường độ dài. Bản tin có ${n} bit. Tính ${target}.`,
+      answer, `ceil((${n}+1)/512)=${blocks} khối. Tổng ${padded} bit, thêm ${zeros} bit 0, có ${blocks * 16} từ và ${blocks * 64}/${blocks * 80} bước MD5/SHA-1.`,
+      [zeros + 1, (blocks - 1) * 16, blocks * 64, blocks * 80, blocks]);
+  });
+  const rol = (v, s) => ((v << s) | (v >> (8 - s))) & 255;
+  calc(4, 'MD5 thu nhỏ', () => {
+    const [a, b, c, d, m, t] = Array.from({ length: 6 }, () => int(0, 255));
+    const s = int(1, 7), f = (b & c) | ((~b) & d), sum = mod(a + f + m + t, 256), rotated = rol(sum, s), next = (b + rotated) & 255;
+    const [target, answer] = pick([['f', f], ['tổng trước khi quay', sum], ['a mới', next]]);
+    return num(`MD5 8 bit: (a,b,c,d,M,t)=(${[a,b,c,d,m,t].map(hex).join(', ')}), quay trái s=${s}. f=(b AND c) OR ((NOT b) AND d). Công thức a mới = b + ROL(a+f+M+t,s), cộng mod 256. Tính ${target} ở hệ hex.`,
+      answer, `f=${hex(f)}, tổng mod 256=${hex(sum)}, quay trái được ${hex(rotated)}, cộng b được ${hex(next)}.`,
+      [f, sum, rotated, next, b + rol(sum, 8 - s)], hex);
+  });
+  calc(4, 'SHA thu nhỏ', () => {
+    const b = int(1, 254);
+    return num(`SHA thu nhỏ: c mới là b quay trái 6 bit trên thanh ghi 8 bit. Nếu b=${hex(b)}, c mới ở hệ hex bằng bao nhiêu?`,
+      rol(b, 6), `${bits(b)} quay trái 6 bit thành ${bits(rol(b, 6))} = ${hex(rol(b, 6))}.`, [rol(b, 2), b << 6, b >> 6, b], hex);
+  });
+  calc(4, 'Chữ ký RSA', () => {
+    const { p, q, n, phi, e, d, m } = rsaInputs(), s = pow(m, d, n);
+    if (int(0, 1)) return num(`Chữ ký RSA theo bài giảng: p=${p}, q=${q}, số mũ công khai b=${e}, đại diện bản tin x=${m}. Tìm chữ ký y.`,
+      s, `n=${n}, φ(n)=${phi}, a=b⁻¹ mod φ(n)=${d}. y=${m}^${d} mod ${n}=${s}.`,
+      [pow(m, e, n), d, m]);
+    const y = int(0, 1) ? s : mod(s + 1, n), recovered = pow(y, e, n);
+    return question(`Xác minh chữ ký RSA với n=${n}, b=${e}, x=${m} và y=${y}. Kết luận và giá trị y^b mod n nào đúng?`,
+      `${recovered === m ? 'Hợp lệ' : 'Không hợp lệ'}, giá trị ${recovered}`,
+      [`${recovered !== m ? 'Hợp lệ' : 'Không hợp lệ'}, giá trị ${recovered}`,
+        `Không hợp lệ, giá trị ${mod(recovered + 1, n)}`, `Hợp lệ, giá trị ${mod(recovered - 1, n)}`],
+      `Tính ${y}^${e} mod ${n} = ${recovered}. Chữ ký hợp lệ khi kết quả đúng bằng ${m}.`);
+  });
+  calc(4, 'DSS/DSA', () => {
+    const [p, q, g] = pick([[1181, 59, 2], [47, 23, 2], [167, 83, 2], [2039, 1019, 2]]);
+    const a = int(1, q - 1), x = int(10, 1200), alpha = pow(g, (p - 1) / q, p), beta = pow(alpha, a, p);
+    let k, r, s;
+    do {
+      k = int(1, q - 1);
+      r = pow(alpha, k, p) % q;
+      s = mod((x + a * r) * inverse(k, q), q);
+    } while (!r || !s);
+    const e1 = x * inverse(s, q) % q, e2 = r * inverse(s, q) % q;
+    const base = `DSS: p=${p}, q=${q}, g=${g}, a=${a}, x=${x}, k=${k}. `;
+    const [target, answer, detail, range] = pick([
+      ['α = g^((p−1)/q) mod p', alpha, `α=${g}^(${(p - 1) / q}) mod ${p}=${alpha}`, p],
+      ['β = α^a mod p', beta, `α=${alpha}, β=${alpha}^${a} mod ${p}=${beta}`, p],
+      ['γ = (α^k mod p) mod q', r, `α=${alpha}, γ=(${alpha}^${k} mod ${p}) mod ${q}=${r}`, q],
+      ['δ = (x+aγ)·k⁻¹ mod q', s, `γ=${r}, k⁻¹=${inverse(k,q)}, δ=(${x}+${a}×${r})×${inverse(k,q)} mod ${q}=${s}`, q],
+      ['e₁ = x·δ⁻¹ mod q để xác minh chữ ký', e1, `γ=${r}, δ=${s}, δ⁻¹=${inverse(s,q)}; e₁=${e1}, e₂=${e2}`, q],
+      ['v = ((α^e₁ × β^e₂) mod p) mod q để đối chiếu với γ', pow(alpha, e1, p) * pow(beta, e2, p) % p % q,
+        `α=${alpha}, β=${beta}, γ=${r}, δ=${s}, e₁=${e1}, e₂=${e2}. Giá trị v=${r} trùng γ nên hợp lệ`, q]
+    ]);
+    return num(base + 'Tính ' + target + '.', answer, detail + '.', [alpha, beta, r, s, e1, e2], n => mod(n, range));
+  });
+
+  const quotas = {
+    practice: { 1: [17, 8], 2: [14, 11], 3: [13, 12], 4: [14, 11] },
+    mock: { 1: [7, 3], 2: [6, 4], 3: [5, 5], 4: [6, 4] }
+  };
+  const topics = ch => [...new Set(list.filter(x => x.ch === ch).map(x => x.topic))];
+  function chapter(ch, mode, ledger) {
+    const bank = list.filter(x => x.ch === ch);
+    const counts = ledger.counts ??= {};
+    const exposures = ledger.exposures ??= {};
+    const previous = new Set(ledger.previous || []);
+    const used = new Set();
+    const result = [];
+    for (const [i, kind] of ['theory', 'calc'].entries()) {
+      const rules = bank.filter(x => x.kind === kind);
+      for (let slot = 0; slot < quotas[mode][ch][i]; slot++) {
+        const topicKey = topic => kind + ':' + topic;
+        const order = shuffle(rules).sort((a, b) =>
+          (counts[topicKey(a.topic)] || 0) - (counts[topicKey(b.topic)] || 0) ||
+          (counts[a.id] || 0) - (counts[b.id] || 0));
+        let selection;
+        for (const rule of order) {
+          const variants = kind === 'theory' ? shuffle(rule.make()) : Array.from({ length: 5 }, () => rule.make());
+          const candidates = variants
+            .filter(q => !used.has(q.prompt) && !previous.has(q.prompt));
+          if (candidates.length === 0) continue;
+          candidates.sort((a, b) => (exposures[a.prompt] || 0) - (exposures[b.prompt] || 0));
+          selection = { ...candidates[0], ...rule };
+          break;
+        }
+        if (!selection) throw new Error('Không đủ câu mới cho chương ' + ch);
+        const { id, topic, prompt, make, ...q } = selection;
+        counts[topicKey(topic)] = (counts[topicKey(topic)] || 0) + 1;
+        counts[id] = (counts[id] || 0) + 1;
+        if (kind === 'theory') exposures[prompt] = (exposures[prompt] || 0) + 1;
+        used.add(prompt);
+        result.push({ ...q, topic, prompt });
+      }
+    }
+    ledger.previous = [...used];
+    return shuffle(result);
+  }
+  return { chapter, topics, pow, inverse, gcd, mod };
+})();
+
+    function calcCasioMod() {
+      const baseEl = document.getElementById('casio-base');
+      const expEl = document.getElementById('casio-exp');
+      const modEl = document.getElementById('casio-mod');
+      const outEl = document.getElementById('casio-mod-out');
+      if (!baseEl || !expEl || !modEl || !outEl) return;
+      const a = Number(baseEl.value);
+      const k = Number(expEl.value);
+      const n = Number(modEl.value);
+      if (![baseEl, expEl, modEl].every(el => el.value.trim()) || ![a, k, n].every(Number.isSafeInteger) || n < 2 || k < 0) {
+        outEl.innerHTML = `<span>Nhập số nguyên hợp lệ với Modulo ≥ 2 và số mũ ≥ 0.</span>`;
+        return;
+      }
+      const res = QuizEngine.pow(a, k, n);
+      const bin = Math.floor(k).toString(2);
+      outEl.innerHTML = `
+        <span>Kết quả: <strong>${a}^${k} mod ${n} = ${res}</strong></span>
+        <span style="font-size:0.85rem;color:var(--on-surface-variant);">Gợi ý tách nhị phân số mũ ${k} = (${bin})₂ để bình phương và nhân nối tiếp bằng phím ÷R trên Casio.</span>
+      `;
+    }
+
+    function calcCasioInv() {
+      const aEl = document.getElementById('inv-a');
+      const nEl = document.getElementById('inv-n');
+      const outEl = document.getElementById('casio-inv-out');
+      if (!aEl || !nEl || !outEl) return;
+      const a = Number(aEl.value), n = Number(nEl.value);
+      if (!aEl.value.trim() || !nEl.value.trim() || ![a, n].every(Number.isSafeInteger) || n < 2) {
+        outEl.textContent = 'Nhập hai số nguyên hợp lệ, modulo n ≥ 2.';
+        return;
+      }
+      const aPos = (BigInt(a) % BigInt(n) + BigInt(n)) % BigInt(n);
+      let [r, s, x, y] = [BigInt(n), aPos, 0n, 1n];
+      while (s) {
+        const q = r / s;
+        [r, s, x, y] = [s, r % s, y, x - q * y];
+      }
+      if (r !== 1n) {
+        outEl.textContent = 'Không có nghịch đảo vì gcd = ' + r + '.';
+        return;
+      }
+      const mod = BigInt(n), inv = (x % mod + mod) % mod;
+      const k = (aPos * inv - 1n) / mod;
+      outEl.textContent = 'Nghịch đảo: ' + inv + '. Với TABLE: f(X) = (' + n + 'X + 1) ÷ ' + aPos + ', nghiệm nguyên đầu tiên tại X = ' + k + '.';
+    }
+
+    function parseBinOrHex(str) {
+      const s = (str || '').trim().toLowerCase();
+      if (/^0b[01]+$/.test(s)) return parseInt(s.slice(2), 2);
+      if (/^0x[0-9a-f]+$/.test(s)) return parseInt(s.slice(2), 16);
+      if (/^[01]+$/.test(s) && s.length >= 4) return parseInt(s, 2);
+      return /^[0-9a-f]+$/.test(s) && !s.startsWith('0b') ? parseInt(s, 16) : NaN;
+    }
+
+    function calcCasioBase() {
+      const xEl = document.getElementById('base-x');
+      const yEl = document.getElementById('base-y');
+      const outEl = document.getElementById('casio-base-out');
+      if (!xEl || !yEl || !outEl) return;
+      const x = parseBinOrHex(xEl.value);
+      const y = parseBinOrHex(yEl.value);
+      if (![x, y].every(Number.isSafeInteger)) {
+        outEl.innerHTML = `<span>Nhập giá trị Hex (vd 0x6A) hoặc Nhị phân (vd 0b01101010).</span>`;
+        return;
+      }
+      const x8 = x & 0xff, y8 = y & 0xff;
+      const xorVal = (x8 ^ y8) & 0xff;
+      const andVal = (x8 & y8) & 0xff;
+      const orVal = (x8 | y8) & 0xff;
+      const sum8 = (x8 + y8) & 0xff;
+      const padBin = v => v.toString(2).padStart(8, '0');
+      const toHex = v => '0x' + v.toString(16).toUpperCase().padStart(2, '0');
+      outEl.innerHTML = `
+        <span>X ⊕ Y (XOR): <strong>${toHex(xorVal)}</strong> (${padBin(xorVal)})</span>
+        <span style="font-size:0.85rem;">AND: <code>${toHex(andVal)}</code> | OR: <code>${toHex(orVal)}</code> | Cộng mod 256 (⊞): <code>${toHex(sum8)}</code></span>
+      `;
+    }
+
+
+const eyesOpen = '<ellipse cx="38" cy="54" rx="5" ry="6.5"/><ellipse cx="62" cy="54" rx="5" ry="6.5"/><circle class="bunny-glint" cx="36.5" cy="51.5" r="1.5"/><circle class="bunny-glint" cx="60.5" cy="51.5" r="1.5"/>';
+const eyesHappy = '<path class="bunny-line" d="M32 56 Q38 45 44 56 M56 56 Q62 45 68 56"/>';
+const mouthHappy = '<path class="bunny-mouth" d="M43 65 Q50 69 57 65 Q55 78 50 78 Q45 78 43 65Z"/>';
+const blush = '<ellipse class="bunny-blush" cx="29" cy="63" rx="8" ry="4"/><ellipse class="bunny-blush" cx="71" cy="63" rx="8" ry="4"/>';
+const faces = {
+  happy: eyesHappy + mouthHappy + blush,
+  sparkly: '<path class="bunny-star" d="M38 44 40 51 47 53 40 55 38 62 36 55 29 53 36 51Z M62 44 64 51 71 53 64 55 62 62 60 55 53 53 60 51Z"/>' + mouthHappy + blush,
+  wink: '<ellipse cx="38" cy="54" rx="5" ry="6.5"/><circle class="bunny-glint" cx="36.5" cy="51.5" r="1.5"/><path class="bunny-line" d="M56 57 64 53 58 49"/>' + mouthHappy + blush,
+  heart: '<path class="bunny-heart" d="M38 61 C36 58 29 54 31 49 Q34 44 38 49 Q42 44 45 49 C47 54 40 58 38 61Z M62 61 C60 58 53 54 55 49 Q58 44 62 49 Q66 44 69 49 C71 54 64 58 62 61Z"/>' + mouthHappy + blush,
+  shy: eyesHappy + blush + '<path class="bunny-line" d="M46 68 Q50 71 54 68 M24 64l3-3 M29 65l3-3 M68 65l3-3 M73 64l3-3"/>',
+  surprised: eyesOpen + blush + '<circle class="bunny-mouth" cx="50" cy="70" r="5"/>',
+  sad: '<path class="bunny-line" d="M31 48 Q36 49 42 45 M58 45 Q64 49 69 48 M33 56 Q38 59 43 56 M57 56 Q62 59 67 56 M45 70 Q50 65 55 70"/><path class="bunny-tear" d="M68 58 Q77 69 69 71 Q62 71 68 58Z"/>' + blush
+};
+const bunnyPraise = [
+  ['giỏi quá em yêu~~', 'happy'],
+  ['cố lên em yêu sắp ra r', 'surprised'],
+  ['tối nay em muốn thưởng j nào ~~~', 'wink'],
+  ['onichan tuyệt quá đi!!', 'sparkly'],
+  ['hẹn em 8h tối nay ở phòng 612', 'wink'],
+  ['Bé yêu muốn a thưởng j nào ~~', 'heart'],
+  ['Em giỏi quáaaa~ Onii-chan tự hào về em lắm đấy~ ❤️', 'heart'],
+  ['Sugoiiii~ Không ngờ em lại tài năng đến mức này!', 'sparkly'],
+  ['Ohoho~ Đúng là một thiên tài nhỏ bé đáng yêu mà~', 'happy'],
+  ['Em làm anh phải đỏ mặt vì tự hào mất rồi đấy~', 'shy']
+];
+let unusedPraise = [], lastPraise;
+
+function nextBunnyPraise() {
+  if (unusedPraise.length === 0) unusedPraise = [...bunnyPraise];
+  let index = Math.floor(Math.random() * unusedPraise.length);
+  if (unusedPraise[index] === lastPraise && unusedPraise.length > 1) index = (index + 1) % unusedPraise.length;
+  [lastPraise] = unusedPraise.splice(index, 1);
+  return lastPraise;
+}
+
+function showBunnyFeedback(correct, previousStreak) {
+  const [title, face] = correct ? nextBunnyPraise() : ['Sai câu này rồi, làm tiếp nhé!', 'sad'];
+  const subtitle = correct
+    ? 'Chuỗi đúng: ' + state.streak
+    : previousStreak > 0
+      ? 'Mất chuỗi ' + previousStreak + ' câu đúng liên tiếp.'
+      : 'Xem lời giải ngay bên dưới nhé.';
+  const toast = $('mascot-toast');
+  toast.classList.remove('show');
+  toast.classList.toggle('is-sad', !correct);
+  $('mascot-face').innerHTML = faces[face];
+  $('mascot-title').textContent = title;
+  $('mascot-sub').textContent = subtitle;
+  // Restart the jump when another answer comes in before the toast fades.
+  void toast.offsetWidth;
+  toast.classList.add('show');
+  clearTimeout(toastId);
+  toastId = setTimeout(() => toast.classList.remove('show'), 3100);
+}
+
+function summarizeAttempt(session) {
+  const { questions, answers } = session;
+  const correct = questions.filter((q, i) => answers[i] === q.correct).length;
+  const answered = Object.keys(answers).length;
+  return { correct, answered, total: questions.length };
+}
+function recordAttempt(session, date = new Date().toISOString()) {
+  return {
+    date, ...summarizeAttempt(session),
+    questions: session.questions, answers: { ...session.answers }
+  };
+}
+function archivePractice(ch) {
+  const session = state.practice[ch];
+  if (!session || session.archived || !Object.keys(session.answers).length) return false;
+  (state.practiceHistory[ch] ??= []).push(recordAttempt(session));
+  session.archived = true;
+  return true;
+}
+function restoreHistory() {
+  state.practiceHistory ??= {};
+  for (const ch of chapters) {
+    const session = state.practice[ch];
+    if (session && Object.keys(session.answers).length === session.questions.length) archivePractice(ch);
+  }
+  if (state.result?.questions) {
+    // The previous version kept the latest exam's questions and a separate score row.
+    const recent = state.history.at(-1);
+    const attempt = recordAttempt(state.result, recent?.date);
+    if (recent?.correct === attempt.correct && !recent.questions) state.history[state.history.length - 1] = attempt;
+    else state.history.push(attempt);
+    state.mockReview = state.history.length - 1;
+  }
+  delete state.result;
+}
+function displayAttemptDate(date) {
+  const parsed = /^\d{4}-\d\d-\d\dT/.test(date || '') ? new Date(date) : null;
+  return parsed && !Number.isNaN(parsed.valueOf()) ? parsed.toLocaleString('vi-VN') : date || 'Chưa có ngày';
+}
+function attemptScore(correct, total) {
+  return `${correct}/${total} đúng`;
+}
+function renderHistory(container, review, attempts, { isMock = false, selected = null, onSelect } = {}) {
+  container.replaceChildren();
+  review.replaceChildren();
+  if (!attempts.length) {
+    container.append(element('p', 'history-meta', 'Các lượt đã lưu sẽ hiện ở đây.'));
+    return;
+  }
+  const total = isMock ? 40 : 25;
+  const complete = attempts.filter(item => isMock || item.answered === total);
+  const best = complete.reduce((max, item) => Math.max(max, item.correct), -1);
+  const stats = element('div', 'history-stats');
+  stats.append(element('span', 'q-tag', `${attempts.length} lượt đã lưu`));
+  if (!isMock) stats.append(element('span', 'q-tag', `${complete.length} bộ đã làm đủ`));
+  if (best >= 0) stats.append(element('span', 'q-tag gen-tag', 'Cao nhất: ' + attemptScore(best, total)));
+  if (complete.length >= 2) {
+    const delta = complete.at(-1).correct - complete.at(-2).correct;
+    stats.append(element('span', 'q-tag', delta ? `Lượt gần nhất: ${delta > 0 ? '+' : ''}${delta} câu đúng` : 'Hai lượt gần nhất bằng điểm'));
+  }
+  const list = element('div', 'history-list');
+  container.append(stats, list);
+
+  function show(index, focus = false) {
+    selected = index;
+    onSelect?.(index);
+    renderAttemptReview(review, attempts[index], label(index));
+    for (const btn of list.querySelectorAll('.history-open')) {
+      btn.setAttribute('aria-pressed', String(btn.value === String(index)));
+    }
+    if (focus) {
+      const heading = review.querySelector('.history-review-title');
+      heading?.focus();
+      heading?.scrollIntoView?.({ block: 'nearest' });
+    }
+  }
+  function label(index) {
+    return isMock ? `Đề thi thử ${index + 1}` : `Lượt luyện ${index + 1}`;
+  }
+  function fillList(limit) {
+    list.replaceChildren();
+    for (let i = attempts.length - 1; i >= Math.max(0, attempts.length - limit); i--) {
+      const attempt = attempts[i];
+      const row = element('div', 'history-entry');
+      const summary = element('div');
+      const incomplete = !isMock && attempt.answered < total ? ` · Dở dang ${attempt.answered}/${total}` : '';
+      const wrong = attempt.questions ? ` · ${attempt.answered - attempt.correct} sai` : '';
+      summary.append(element('strong', '', `${label(i)} · ${attemptScore(attempt.correct, total)}${wrong}${incomplete}`),
+        element('div', 'history-meta', displayAttemptDate(attempt.date)));
+      row.append(summary);
+      if (attempt.questions) {
+        const open = button('Xem lại', 'btn btn-soft history-open', () => show(i, true));
+        open.value = String(i);
+        open.setAttribute('aria-label', 'Xem lại ' + label(i).toLowerCase());
+        open.setAttribute('aria-pressed', String(selected === i));
+        row.append(open);
+      } else {
+        row.append(element('span', 'history-meta', 'Chỉ có điểm của lượt này'));
+      }
+      list.append(row);
+    }
+    if (limit < attempts.length) {
+      list.append(button('Xem thêm lượt trước', 'btn btn-soft', () => fillList(limit + 8)));
+    }
+  }
+  fillList(selected === null ? 8 : Math.max(8, attempts.length - selected));
+  if (selected !== null && attempts[selected]?.questions) show(selected);
+}
+function renderAttemptReview(container, attempt, titleText) {
+  const { questions, answers, correct, answered, total } = attempt;
+  const card = element('div', 'result-banner');
+  const title = element('h3', 'section-title history-review-title', titleText);
+  title.tabIndex = -1;
+  card.append(title, element('strong', 'score-big', attemptScore(correct, total)),
+    element('div', 'history-meta', `${displayAttemptDate(attempt.date)} · ${answered - correct} sai · ${total - answered} bỏ trống`));
+  if (total === 40) {
+    const chapterScores = chapters.map(ch => questions.filter((q, i) => q.ch === ch && answers[i] === q.correct).length);
+    card.append(element('div', '', `${(correct / 4).toFixed(2)}/10 · ` + chapterScores.map((score, i) => `Chương ${i + 1}: ${score}/10`).join(' · ')));
+  }
+  const controls = element('div', 'history-controls');
+  const list = element('div', 'history-review-list');
+  const wrong = answered - correct;
+  const filters = [
+    [`Câu sai (${wrong})`, (q, ans) => ans !== undefined && ans !== q.correct],
+    [`Bỏ trống (${total - answered})`, (q, ans) => ans === undefined],
+    [`Tất cả (${total})`, () => true]
+  ];
+  const buttons = filters.map(([label], index) =>
+    button(label, 'btn btn-soft', () => showQuestions(index)));
+  function showQuestions(index) {
+    for (const [i, btn] of buttons.entries()) btn.setAttribute('aria-pressed', String(i === index));
+    const matches = filters[index][1];
+    list.replaceChildren();
+    questions.forEach((q, i) => {
+      const ans = answers[i];
+      if (!matches(q, ans)) return;
+      const review = element('article', 'review-item');
+      const status = ans === undefined ? 'Bỏ trống' : ans === q.correct ? 'Đúng' : 'Sai';
+      const options = element('ul', 'options-list history-options');
+      options.setAttribute('role', 'list');
+      q.choices.forEach((choice, option) => {
+        const isCorrect = option === q.correct;
+        const isChosen = option === ans;
+        const style = isCorrect ? ' correct' : isChosen ? ' wrong' : '';
+        const row = element('li', 'opt-btn history-option' + style);
+        const body = element('span', 'history-option-body', choice);
+        if (isCorrect || isChosen) {
+          const label = isCorrect && isChosen ? 'Đáp án đúng · Bạn đã chọn'
+            : isCorrect ? 'Đáp án đúng' : 'Bạn đã chọn';
+          body.append(element('small', 'history-option-label', label));
+        }
+        row.append(element('span', 'opt-letter', letter(option)), body);
+        options.append(row);
+      });
+      const explanation = element('div', 'explain-box');
+      explanation.append(element('strong', '', 'Lời giải'), element('span', '', q.explanation));
+      review.append(element('h4', 'history-question-title', `Câu ${i + 1} · Chương ${q.ch} · ${status} · ${q.topic}`),
+        element('div', 'q-text', q.prompt), options, explanation);
+      list.append(review);
+    });
+    if (!list.children.length) list.append(element('p', 'history-meta', 'Không có câu nào trong mục này.'));
+  }
+  controls.append(...buttons);
+  card.append(controls, list);
+  container.replaceChildren(card);
+  showQuestions(wrong ? 0 : 2);
+}
+
+const $ = id => document.getElementById(id);
+const chapters = [1, 2, 3, 4];
+const modes = ['theory', 'casio', 'practice', 'mock'];
+const storageKey = 'atbmtt_bunny_study_v2';
+function readState(key) {
+  try { return JSON.parse(localStorage.getItem(key)); } catch { return null; }
+}
+function initialState(legacy = {}) {
+  return {
+    mode: modes.includes(legacy.mode) ? legacy.mode : 'theory',
+    theoryCh: chapters.includes(legacy.theoryCh) ? legacy.theoryCh : 1,
+    practiceCh: chapters.includes(legacy.practiceCh) ? legacy.practiceCh : 1,
+    practice: {}, ledger: { practice: {}, mock: {} },
+    answered: 0, correct: 0, streak: 0,
+    history: Array.isArray(legacy.mockHistory) ? [...legacy.mockHistory] : [],
+    best: Number.isInteger(legacy.bestMock) ? legacy.bestMock : null,
+    mock: null, mockReview: null, practiceHistory: {}
+  };
+}
+let state = readState(storageKey) || initialState(readState('atbmtt_bunny_study_v1') || {});
+let timerId, toastId;
+function save() {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+    $('storage-notice').classList.add('hidden');
+  } catch {
+    $('storage-notice').classList.remove('hidden');
+  }
+}
+function element(tag, cls = '', content = '') {
+  const el = document.createElement(tag);
+  el.className = cls;
+  el.textContent = content;
+  return el;
+}
+function button(label, cls, action) {
+  const el = element('button', cls, label);
+  el.type = 'button';
+  el.addEventListener('click', action);
+  return el;
+}
+function updateStats() {
+  $('stat-answered').textContent = state.answered;
+  $('stat-accuracy').textContent = (state.answered ? Math.round(100 * state.correct / state.answered) : 0) + '%';
+  $('stat-streak').textContent = 'Chuỗi đúng: ' + state.streak;
+  $('stat-best-mock').textContent = state.best === null ? '—' : state.best + ' / 40';
+  $('stat-mood').textContent = state.streak >= 5 ? 'Đang vào guồng!' : 'Sẵn sàng học!';
+}
+function switchMode(mode) {
+  if (state.mode !== mode) $('mascot-toast').classList.remove('show');
+  state.mode = mode;
+  for (const m of modes) {
+    $('view-' + m).classList.toggle('hidden', m !== mode);
+    $('tab-' + m).classList.toggle('active', m === mode);
+  }
+  if (mode === 'practice') loadPractice();
+  if (mode === 'mock') renderMock();
+  save();
+}
+function selectTheoryChapter(ch) {
+  state.theoryCh = ch;
+  for (const c of chapters) $('th-chip-' + c).classList.toggle('active', c === ch);
+  $('theory-content').innerHTML = THEORY_HTML[ch];
+  save();
+}
+async function copyWebLink(btn) {
+  try {
+    await navigator.clipboard.writeText(location.href);
+    btn.textContent = 'Đã sao chép';
+    setTimeout(() => { btn.textContent = 'Sao chép link web'; }, 1800);
+  } catch {
+    window.prompt('Sao chép địa chỉ trang web', location.href);
+  }
+}
+function handleResetProgress() {
+  if (!window.confirm('Xóa tiến độ, lịch sử luyện tập và lịch sử thi thử trên trình duyệt này?')) return;
+  clearInterval(timerId);
+  state = initialState();
+  save();
+  updateStats();
+  selectTheoryChapter(1);
+  switchMode('theory');
+  renderMock();
+}
+function newQuestions(ch, mode) {
+  const ledger = state.ledger[mode][ch] ??= {};
+  return QuizEngine.chapter(ch, mode, ledger);
+}
+function makeSession(questions) {
+  return { questions, answers: {}, index: 0 };
+}
+function selectPracticeChapter(ch) {
+  state.practiceCh = ch;
+  $('practice-history-panel').open = false;
+  loadPractice();
+}
+function loadPractice() {
+  const ch = state.practiceCh;
+  state.practice[ch] ??= makeSession(newQuestions(ch, 'practice'));
+  renderPractice();
+  renderPracticeHistory();
+  save();
+}
+function generateNewBatchForChapter() {
+  const ch = state.practiceCh;
+  const session = state.practice[ch];
+  const answered = Object.keys(session?.answers || {}).length;
+  if (answered > 0 && answered < 25 && !window.confirm('Lưu lượt đang làm vào lịch sử rồi sinh bộ mới?')) return;
+  const next = makeSession(newQuestions(ch, 'practice'));
+  archivePractice(ch);
+  state.practice[ch] = next;
+  renderPractice();
+  renderPracticeHistory();
+  save();
+}
+function resetCurrentChapter() {
+  const ch = state.practiceCh;
+  const session = state.practice[ch];
+  if (Object.keys(session.answers).length && !window.confirm('Lưu lượt này vào lịch sử và làm lại cùng bộ câu hỏi?')) return;
+  archivePractice(ch);
+  state.practice[ch] = makeSession(session.questions);
+  renderPractice();
+  renderPracticeHistory();
+  save();
+}
+function openPracticeHistory() {
+  const panel = $('practice-history-panel');
+  panel.open = true;
+  $('practice-history-label').focus();
+  panel.scrollIntoView({ block: 'start' });
+}
+function renderPracticeHistory() {
+  const attempts = state.practiceHistory[state.practiceCh] || [];
+  $('practice-history-label').textContent = `Lịch sử Chương ${state.practiceCh} · ${attempts.length} lượt đã lưu`;
+  renderHistory($('practice-history-box'), $('practice-review'), attempts);
+}
+const letter = i => 'ABCD'[i];
+function renderQuestion(session, card, dots, practice) {
+  const index = session.index;
+  const q = session.questions[index];
+  const selected = session.answers[index];
+  const showAnswer = practice && selected !== undefined;
+  const goTo = (i, focus) => {
+    session.index = i;
+    practice ? renderPractice() : renderMockQuestion();
+    if (focus) (focus === 'dot' ? dots.querySelector('.current') : card.querySelector('.q-text')).focus();
+    save();
+  };
+  const meta = element('div', 'q-meta');
+  meta.append(element('span', 'q-tag', `Câu ${index + 1}/${session.questions.length} · Chương ${q.ch}`));
+  meta.append(element('span', 'q-tag gen-tag', (q.kind === 'calc' ? 'Bài tính' : 'Lý thuyết') + ' · ' + q.topic));
+  const heading = element('h3', 'q-text', q.prompt);
+  heading.tabIndex = -1;
+  const options = element('div', 'options-list');
+  q.choices.forEach((choice, i) => {
+    let cls = 'opt-btn';
+    if (showAnswer && q.correct === i) cls += ' correct';
+    else if (i === selected) cls += showAnswer ? ' wrong' : ' selected';
+    const btn = button('', cls, () => {
+      if (practice && session.answers[index] !== undefined) return;
+      if (!practice && Date.now() >= state.mock.deadline) { finishMockExam(); return; }
+      session.answers[index] = i;
+      if (practice) {
+        const correct = i === q.correct;
+        state.answered++;
+        state.correct += Number(correct);
+        const previousStreak = state.streak;
+        state.streak = correct ? previousStreak + 1 : 0;
+        showBunnyFeedback(correct, previousStreak);
+        updateStats();
+        renderPractice();
+        if (Object.keys(session.answers).length === session.questions.length && archivePractice(state.practiceCh)) renderPracticeHistory();
+        card.querySelector('.explain-box').focus();
+      } else {
+        renderMockQuestion();
+        card.querySelectorAll('.opt-btn')[i].focus();
+      }
+      save();
+    });
+    btn.disabled = showAnswer;
+    btn.setAttribute('aria-pressed', String(i === selected));
+    btn.append(element('span', 'opt-letter', letter(i)), element('span', '', choice));
+    options.append(btn);
+  });
+  const nav = element('div', 'q-meta');
+  const prev = button('← Câu trước', 'btn btn-soft', () => goTo(index - 1, 'question'));
+  prev.disabled = index === 0;
+  const next = button('Câu sau →', 'btn btn-soft', () => goTo(index + 1, 'question'));
+  next.disabled = index === session.questions.length - 1;
+  nav.append(prev, next);
+  card.replaceChildren(meta, heading, options);
+  if (showAnswer) {
+    const right = selected === q.correct;
+    const feedback = element('div', 'explain-box ' + (right ? 'is-correct' : 'is-wrong'));
+    feedback.tabIndex = -1;
+    feedback.append(element('strong', '', right ? 'Chính xác!' : 'Đáp án đúng: ' + letter(q.correct) + '. ' + q.choices[q.correct]),
+      element('span', '', q.explanation));
+    card.append(feedback);
+  }
+  card.append(nav);
+  dots.replaceChildren(...session.questions.map((item, i) => {
+    const ans = session.answers[i];
+    let cls = 'q-dot' + (i === index ? ' current' : '');
+    if (ans !== undefined) cls += !practice ? ' answered' : ans === item.correct ? ' ok' : ' bad';
+    const dot = button(String(i + 1), cls, () => goTo(i, 'dot'));
+    if (i === index) dot.setAttribute('aria-current', 'true');
+    dot.setAttribute('aria-label', `Câu ${i + 1}, ${ans === undefined ? 'chưa làm' : 'đã làm'}`);
+    return dot;
+  }));
+}
+function renderPractice() {
+  const ch = state.practiceCh;
+  const session = state.practice[ch];
+  for (const c of chapters) $('pr-chip-' + c).classList.toggle('active', c === ch);
+  $('practice-title').textContent = 'Luyện tập Chương ' + ch;
+  const chosen = Object.keys(session.answers).length;
+  const correct = session.questions.filter((q, i) => session.answers[i] === q.correct).length;
+  const calcCount = session.questions.filter(q => q.kind === 'calc').length;
+  const topicCount = new Set(session.questions.map(q => q.topic)).size;
+  $('practice-sub').textContent = `${25 - calcCount} câu lý thuyết · ${calcCount} bài tính · ${topicCount}/${QuizEngine.topics(ch).length} chủ đề trong bộ này`;
+  $('practice-score-badge').textContent = `${correct}/25 đúng · ${chosen} đã làm`;
+  $('practice-progress').style.width = chosen * 4 + '%';
+  renderQuestion(session, $('practice-card'), $('practice-dots'), true);
+}
+function renderMockQuestion() {
+  const session = state.mock;
+  $('mock-answered-count').textContent = 'Đã chọn: ' + Object.keys(session.answers).length + ' / 40';
+  renderQuestion(session, $('mock-card'), $('mock-dots'), false);
+}
+function renderMock() {
+  $('mock-lobby').classList.toggle('hidden', Boolean(state.mock));
+  $('mock-active').classList.toggle('hidden', !state.mock);
+  $('mock-result').classList.toggle('hidden', Boolean(state.mock));
+  if (state.mock) {
+    $('mock-result').replaceChildren();
+    renderMockQuestion();
+    updateTimer();
+    return;
+  }
+  renderHistory($('mock-history-box'), $('mock-result'), state.history, {
+    isMock: true,
+    selected: state.mockReview ?? null,
+    onSelect: index => { state.mockReview = index; save(); }
+  });
+}
+function updateTimer() {
+  if (!state.mock) return;
+  const remaining = Math.max(0, Math.ceil((state.mock.deadline - Date.now()) / 1000));
+  const f = n => String(n).padStart(2, '0');
+  $('mock-timer').textContent = f(Math.floor(remaining / 60)) + ':' + f(remaining % 60);
+  $('mock-timer').classList.toggle('urgent', remaining <= 300);
+  if (!remaining) finishMockExam();
+}
+function startMockExam() {
+  if (state.mock) return;
+  const groups = chapters.map(ch => newQuestions(ch, 'mock'));
+  const exam = groups[0].flatMap((_, i) => groups.map(group => group[i]));
+  state.mock = { ...makeSession(exam), deadline: Date.now() + 3_600_000 };
+  state.mockReview = null;
+  save();
+  renderMock();
+  clearInterval(timerId);
+  timerId = setInterval(updateTimer, 500);
+}
+function submitMockExam() {
+  if (!state.mock) return;
+  const answered = Object.keys(state.mock.answers).length;
+  if (answered < 40 && !window.confirm(`Còn ${40 - answered} câu chưa trả lời. Nộp bài ngay?`)) return;
+  finishMockExam();
+}
+function finishMockExam() {
+  const session = state.mock;
+  if (!session) return;
+  clearInterval(timerId);
+  const attempt = recordAttempt(session);
+  state.history.push(attempt);
+  state.best = Math.max(state.best ?? 0, attempt.correct);
+  state.mockReview = state.history.length - 1;
+  state.mock = null;
+  save();
+  updateStats();
+  renderMock();
+}
+function init() {
+  restoreHistory();
+  calcCasioMod();
+  calcCasioInv();
+  calcCasioBase();
+  updateStats();
+  selectTheoryChapter(state.theoryCh);
+  switchMode(state.mode);
+  if (state.mock) {
+    clearInterval(timerId);
+    updateTimer();
+    if (state.mock) timerId = setInterval(updateTimer, 500);
+  }
+  if (globalThis.lucide) globalThis.lucide.createIcons();
+}
+init();
+  </script>
+</body>
+</html>
